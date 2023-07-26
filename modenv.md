@@ -3,7 +3,7 @@
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.registercallback = callback.register`
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.createcallback = callback.create`
 - [x] `API/modConstants.lua`              | `local s = mods.modenv`
-- [~] `API/module/input.lua`              | `mods.modenv.input = input`
+- [x] `API/module/input.lua`              | `mods.modenv.input = input`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
