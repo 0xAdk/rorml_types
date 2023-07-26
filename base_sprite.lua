@@ -11,7 +11,7 @@
 ---@field boundingBoxRight  number TODO
 ---@field boundingBoxTop    number TODO
 ---@field boundingBoxBottom number TODO
-BaseSprite = {}
+local BaseSprite = {}
 
 
 --- TODO

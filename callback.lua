@@ -147,7 +147,7 @@ function callback.register(name, fn, priority) end
 --- TODO
 ---
 ---@param name string TODO
----@return fun(...) callback_runner
+---@return fun(...) callbackRunner
 function callback.create(name) end
 
 
@@ -168,7 +168,7 @@ function registercallback(name, fn, priority) end
 --- For legacy compatibility. Use `callback.create` instead.
 ---
 ---@param name string TODO
----@return fun(...) callback_runner
+---@return fun(...) callbackRunner
 ---
 ---@deprecated
 function createcallback(name) end

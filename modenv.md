@@ -2,6 +2,8 @@
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.callback = callback`
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.registercallback = callback.register`
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.createcallback = callback.create`
+- [x] `API/modConstants.lua`              | `local s = mods.modenv`
+- [~] `API/module/input.lua`              | `mods.modenv.input = input`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -23,9 +25,7 @@
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
-- [ ] `API/modConstants.lua`              | `local s = mods.modenv`
 - [ ] `API/module/graphics.lua`           | `mods.modenv.graphics = graphics`
-- [ ] `API/module/input.lua`              | `mods.modenv.input = input`
 - [ ] `API/module/misc.lua`               | `mods.modenv.misc = misc`
 - [ ] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [ ] `API/module/net.lua`                | `mods.modenv.net = net`
