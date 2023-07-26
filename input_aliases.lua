@@ -32,6 +32,32 @@
 ---|
 ---|-- Text
 ---| 'space' TODO
+---| 'a' TODO
+---| 'b' TODO
+---| 'c' TODO
+---| 'd' TODO
+---| 'e' TODO
+---| 'f' TODO
+---| 'g' TODO
+---| 'h' TODO
+---| 'i' TODO
+---| 'j' TODO
+---| 'k' TODO
+---| 'l' TODO
+---| 'm' TODO
+---| 'n' TODO
+---| 'o' TODO
+---| 'p' TODO
+---| 'q' TODO
+---| 'r' TODO
+---| 's' TODO
+---| 't' TODO
+---| 'u' TODO
+---| 'v' TODO
+---| 'w' TODO
+---| 'x' TODO
+---| 'y' TODO
+---| 'z' TODO
 ---| 'A' TODO
 ---| 'B' TODO
 ---| 'C' TODO
