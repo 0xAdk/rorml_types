@@ -7,6 +7,9 @@
 - [x] `API/class/object/GMObject.lua`     | `mods.modenv.Object = Object`
 - [x] `API/class/Item.lua`                | `mods.modenv.Item = Item`
 - [x] `API/class/ItemPool.lua`            | `mods.modenv.ItemPool = ItemPool`
+- [x] `main.lua`                          | `mods.modenv.log = log`
+- [x] `main.lua`                          | `mods.modenv.print = print`
+- [x] `util/class.lua`                    | `function mods.modenv.isa(obj, t)`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -30,10 +33,7 @@
 - [ ] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [ ] `API/module/net.lua`                | `mods.modenv.net = net`
 - [ ] `API/module/save.lua`               | `mods.modenv.save = save`
-- [ ] `main.lua`                          | `mods.modenv.log = log`
-- [ ] `main.lua`                          | `mods.modenv.print = print`
 - [ ] `main.lua`                          | `mods.modenv[k] = v`
-- [ ] `util/class.lua`                    | `function mods.modenv.isa(obj, t)`
 - [ ] `util/class.lua`                    | `mods.modenv.getmetatable = function(t)`
 - [ ] `util/class.lua`                    | `mods.modenv.rawget = function(t, k)`
 - [ ] `util/class.lua`                    | `mods.modenv.rawset = function(t, k, v)`
