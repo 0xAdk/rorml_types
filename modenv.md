@@ -4,6 +4,7 @@
 - [x] `internal/callbackHandler.lua`      | `mods.modenv.createcallback = callback.create`
 - [x] `API/modConstants.lua`              | `local s = mods.modenv`
 - [x] `API/module/input.lua`              | `mods.modenv.input = input`
+- [x] `API/class/object/GMObject.lua`     | `mods.modenv.Object = Object`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -19,7 +20,6 @@
 - [ ] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
 - [ ] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/graphics/Surface.lua`    | `mods.modenv.Surface = Surface`
-- [ ] `API/class/object/GMObject.lua`     | `mods.modenv.Object = Object`
 - [ ] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
 - [ ] `API/class/room.lua`                | `mods.modenv.Room = Room`
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
