@@ -1,4 +1,4 @@
----@meta
+---@meta _
 
 ---@alias Callback
 ---| string

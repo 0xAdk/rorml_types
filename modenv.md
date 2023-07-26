@@ -10,6 +10,7 @@
 - [x] `main.lua`                          | `mods.modenv.log = log`
 - [x] `main.lua`                          | `mods.modenv.print = print`
 - [x] `util/class.lua`                    | `function mods.modenv.isa(obj, t)`
+- [x] `API/module/graphics.lua`           | `mods.modenv.graphics = graphics`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -28,7 +29,6 @@
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
-- [ ] `API/module/graphics.lua`           | `mods.modenv.graphics = graphics`
 - [ ] `API/module/misc.lua`               | `mods.modenv.misc = misc`
 - [ ] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [ ] `API/module/net.lua`                | `mods.modenv.net = net`
