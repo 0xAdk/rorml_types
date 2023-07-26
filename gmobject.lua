@@ -36,5 +36,5 @@ function GMObject:getName() end
 --- TODO
 ---
 ---@param callback GMObjectCallback TODO
----@param bind fun(Instance) TODO
+---@param bind fun(self: Instance) TODO
 function GMObject:addCallback(callback, bind) end

@@ -5,6 +5,7 @@
 - [x] `API/modConstants.lua`              | `local s = mods.modenv`
 - [x] `API/module/input.lua`              | `mods.modenv.input = input`
 - [x] `API/class/object/GMObject.lua`     | `mods.modenv.Object = Object`
+- [x] `API/class/Item.lua`                | `mods.modenv.Item = Item`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -13,7 +14,6 @@
 - [ ] `API/class/Color.lua`               | `mods.modenv.Color = Color`
 - [ ] `API/class/Difficulty.lua`          | `mods.modenv.Difficulty = Difficulty`
 - [ ] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
-- [ ] `API/class/Item.lua`                | `mods.modenv.Item = Item`
 - [ ] `API/class/ItemPool.lua`            | `mods.modenv.ItemPool = ItemPool`
 - [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
 - [ ] `API/class/Sound.lua`               | `mods.modenv.Sound = Sound`
