@@ -11,12 +11,12 @@
 - [x] `main.lua`                          | `mods.modenv.print = print`
 - [x] `util/class.lua`                    | `function mods.modenv.isa(obj, t)`
 - [x] `API/module/graphics.lua`           | `mods.modenv.graphics = graphics`
+- [x] `API/class/Color.lua`               | `mods.modenv.Color = Color`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
 - [ ] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
 - [ ] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
-- [ ] `API/class/Color.lua`               | `mods.modenv.Color = Color`
 - [ ] `API/class/Difficulty.lua`          | `mods.modenv.Difficulty = Difficulty`
 - [ ] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
 - [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
