@@ -14,6 +14,7 @@
 - [x] `API/class/Color.lua`               | `mods.modenv.Color = Color`
 - [x] `API/class/graphics/Surface.lua`    | `mods.modenv.Surface = Surface`
 - [x] `API/class/room.lua`                | `mods.modenv.Room = Room`
+- [x] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -30,7 +31,6 @@
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
 - [ ] `API/module/misc.lua`               | `mods.modenv.misc = misc`
-- [ ] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [ ] `API/module/net.lua`                | `mods.modenv.net = net`
 - [ ] `API/module/save.lua`               | `mods.modenv.save = save`
 - [ ] `main.lua`                          | `mods.modenv[k] = v`
