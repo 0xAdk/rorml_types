@@ -13,6 +13,7 @@
 - [x] `API/module/graphics.lua`           | `mods.modenv.graphics = graphics`
 - [x] `API/class/Color.lua`               | `mods.modenv.Color = Color`
 - [x] `API/class/graphics/Surface.lua`    | `mods.modenv.Surface = Surface`
+- [x] `API/class/room.lua`                | `mods.modenv.Room = Room`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -25,7 +26,6 @@
 - [ ] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
 - [ ] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
-- [ ] `API/class/room.lua`                | `mods.modenv.Room = Room`
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
