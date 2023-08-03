@@ -63,10 +63,10 @@ function PlayerInstance:survivorSetInitialStats(health, damage, regen) end
 
 --- TODO
 ---
----@param health number
----@param damage number
----@param regen number
----@param armor number
+---@param health number TODO
+---@param damage number TODO
+---@param regen number TODO
+---@param armor number TODO
 function PlayerInstance:survivorLevelUpStats(health, damage, regen, armor) end
 
 --- TODO

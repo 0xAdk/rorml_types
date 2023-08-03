@@ -55,7 +55,7 @@ function Color.fromHex(value) end
 ---
 ---@param color1 Color TODO
 ---@param color2 Color TODO
----@param amount number
+---@param amount number TODO
 ---@return Color
 function Color.mix(color1, color2, amount) end
 

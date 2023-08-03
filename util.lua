@@ -3,17 +3,17 @@
 
 --- TODO
 ---
----@param ... any
+---@param ... any TODO
 function print(...) end
 
 --- TODO
 ---
----@param ... any
+---@param ... any TODO
 function log(...) end
 
 --- TODO
 ---
----@param instance any
----@param type string
+---@param instance any TODO
+---@param type string TODO
 ---@return boolean
 function isa(instance, type) end

@@ -126,7 +126,7 @@ function graphics.setBlendModeAdvanced(source, dest) end
 
 --- TODO
 ---
----@param args DrawImageArgs
+---@param args DrawImageArgs TODO
 function graphics.drawImage(args) end
 
 --- TODO
