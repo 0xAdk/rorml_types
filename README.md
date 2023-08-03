@@ -6,10 +6,24 @@ which just need to add the path `../rorml_types` to `workspace.library` in your
 project's `.luarc.json`
 
 ---
-example `.luarc.json`
+If you don't have a `.luarc.json` already, you can use this base.
+
 ```json
 {
-    "runtime.version": "Lua 5.1",
-    "workspace.library": [ "../rorml_types" ]
+	"runtime.version": "Lua 5.1",
+
+	"runtime.pathStrict": true,
+	"runtime.path": [
+		"?.lua",
+		"?",
+	],
+
+	"workspace.library": [
+		"../rorml_types",
+		"../../resources/libs",
+	],
 }
 ```
+
+Create a file `.luarc.json` in the root of your mod's directory and copy in the
+json above.
