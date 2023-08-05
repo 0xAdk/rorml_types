@@ -15,6 +15,8 @@
 - [x] `API/class/graphics/Surface.lua`    | `mods.modenv.Surface = Surface`
 - [x] `API/class/room.lua`                | `mods.modenv.Room = Room`
 - [x] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
+- [x] `API/module/net.lua`                | `mods.modenv.net = net`
+- [x] `API/module/misc.lua`               | `mods.modenv.misc = misc`
 - [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
 - [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
@@ -30,8 +32,6 @@
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
-- [ ] `API/module/misc.lua`               | `mods.modenv.misc = misc`
-- [ ] `API/module/net.lua`                | `mods.modenv.net = net`
 - [ ] `API/module/save.lua`               | `mods.modenv.save = save`
 - [ ] `main.lua`                          | `mods.modenv[k] = v`
 - [ ] `util/class.lua`                    | `mods.modenv.getmetatable = function(t)`
