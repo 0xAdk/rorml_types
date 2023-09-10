@@ -181,13 +181,6 @@ function graphics.line(x1, y1, x2, y2, width) end
 ---@param y number TODO
 function graphics.pixel(x, y) end
 
-graphics.FONT_DEFAULT = nil  -- TODO
-graphics.FONT_LARGE = nil    -- TODO
-graphics.FONT_SMALL = nil    -- TODO
-graphics.FONT_DAMAGE = nil   -- TODO
-graphics.FONT_CRITICAL = nil -- TODO
-graphics.FONT_MONEY = nil    -- TODO
-
 ---@class FontId
 
 --- TODO
@@ -200,6 +193,24 @@ graphics.FONT_MONEY = nil    -- TODO
 ---| `graphics.FONT_CRITICAL` TODO
 ---| `graphics.FONT_MONEY` TODO
 ---| FontId TODO
+
+---@type Font
+graphics.FONT_DEFAULT = nil  -- TODO
+
+---@type Font
+graphics.FONT_LARGE = nil    -- TODO
+
+---@type Font
+graphics.FONT_SMALL = nil    -- TODO
+
+---@type Font
+graphics.FONT_DAMAGE = nil   -- TODO
+
+---@type Font
+graphics.FONT_CRITICAL = nil -- TODO
+
+---@type Font
+graphics.FONT_MONEY = nil    -- TODO
 
 graphics.ALIGN_LEFT = 0                       -- TODO
 graphics.ALIGN_MIDDLE = 1                     -- TODO
