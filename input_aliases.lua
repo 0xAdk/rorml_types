@@ -4,7 +4,7 @@
 ---- general
 --]]
 
---- TODO
+--- Input checking functions all return one of the press status constants depending on the state of the checked input.
 ---
 ---@alias PressStatus
 ---| `input.NEUTRAL`
@@ -15,140 +15,165 @@
 
 
 --[[
+---- Controls
+--]]
+
+--- Valid control names for `input.checkControl()` and `PlayerInstance:control()`.
+---
+---@alias PlayerControl
+---| 'left'
+---| 'right'
+---| 'up'
+---| 'down'
+---| 'jump'
+---|
+---| 'ability1'
+---| 'ability2'
+---| 'ability3'
+---| 'ability4'
+---|
+---| 'use'
+---| 'enter'
+---| 'swap'
+
+
+
+
+--[[
 ---- keyboard
 --]]
 
---- TODO
+--- Valid keys for `input.checkKeyboard()`.
 ---
 ---@alias KeyboardKey
 ---|-- Special
 ---| 'nokey' TODO
----| 'anykey' TODO
+---| 'anykey' Used to check if any key is pressed/held/released
 ---|
 ---|-- Modifiers
----| 'shift' TODO
----| 'control' TODO
----| 'alt' TODO
+---| 'shift'
+---| 'control'
+---| 'alt'
 ---|
 ---|-- Text
----| 'space' TODO
----| 'a' TODO
----| 'b' TODO
----| 'c' TODO
----| 'd' TODO
----| 'e' TODO
----| 'f' TODO
----| 'g' TODO
----| 'h' TODO
----| 'i' TODO
----| 'j' TODO
----| 'k' TODO
----| 'l' TODO
----| 'm' TODO
----| 'n' TODO
----| 'o' TODO
----| 'p' TODO
----| 'q' TODO
----| 'r' TODO
----| 's' TODO
----| 't' TODO
----| 'u' TODO
----| 'v' TODO
----| 'w' TODO
----| 'x' TODO
----| 'y' TODO
----| 'z' TODO
----| 'A' TODO
----| 'B' TODO
----| 'C' TODO
----| 'D' TODO
----| 'E' TODO
----| 'F' TODO
----| 'G' TODO
----| 'H' TODO
----| 'I' TODO
----| 'J' TODO
----| 'K' TODO
----| 'L' TODO
----| 'M' TODO
----| 'N' TODO
----| 'O' TODO
----| 'P' TODO
----| 'Q' TODO
----| 'R' TODO
----| 'S' TODO
----| 'T' TODO
----| 'U' TODO
----| 'V' TODO
----| 'W' TODO
----| 'X' TODO
----| 'Y' TODO
----| 'Z' TODO
+---| 'space'
+---| 'a'
+---| 'b'
+---| 'c'
+---| 'd'
+---| 'e'
+---| 'f'
+---| 'g'
+---| 'h'
+---| 'i'
+---| 'j'
+---| 'k'
+---| 'l'
+---| 'm'
+---| 'n'
+---| 'o'
+---| 'p'
+---| 'q'
+---| 'r'
+---| 's'
+---| 't'
+---| 'u'
+---| 'v'
+---| 'w'
+---| 'x'
+---| 'y'
+---| 'z'
+---| 'A'
+---| 'B'
+---| 'C'
+---| 'D'
+---| 'E'
+---| 'F'
+---| 'G'
+---| 'H'
+---| 'I'
+---| 'J'
+---| 'K'
+---| 'L'
+---| 'M'
+---| 'N'
+---| 'O'
+---| 'P'
+---| 'Q'
+---| 'R'
+---| 'S'
+---| 'T'
+---| 'U'
+---| 'V'
+---| 'W'
+---| 'X'
+---| 'Y'
+---| 'Z'
 ---|
 ---|-- Numbers
----| '0' TODO
----| '1' TODO
----| '2' TODO
----| '3' TODO
----| '4' TODO
----| '5' TODO
----| '6' TODO
----| '7' TODO
----| '8' TODO
----| '9' TODO
+---| '0'
+---| '1'
+---| '2'
+---| '3'
+---| '4'
+---| '5'
+---| '6'
+---| '7'
+---| '8'
+---| '9'
 ---|
 ---|-- Numpad
----| 'numpad0' TODO
----| 'numpad1' TODO
----| 'numpad2' TODO
----| 'numpad3' TODO
----| 'numpad4' TODO
----| 'numpad5' TODO
----| 'numpad6' TODO
----| 'numpad7' TODO
----| 'numpad8' TODO
----| 'numpad9' TODO
+---| 'numpad0'
+---| 'numpad1'
+---| 'numpad2'
+---| 'numpad3'
+---| 'numpad4'
+---| 'numpad5'
+---| 'numpad6'
+---| 'numpad7'
+---| 'numpad8'
+---| 'numpad9'
 ---|
 ---|-- Math
----| 'decimal' TODO
----| 'multiply' TODO
----| 'divide' TODO
----| 'add' TODO
----| 'subtract' TODO
+---| 'decimal'
+---| 'multiply'
+---| 'divide'
+---| 'add'
+---| 'subtract'
 ---|
 ---|-- Function Keys
----| 'f1' TODO
----| 'f2' TODO
----| 'f3' TODO
----| 'f4' TODO
----| 'f5' TODO
----| 'f6' TODO
----| 'f7' TODO
----| 'f8' TODO
----| 'f9' TODO
----| 'f10' TODO
----| 'f11' TODO
----| 'f12' TODO
+---| 'f1'
+---| 'f2'
+---| 'f3'
+---| 'f4'
+---| 'f5'
+---| 'f6'
+---| 'f7'
+---| 'f8'
+---| 'f9'
+---| 'f10'
+---| 'f11'
+---| 'f12'
 ---|
 ---|-- Arrow Keys
----| 'left' TODO
----| 'right' TODO
----| 'up' TODO
----| 'down' TODO
+---| 'left'
+---| 'right'
+---| 'up'
+---| 'down'
 ---|
 ---|-- Action Keys
----| 'enter' TODO
----| 'escape' TODO
----| 'home' TODO
----| 'end' TODO
----| 'delete' TODO
----| 'insert' TODO
----| 'pageup' TODO
----| 'pagedown' TODO
----| 'pause' TODO
----| 'printscreen' TODO
----| 'tab' TODO
----| 'backspace' TODO
+---| 'enter'
+---| 'escape'
+---| 'home'
+---| 'end'
+---| 'delete'
+---| 'insert'
+---| 'pageup'
+---| 'pagedown'
+---| 'pause'
+---| 'printscreen'
+---| 'tab'
+---| 'backspace'
 
 
 
@@ -158,33 +183,33 @@
 
 ---@alias GamepadId number
 
---- TODO
+--- Valid buttons for `input.checkGamepad()`.
 ---
 ---@alias GamepadButton
----| 'face1' TODO
----| 'face2' TODO
----| 'face3' TODO
----| 'face4' TODO
----| 'shoulderl' TODO
----| 'shoulderlb' TODO
----| 'shoulderr' TODO
----| 'shoulderrb' TODO
----| 'select' TODO
----| 'start' TODO
----| 'stickl' TODO
----| 'stickr' TODO
----| 'padu' TODO
----| 'padd' TODO
----| 'padl' TODO
----| 'padr' TODO
+---| 'face1' Face button 1 (A or Cross)
+---| 'face2' Face button 2, (B or Circle)
+---| 'face3' Face button 3 (X or Square)
+---| 'face4' Face button 4 (Y or Triangle)
+---| 'shoulderl' Left Shoulder Button (Left Bumper or L1)
+---| 'shoulderlb' Left Shoulder Trigger (Left Trigger or L2)
+---| 'shoulderr' Right Shoulder Button (Right Bumper or R1)
+---| 'shoulderrb' Right Shoulder Trigger (Right Trigger or R2)
+---| 'select' The select button (Touch-Pad press on a PS4 controller)
+---| 'start' The start button (“Options” button on a PS4 controller)
+---| 'stickl' The left stick pressed (as a button)
+---| 'stickr' The right stick pressed (as a button)
+---| 'padu' Up on the D-pad
+---| 'padd' Down on the D-pad
+---| 'padl' Left on the D-pad
+---| 'padr' Right on the D-pad
 
---- TODO
+--- Valid axises for `input.getGamepadAxis()`.
 ---
 ---@alias GamepadAxis
----| 'lh' TODO
----| 'lv' TODO
----| 'rh' TODO
----| 'rv' TODO
+---| 'lh' Left stick horizontal
+---| 'lv' Left stick vertical
+---| 'rh' Right stick horizontal
+---| 'rv' Right stick vertical
 
 
 
@@ -192,18 +217,17 @@
 ---- mouse functions
 --]]
 
---- TODO
+--- Valid buttons for `input.checkMouse()`.
 ---
 ---@alias MouseButton
----| 'none' TODO
----| 'left' TODO
----| 'right' TODO
----| 'middle' TODO
+---| 'none'
+---| 'left'
+---| 'right'
+---| 'middle'
 
---- TODO
+--- Return values of `input.getMouseScroll()`.
 ---
 ---@alias ScrollState
 ---| `0`  no scroll
 ---| `-1` up scroll
 ---| `1`  down scroll
-
