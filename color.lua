@@ -1,5 +1,18 @@
 ---@meta _
 
+---@alias ColorText
+---| "r" Red
+---| "b" Blue
+---| "g" Green
+---| "y" Yellow
+---| "or" Orange
+---| "bl" Black
+---| "lt" Light Gray
+---| "dk" Dark gray
+---| "w" White
+---| "p" Pink
+---| "!" Reset
+
 --- TODO
 ---
 ---@class Color
