@@ -1,12 +1,17 @@
 ---@meta _
 
---- TODO
+--- An `ItemInstance` is any instance of an [Item](https://saturnyoshi.gitlab.io/RoRML-Docs/class/item.html) object.
 ---
 ---@class ItemInstance: Instance
 local ItemInstance = {}
 
 
---- TODO
+--- # Example
+---     Get the [Item](https://saturnyoshi.gitlab.io/RoRML-Docs/class/item.html) that the instance stored in variable `instance` was created from.
 ---
----@return Item
+---     ```lua
+---     local item = instance:getItem()
+---     ```
+---
+---@return Item '' The Item which the instance represents
 function ItemInstance:getItem() end
