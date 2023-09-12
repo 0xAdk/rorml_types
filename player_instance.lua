@@ -2,7 +2,7 @@
 
 --- The `PlayerInstance` class is a subclass of the `ActorInstance` class used to manipulate players.
 ---
---- PlayerInstance inherits all functionality from [ActorInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/actorInstance.html) and [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html).
+--- `PlayerInstance` inherits all functionality from [ActorInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/actorInstance.html) and [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html).
 ---
 ---@class PlayerInstance: ActorInstance
 ---@field playerIndex number **[Read only]** The slot of the player
