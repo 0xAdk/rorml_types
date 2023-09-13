@@ -375,6 +375,7 @@ graphics.ALIGN_BOTTOM = 2
 ---     graphics.print("Bonus: " .. tostring(bonus), 16, 128)
 ---     ```
 ---
+---
 ---     Display an indicator above the instance `target`.
 ---     The text will be drawn with the small font, drawn above the Y coordinate, and centered around the X coordinate.
 ---
