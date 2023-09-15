@@ -1,9 +1,11 @@
 ---@meta _
 
---- TODO
+--- A Sprite is any image which can be rendered to the screen but is not modified during runtime.
+---
+--- Sprite inherits all functionality from [BaseSprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/baseSprite.html).
 ---
 ---@class Sprite: BaseSprite
----@field id Id TODO
+---@field id Id The sprite’s GameMaker resource ID
 ---@field ID Id alias for `id`
 ---
 ---@overload fun(name: string, fname: string, frames: number, xorigin: number, yorigin: number): Sprite
@@ -13,59 +15,83 @@ Sprite = {}
 ---- static functions
 --]]
 
---- TODO
+--- Loads a sprite from the path fname relative to the mod’s directory.
 ---
----@param name string TODO
----@param fname string TODO
----@param frames number TODO
----@param xorigin number TODO
----@param yorigin number TODO
+--- **Note**: Only .png files are supported.
+---
+--- # Example
+---     load the sprite called `Light Switch`.
+---     It has two frames and its origin is at (12, 14).
+---
+---     ```lua
+---     ls = Sprite.load("Light Switch", "sprites/light switch.png", 2, 12, 14)
+---     ```
+---
+---@param name string The name to give the sprite within the current namespace.
+---@param fname string This is the path to the file, relative to the mod’s base path. *file extension is optional*
+---@param frames number The amount of frames in the sprite. When the sprite is imported into the game, the PNG image will be cut into this many equally sized vertical slices
+---@param xorigin number The X position of the sprite’s origin. When a sprite is being drawn to the screen, this is the point that will end up at the specified coordinates
+---@param yorigin number The Y position of the sprite’s origin
 ---@return Sprite
 function Sprite.load(name, fname, frames, xorigin, yorigin) end
 
---- TODO
+--- Shorthand for `Sprite.load` that omits the name parameter
 ---
----@param fname string TODO
----@param frames number TODO
----@param xorigin number TODO
----@param yorigin number TODO
+---@param fname string
+---@param frames number
+---@param xorigin number
+---@param yorigin number
 ---@return Sprite
 function Sprite.load(fname, frames, xorigin, yorigin) end
 
---- TODO
+--- Executes a [namespace search](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html) to find an existing Item.
 ---
----@param name string TODO
----@param namespace? Namespace TODO
+--- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-find) for more information.
+---
+---@param name string
+---@param namespace? Namespace
 ---@return Sprite
 function Sprite.find(name, namespace) end
 
---- TODO
+--- Executes a [namespace search](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html) to find an existing Item.
 ---
----@param namespace? Namespace TODO
+--- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-find-all) for more information.
+---
+---@param namespace? Namespace
 ---@return Sprite[]
 function Sprite.findAll(namespace) end
 
---- TODO
+--- Used to fetch a Sprite object from its GameMaker resource ID.
 ---
----@param id Id TODO
----@return Sprite
+--- Useful for getting sprites from instance variables which contain a sprite ID.
+---
+---@param id Id The GameMaker ID of the sprite
+---@return Sprite '' The Sprite if found, otherwise nil
 function Sprite.fromID(id) end
 
 --[[
 ---- methods
 --]]
 
---- TODO
+--- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-origin) for more information.
 ---
----@return Namespace
+---@return Namespace '' The namespace containing the item
 function Sprite:getOrigin() end
 
---- TODO
+--- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-name) for more information.
 ---
----@return string
+---@return string '' The name of the item
 function Sprite:getName() end
 
---- TODO
+--- Replaces a sprite with another sprite. Useful for visual mods.
 ---
----@param new Sprite TODO
+--- # Example
+---     Replaces every single sprite in the vanilla game with the sprite `eggplant`.
+---
+---     ```lua
+---     for _, v in ipairs(Graphics.findAllSprites("vanilla")) do
+---         v:replace(eggplant)
+---     end
+---     ```
+---@param new Sprite The sprite that will replace the old sprite
 function Sprite:replace(new) end
