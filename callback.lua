@@ -3,68 +3,73 @@
 ---@alias Callback
 ---| string
 ---|
----|-- Items
----| 'onItemRoll'
----| 'onItemDropped'
----| 'onItemInit'
----| 'onItemPickup'
----| 'onUseItemUse'
----| 'postUseItemUse'
+---|-- Item Callbacks: These are callbacks related to item objects
+---| 'onItemRoll' Fired when rolling an item from a pool. The rolled item can be overwritten by returning an item object within the callback.
+---| 'onItemDropped' TODO
+---| 'onItemInit' Fired whenever an instance of an item is spawned.
+---| 'onItemPickup' Fired whenever an item gets picked up.
+---| 'onUseItemUse' Fired whenever a player uses a use item.
+---| 'postUseItemUse' Fired after onUseItemUse and vanilla use item logic.
 ---|
----|-- Actor
----| 'onNPCDeath'
----| 'onNPCDeathProc'
----| 'onActorInit'
----| 'onEliteInit'
----| 'onDamage'
+---|-- Actor Callbacks: These are callbacks related to any actor instance.
+---| 'onActorInit' Called whenever a new actor spawns.
 ---|
----|-- Player
----| 'onPlayerInit'
----| 'onPlayerStep'
----| 'onPlayerDrawBelow'
----| 'onPlayerDraw'
----| 'onPlayerDrawAbove'
----| 'onPlayerLevelUp'
----| 'onPlayerDeath'
----| 'onPlayerHUDDraw'
+---|-- NPC Callbacks: These are callbacks related to NPCs and bosses
+---| 'onNPCDeath' Fired whenever an NPC dies.
+---| 'onNPCDeathProc' Fired for each player whenever an NPC dies. Handle death item procs here.
+---| 'onEliteInit' TODO
+---| 'onDamage' TODO
 ---|
----|-- Damagers
----| 'onFire'
----| 'onFireSetProcs'
----| 'onHit'
----| 'preHit'
----| 'postHit'
----| 'onImpact'
+---|-- Player Callbacks: These are callbacks related to the player and are fired for each player object in the game
+---| 'onPlayerInit' Fired at the start of the run for every player.
+---| 'onPlayerStep' Fired each tick for every player.
+---| 'onPlayerDrawBelow' Fired after drawing the player’s sprite.
+---| 'onPlayerDraw'  Fired when beginning to draw the player, before any part of them is drawn.
+---| 'onPlayerDrawAbove' Fired after drawing all parts of the player.
+---| 'onPlayerLevelUp' Fired whenever the player levels up.
+---| 'onPlayerDeath' Fired whenever a player dies.
+---| 'onPlayerHUDDraw' The x and y coordinates are the position of the player’s first skill on screen.
 ---|
----|-- Map objects
----| 'onMapObjectActivate'
+---|-- Damager Callbacks: These are callbacks related to damagers, i.e. bullets and explosions
+---| 'onFire' Called each time a bullet or explosion is fired.
+---| 'onFireSetProcs' Called when setting item procs when a bullet or explosion is fired. Not called when the damager is set not to proc.
+---| 'onHit' Fired whenever a damager hits an actor, including the precise coordinates hit at.
+---| 'preHit' Fired whenever a damager hits an actor, before dealing damage or most item procs.
+---| 'postHit' Fired after hitting an actor but only once per damager.
+---| 'onImpact' Fired when any damager hits an actor and when bullet damagers hit a wall.
 ---|
----|-- Game
----| 'onStageEntry'
----| 'onSecond'
----| 'onMinute'
----| 'onGameStart'
----| 'onGameEnd'
+---|-- MapObject Callbacks: These are callbacks related to map objects
+---| 'onMapObjectActivate' Fired whenever a map object is activated by a player.
 ---|
----|-- General
----| 'onStep'
----| 'preStep'
----| 'postStep'
----| 'onDraw'
----| 'onHUDDraw'
----| 'preHUDDraw'
----| 'onLoad'
----| 'postLoad'
----| 'onCameraUpdate'
+---|-- Game Callbacks: These are callbacks related to game events
+---| 'onStageEntry' Fired at the start of every stage.
+---| 'onSecond' Fired whenever the timer second changes.
+---| 'onMinute' Fired whenever the timer minute changes.
+---| 'onGameStart' Fired at the very start of the game.
+---| 'onGameEnd' Fired at the end of the game.
 ---|
----|-- Global
----| 'globalStep'
----| 'globalPreStep'
----| 'globalPostStep'
----| 'globalRoomStart'
----| 'globalRoomEnd'
+---|-- General Callbacks: These are callbacks related to the running of the game
+---| 'onStep' Fired every game tick.
+---| 'preStep' Fired at the start of every game tick.
+---| 'postStep' Fired at the end of every game tick.
+---| 'onDraw' Fired after most vanilla rendering. Custom drawing should be done here.
+---| 'onHUDDraw' Fired after most vanilla HUD rendering. Drawing coordinates are screen based.
+---| 'preHUDDraw' Fired before most vanilla HUD rendering. Drawing coordinates are screen based.
+---| 'onLoad' Fired immediately after all mods are initialized.
+---| 'postLoad' Fired immediately after onLoad.
+---| 'onCameraUpdate' Fired immediately after the base game’s camera movement.
+---|
+---|-- Global Callbacks: **WARNING**: The API was not really designed to be used outside of runs. Running code outside of the game holds a much higher risk of errors. These are callbacks that can be executed both in and outside of gameplay, such as during menus or cutscenes.
+---| 'globalStep' Global equivalent to the "onStep" callback.
+---| 'globalPreStep' Global equivalent to the "preStep" callback.
+---| 'globalPostStep' Global equivalent to the "postStep" callback.
+---| 'globalRoomStart' Called any time a new room is loaded.
+---| 'globalRoomEnd' Called when the current room is being unloaded.
 
---- TODO
+--- Callbacks are your main method of getting the game to call your code.
+---
+--- **WARNING**: Callbacks exist forever (even across runs) no matter when they are defined.
+---          If you think you need to define a callback after load, then you’re probably doing something wrong.
 ---
 ---@overload fun(name: Callback, fn: fun(...), priority?: number)
 callback = {}
@@ -75,24 +80,52 @@ callback = {}
 ---- static functions
 --]]
 
---- TODO
+--- Adds a function to be called whenever the specified callback is fired.
 ---
----@ Items
+--- # Examples
+---     Two functionally identical ways of assigning a function to a callback.
+---     In this case we’re doing something on the player step callback.
+---
+---     ```lua
+---     local function foo(player)
+---         -- Do something
+---     end
+---
+---     callback.register("onPlayerStep", foo)
+---     ```
+---
+---     ```lua
+---     callback.register("onPlayerStep", function(player)
+---         -- Do something
+---     end)
+---     ```
+---
+---
+---     Similar to above except we register to the NPC death callback with a priority of 200.
+---     The higher priority means the callback will be called before most others.
+---
+---     ```lua
+---     callback.register("onNPCDeath", function(npc)
+---         -- Do something
+---     end, 200)
+---     ```
+---
+---@-- Items
 ---@overload fun(name: 'onItemRoll', fn: (fun(pool: ItemPool, item: Item): override: Item), priority?: number)
----@overload fun(name: 'onItemDropped', fn: fun(...), priority?: number) TODO: is this implemented?
+---@overload fun(name: 'onItemDropped', fn: fun(...), priority?: number) TEST: is this implemented?
 ---@overload fun(name: 'onItemInit', fn: fun(item: ItemInstance), priority?: number)
 ---@overload fun(name: 'onItemPickup', fn: fun(item: ItemInstance, player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
 ---@overload fun(name: 'postUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
 ---
----@ Actor
+---@-- Actor
 ---@overload fun(name: 'onNPCDeath', fn: fun(npc: ActorInstance), priority?: number)
 ---@overload fun(name: 'onNPCDeathProc', fn: fun(npc: ActorInstance, player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onActorInit', fn: fun(actor: ActorInstance), priority?: number)
 ---@overload fun(name: 'onEliteInit', fn: fun(elite: ActorInstance), priority?: number)
 ---@overload fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source: Instance), priority?: number)
 ---
----@ Player
+---@-- Player
 ---@overload fun(name: 'onPlayerInit', fn: fun(player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onPlayerStep', fn: fun(player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onPlayerDrawBelow', fn: fun(player: PlayerInstance), priority?: number)
@@ -102,7 +135,7 @@ callback = {}
 ---@overload fun(name: 'onPlayerDeath', fn: fun(player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onPlayerHUDDraw', fn: fun(player: PlayerInstance, x: number, y: number), priority?: number)
 ---
----@ Damagers
+---@-- Damagers
 ---@overload fun(name: 'onFire', fn: fun(damager: DamagerInstance ), priority?: number)
 ---@overload fun(name: 'onFireSetProcs', fn: fun(damager: DamagerInstance, parent: ActorInstance ), priority?: number)
 ---@overload fun(name: 'onHit', fn: fun(damager: DamagerInstance, hit: ActorInstance, x: number, y: number), priority?: number)
@@ -110,17 +143,17 @@ callback = {}
 ---@overload fun(name: 'postHit', fn: fun(damager: DamagerInstance ), priority?: number)
 ---@overload fun(name: 'onImpact', fn: fun(damager: DamagerInstance, x: number, y: number), priority?: number)
 ---
----@ Map objects
+---@-- Map objects
 ---@overload fun(name: 'onMapObjectActivate', fn: fun(mapObject: Instance, activator: PlayerInstance), priority?: number)
 ---
----@ Game
+---@-- Game
 ---@overload fun(name: 'onStageEntry', fn: fun(), priority?: number)
 ---@overload fun(name: 'onSecond', fn: fun(minute: number, second: number), priority?: number)
 ---@overload fun(name: 'onMinute', fn: fun(minute: number, second: number), priority?: number)
 ---@overload fun(name: 'onGameStart', fn: fun(), priority?: number)
 ---@overload fun(name: 'onGameEnd', fn: fun(), priority?: number)
 ---
----@ General
+---@-- General
 ---@overload fun(name: 'onStep', fn: fun(), priority?: number)
 ---@overload fun(name: 'preStep', fn: fun(), priority?: number)
 ---@overload fun(name: 'postStep', fn: fun(), priority?: number)
@@ -131,23 +164,45 @@ callback = {}
 ---@overload fun(name: 'postLoad', fn: fun(), priority?: number)
 ---@overload fun(name: 'onCameraUpdate', fn: fun(), priority?: number)
 ---
----@ Global
+---@-- Global
 ---@overload fun(name: 'globalStep', fn: fun(room: Room), priority?: number)
 ---@overload fun(name: 'globalPreStep', fn: fun(room: Room), priority?: number)
 ---@overload fun(name: 'globalPostStep', fn: fun(room: Room), priority?: number)
 ---@overload fun(name: 'globalRoomStart', fn: fun(room: Room), priority?: number)
 ---@overload fun(name: 'globalRoomEnd', fn: fun(room: Room), priority?: number)
 ---
----@param name string TODO
----@param fn function TODO
----@param priority? number TODO
+---@-- FIXME: using `Callback` as the type instead of string casues every callback to show up
+---@--        twice in suggestions. I need to use it anyways since it's the only way to show callback docs
+---@param name Callback The name of the callback to add a function onto
+---@param fn function The function to add as the callback. The arguments fed to this function will depend on what callback is being fired ([see here](https://saturnyoshi.gitlab.io/RoRML-Docs/global/registerCallback.html#list-of-callbacks))
+---@param priority? number A priority can be set to decide in which order callbacks will be run. A higher priority means the function is called earlier. This value can be negative. *defaults to 10*
 ---
 function callback.register(name, fn, priority) end
 
---- TODO
+--- Creates a new callback that all mods can register to.
+--- 
+--- **WARNING**: Make sure to use unique names!
+---          If multiple mods try to create the same callback an error will be thrown.
 ---
----@param name string TODO
----@return fun(...) callbackRunner
+--- # Example
+---     Create a new callback, add a function to it, and call it with a random number.
+---
+---     ```lua
+---     -- Create a callback
+---     local customCallback = callback.create("exampleCustomCallback")
+---
+---     -- Add a function to it
+---     local function myFunc(number)
+---         print("The number is: " .. tostring(number))
+---     end
+---     callback.register("exampleCustomCallback", myFunc)
+---
+---     -- Call it
+---     customCallback(math.random(100))
+---     ```
+---
+---@param name string The name that will be used to add to this callback with `callback.register`
+---@return fun(...) callbackRunner '' A new function used to invoke the callback. Arguments passed to this function will also be passed to all called functions
 function callback.create(name) end
 
 
@@ -158,17 +213,17 @@ function callback.create(name) end
 
 --- For legacy compatibility. Use `callback.register` instead.
 ---
----@param name Callback TODO
----@param fn fun(...) TODO
----@param priority? number TODO
+---@param name Callback The name of the callback to add a function onto
+---@param fn function The function to add as the callback. The arguments fed to this function will depend on what callback is being fired ([see here](https://saturnyoshi.gitlab.io/RoRML-Docs/global/registerCallback.html#list-of-callbacks))
+---@param priority? number A priority can be set to decide in which order callbacks will be run. A higher priority means the function is called earlier. This value can be negative. *defaults to 10*
 ---
----@deprecated
+---@deprecated 'Use `callback.register` instead'
 function registercallback(name, fn, priority) end
 
 --- For legacy compatibility. Use `callback.create` instead.
 ---
----@param name string TODO
----@return fun(...) callbackRunner
+---@param name string The name that will be used to add to this callback with `callback.register`
+---@return fun(...) callbackRunner '' A new function used to invoke the callback. Arguments passed to this function will also be passed to all called functions
 ---
----@deprecated
+---@deprecated 'Use `callback.create` instead'
 function createcallback(name) end
