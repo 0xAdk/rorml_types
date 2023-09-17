@@ -86,10 +86,10 @@ function Sprite:getName() end
 --- Replaces a sprite with another sprite. Useful for visual mods.
 ---
 --- # Example
----     Replaces every single sprite in the vanilla game with the sprite `eggplant`.
+---     Replace every single sprite in the vanilla game with the sprite `eggplant`.
 ---
 ---     ```lua
----     for _, v in ipairs(Graphics.findAllSprites("vanilla")) do
+---     for _, v in ipairs(Sprite.findAll("vanilla")) do
 ---         v:replace(eggplant)
 ---     end
 ---     ```
