@@ -33,6 +33,9 @@
 ---@overload fun(hex: number): Color
 Color = {}
 
+--- Alias for `Color`
+Colour = Color
+
 Color.r = Color.red        -- alias for `red`
 Color.R = Color.red        -- alias for `red`
 Color.g = Color.green      -- alias for `green`
