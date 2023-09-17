@@ -55,3 +55,15 @@ function math.clamp(value, lower, upper) end
 ---@param amount number TODO
 ---@return number
 function math.lerp(from, to, amount) end
+
+--- TODO
+---
+---@param ... any TODO
+function log(...) end
+
+--- TODO
+---
+---@param instance any TODO
+---@param type string TODO
+---@return boolean
+function isa(instance, type) end
