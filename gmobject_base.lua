@@ -1,6 +1,6 @@
 ---@meta _
 
---- The BaseSprite class provides shared methods to the [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) and [ParentObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/parentObject.html) classes.
+--- The `GMObjectBase` class provides shared methods to the [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) and [ParentObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/parentObject.html) classes.
 ---
 --- **Note**: Methods which return an [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) may return any [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) child class depending on the calling object.
 ---
