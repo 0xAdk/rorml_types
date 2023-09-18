@@ -1,20 +1,23 @@
 ---@meta _
 
---- TODO
+--- An `EliteType` is a kind of elite enemy that can spawn.
 ---
 ---@class EliteType
----@field displayName string TODO
----@field color Color TODO
+---@field displayName string The name of the elite, like `frenzied`, or `overloading`
+---@field color Color The primary color of the elite, used to tint the enemy when the elite palette is not available
 ---@field colour Color alias for `color`
----@field colorHard Color TODO
+---@field colorHard Color The color of the elite when hard elites are active. *you can usually ignore this*
 ---@field colourHard Color alias for `colorHard`
----@field palette Sprite TODO
+---@field palette Sprite A single frame 1x6 pixel sprite containing the palette used for recoloring enemies of this elite. *[vanilla palettes upscaled for reference](https://saturnyoshi.gitlab.io/RoRML-Docs/_images/elitepalettes.png)*
 ---
+---@overload fun(name: string): EliteType
 EliteType = {}
 
---- TODO
+--- Creates a new elite type.
 ---
----@param name string TODO
+--- **Note**: This `EliteType` won't show up in-game until it's manually added to an enemy’s elite list.
+---
+---@param name string The name to give the elite within the current namespace
 ---@return EliteType
 function EliteType.new(name) end
 
@@ -35,13 +38,21 @@ function EliteType.find(name, namespace) end
 ---@return EliteType[]
 function EliteType.findAll(namespace) end
 
---- TODO
+--- Used to setup an elite palette for a new enemy.
 ---
----@param palette Sprite TODO
----@param object GMObject TODO
+--- The sprite will automatically be overwritten to include all other elite palettes.
+---
+--- The sprite should be a single frame 1x6 pixel image containing the enemy’s source colors which will be mapped to the elite palette’s colors.
+---
+--- [palette example image](https://saturnyoshi.gitlab.io/RoRML-Docs/_images/elitepalettes.png)
+---
+---@param palette Sprite The new palette being set up
+---@param object GMObject The enemy the palette is being assigned to. The palette must still be manually set as the enemy’s `palette` sprite on spawn
 function EliteType.registerPalette(palette, object) end
 
---- TODO
+--- Forces all elite palettes to be refreshed.
+---
+--- Only needed if creating a new elite type after loading is finished.
 ---
 function EliteType.refreshPalettes() end
 

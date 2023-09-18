@@ -1,25 +1,39 @@
 ---@meta _
 
---- TODO
+--- A `MonsterLog` is the unlockable data entry associated with an enemy.
 ---
 ---@class MonsterLog
----@field displayName string TODO
----@field story string TODO
----@field statHP number TODO
----@field statDamage number TODO
----@field statSpeed number TODO
----@field sprite Sprite TODO
----@field portrait Sprite TODO
----@field portraitSubimage number TODO
+---@field displayName string The name of the log as displayed in-game
+---@field story string The main lore of the enemy
+---@field statHP number The enemy’s displayed HP stat
+---@field statDamage number The enemy’s displayed damage stat
+---@field statSpeed number The enemy’s displayed speed stat
+---@field sprite Sprite The sprite of the enemy used as the log icon
+---@field portrait Sprite The big sprite of the enemy seen when viewing the log
+---@field portraitSubimage number The subimage of the portrait sprite to display. **Note**: *This is 0-indexed rather than the usual 1-indexing*
 ---
+---@overload fun(name: string): MonsterLog
 MonsterLog = {}
 
----@type Map<GMObject, MonsterLog> TODO
+--- A [Map](https://saturnyoshi.gitlab.io/RoRML-Docs/class/map.html) associating an enemy’s [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) to its log entry.
+---
+--- Assigning a log to an object in this map will cause that object to drop the log when killed.
+---
+---@type Map<GMObject, MonsterLog>
 MonsterLog.map = nil
 
---- TODO
+--- Creates and returns a new monster log.
 ---
----@param name string TODO
+--- # Example
+---     Create a new enemy and its log, assigning the log to the enemy.
+---
+---     ```lua
+---     local enemy_obj = Object.base("EnemyClassic", "myEnemy")
+---     local enemy_log = MonsterLog.new("My Enemy")
+---     MonsterLog.map[enemy_obj] = enemy_log
+---     ```
+---
+---@param name string The name to give the monster log within the current namespace
 ---@return MonsterLog
 function MonsterLog.new(name) end
 
