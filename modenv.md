@@ -22,6 +22,7 @@
 - [x] `API/class/Difficulty.lua`          | `mods.modenv.Difficulty = Difficulty`
 - [x] `modhandler.lua`                    | `modenv.export = function(name, value)`
 - [x] `API/class/Sound.lua`               | `mods.modenv.Sound = Sound`
+- [x] `API/module/save.lua`               | `mods.modenv.save = save`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
 - [ ] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
 - [ ] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
@@ -33,7 +34,6 @@
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
-- [ ] `API/module/save.lua`               | `mods.modenv.save = save`
 - [ ] `main.lua`                          | `mods.modenv[k] = v`
 - [ ] `util/class.lua`                    | `mods.modenv.getmetatable = function(t)`
 - [ ] `util/class.lua`                    | `mods.modenv.rawget = function(t, k)`
