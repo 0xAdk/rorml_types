@@ -17,15 +17,16 @@
 - [x] `API/module/modloader.lua`          | `mods.modenv.modloader = modloader`
 - [x] `API/module/net.lua`                | `mods.modenv.net = net`
 - [x] `API/module/misc.lua`               | `mods.modenv.misc = misc`
-- [ ] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
-- [ ] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
+- [x] `API/NewType.lua`                   | `function mods.modenv.newtype(name)`
+- [x] `API/class/Achievement.lua`         | `mods.modenv.Achievement = Achievement`
+- [x] `API/class/Difficulty.lua`          | `mods.modenv.Difficulty = Difficulty`
+- [x] `modhandler.lua`                    | `modenv.export = function(name, value)`
+- [x] `API/class/Sound.lua`               | `mods.modenv.Sound = Sound`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
 - [ ] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
 - [ ] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
-- [ ] `API/class/Difficulty.lua`          | `mods.modenv.Difficulty = Difficulty`
 - [ ] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
 - [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
-- [ ] `API/class/Sound.lua`               | `mods.modenv.Sound = Sound`
 - [ ] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
 - [ ] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
@@ -39,3 +40,11 @@
 - [ ] `util/class.lua`                    | `mods.modenv.rawset = function(t, k, v)`
 - [ ] `util/class.lua`                    | `mods.modenv.setmetatable = function(t, mt)`
 - [ ] `util/class.lua`                    | `mods.modenv.type = typeOf`
+- [ ] `modhandler.lua`                    | `modenv.require = function(s)`
+- [ ] `modhandler.lua`                    | `modenv.load = function(code, name, mode, env)`
+- [ ] `modhandler.lua`                    | `modenv.loadstring = modenv.load`
+- [ ] `modhandler.lua`                    | `modenv.pairs = function(t)`
+- [ ] `modhandler.lua`                    | `modenv.ipairs = function(t)`
+- [ ] `modhandler.lua`                    | `modenv.os = {`
+- [ ] `modhandler.lua`                    | `modenv.getfenv = function(t)`
+- [ ] `modhandler.lua`                    | `modenv.setfenv = function(t, env)`
