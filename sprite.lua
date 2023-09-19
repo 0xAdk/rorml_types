@@ -75,12 +75,12 @@ function Sprite.fromID(id) end
 
 --- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-origin) for more information.
 ---
----@return Namespace '' The namespace containing the item
+---@return Namespace '' The namespace containing the sprite
 function Sprite:getOrigin() end
 
 --- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-name) for more information.
 ---
----@return string '' The name of the item
+---@return string '' The name of the sprite
 function Sprite:getName() end
 
 --- Replaces a sprite with another sprite. Useful for visual mods.
