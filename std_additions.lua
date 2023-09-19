@@ -131,3 +131,123 @@ function log(...) end
 ---@param type string The type to check for
 ---@return boolean '' true if `instance` is `type` or a descendant of `type`
 function isa(instance, type) end
+
+--- The `export` function is used to expose functions and values defined in one mod to every other.
+---
+--- Inserts the provided value into the environment of all dependent mods.
+---
+--- # Examples
+---     There are a multitude of ways the export function can be used.
+---
+---     These snippets both have the same effect.
+---     A table of strings is created and added to all relevant mod environments under the key `Fruits`.
+---
+---     ```lua
+---     Fruits = {"banana", "apple", "pear"}
+---     export("Fruits")
+---
+---     export("Fruits", {"banana", "apple", "pear"})
+---     ```
+---
+---
+---     Creating custom libraries is simple with this function
+---
+---     ```lua
+---     export("MyLibrary")
+---     MyLibrary.happyPrint = function(str)
+---         print(str .. " :)")
+---     end
+---     ```
+---
+---
+---     You can also utilize this function to modify or expand built-in modules.
+---
+---     Create a new `add` function in the `math` library.
+---
+---     ```lua
+---     function math.add(n1, n2)
+---         return n1 + n2
+---     end
+---     export("math.add")
+---     ```
+---
+---
+---     Overwrite the `math.random` function with a replacement which always returns 1.
+---
+---     ```lua
+---     function math.random()
+---         return 1
+---     end
+---     export("math.random")
+---     ```
+---
+---
+---     When using table paths, all missing tables will automatically be created
+---
+---     ```lua
+---     export("very.long.string.of.nested.tables.number", 1)
+---     ```
+---
+---@param name string The key the value will be assigned to. *also supports table paths*
+---@param value? any The value to be exported. *defaults to `_G[name] or {}`*
+function export(name, value) end
+
+--- The `newtype` function is used to create new datatypes and classes.
+---
+--- Used to create a type or class.
+---
+--- The current namespace followed by a colon will be prepended to the type name to prevent naming collisions.
+---
+--- # Examples
+---     Set up a new type called `MyClass` and stores the constructor and metatable
+---     in the `MyClass` and `classMT` variables respectively.
+---
+---     ```lua
+---     local MyClass, classMT = newtype("MyClass")
+---     ```
+---
+---
+---     A custom defined type interacting with built-in functions.
+---     Create a new object and then print its type to the console.
+---
+---     ```lua
+---     local obj = MyClass()
+---     print(type(obj))
+---     ```
+---
+---
+---     Use standard Lua metatable features to add a method named `greet` to our custom type.
+---     Then calls it on our previously created object.
+---
+---     ```lua
+---     classMT.__index = {}
+---     function classMT.__index:greet()
+---         print("Howdy!")
+---     end
+---
+---     obj:greet()
+---     ```
+---
+---
+---     Use of the special `__init` metamethod.
+---
+---     ```lua
+---     local obj_name = {}
+---
+---     function classMT:__init(name)
+---        obj_name[self] = name
+---     end
+---
+---     function classMT.__index:getName()
+---         return obj_name[self]
+---     end
+---
+---     local obj2 = MyClass("Apple")
+---     print(obj2:getName())
+---     ```
+---
+---@generic T
+---@param name `T` The name of the type, such as `number`, `vector`, or `item`
+---@return fun(): `T` new A function which returns a new object of the new type
+---@return metatable<`T`> meta The metatable used by all objects of the new type
+function newtype(name) end
