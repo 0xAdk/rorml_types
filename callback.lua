@@ -171,8 +171,9 @@ callback = {}
 ---@overload fun(name: 'globalRoomStart', fn: fun(room: Room), priority?: number)
 ---@overload fun(name: 'globalRoomEnd', fn: fun(room: Room), priority?: number)
 ---
----@-- FIXME: using `Callback` as the type instead of string casues every callback to show up
----@--        twice in suggestions. I need to use it anyways since it's the only way to show callback docs
+---@-- FIXME: using `Callback` as the type instead of `string` casues every callback to show up
+---@--        twice in suggestions due to the overloads.
+---@--        It's required for the callback docs, and the overloads for the autocomplete.
 ---@param name Callback The name of the callback to add a function onto
 ---@param fn function The function to add as the callback. The arguments fed to this function will depend on what callback is being fired ([see here](https://saturnyoshi.gitlab.io/RoRML-Docs/global/registerCallback.html#list-of-callbacks))
 ---@param priority? number A priority can be set to decide in which order callbacks will be run. A higher priority means the function is called earlier. This value can be negative. *defaults to 10*

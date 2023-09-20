@@ -1,9 +1,9 @@
 ---@meta _
 
---- TODO
+--- An `Interactable` represents an object randomly spawned in a [Stage](https://saturnyoshi.gitlab.io/RoRML-Docs/class/stage.html) such as chests, broken drones, or shrines.
 ---
 ---@class Interactable
----@field spawnCost number TODO
+---@field spawnCost number This number of spawn points the object costs to spawn. *Defaults to 75*, the same amount as item shops. For reference, small chests take 50, large chests 110, golden chests 250, small barrels 7, and chance shrines 65.
 ---
 ---@overload fun(obj: GMObject, name: string): Interactable
 Interactable = {}
@@ -12,10 +12,18 @@ Interactable = {}
 ---- static functions
 --]]
 
---- TODO
+--- Creates a new interactable from an existing object, with the specified name.
 ---
----@param obj GMObject TODO
----@param name? string TODO
+--- # Example
+---     Create a new interactable called `Toast_Interactable`.
+---
+---     ```lua
+---     local toastObject = Object.new("Toast_Object")
+---     local toastInteractable = Interactable.new(toastObject, "Toast_Interactable")
+---     ```
+---
+---@param obj GMObject The object represented by this interactable
+---@param name? string The name to give the interactable within the current namespace
 ---@return Interactable
 function Interactable.new(obj, name) end
 
@@ -36,19 +44,25 @@ function Interactable.find(name, namespace) end
 ---@return Interactable[]
 function Interactable.findAll(namespace) end
 
---- TODO
+--- Finds an existing interactable given its object.
 ---
----@param object GMObject TODO
----@return Interactable '' TODO
+--- # Example
+---     Get the existing interactable for the `Chest` object.
+---
+---     ```lua
+---     local chestObject = Object.find("Chest", "vanilla")
+---     local chestInteractable = Interactable.fromObject(chestObject)
+---     ```
+---
+---@param object GMObject The object represented by this interactable
+---@return Interactable '' An `Interactable` if one exists for the given object, otherwise nil
 function Interactable.fromObject(object) end
 
 --[[
 ---- methods
 --]]
 
---- TODO
----
----@return GMObject '' TODO
+---@return GMObject '' The object represented by this interactable.
 function Interactable:getObject() end
 
 --- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-origin) for more information.
