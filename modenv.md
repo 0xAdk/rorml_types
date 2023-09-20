@@ -25,11 +25,11 @@
 - [x] `API/module/save.lua`               | `mods.modenv.save = save`
 - [x] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
 - [x] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
+- [x] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
+- [x] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
+- [x] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
-- [ ] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
-- [ ] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
 - [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
-- [ ] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
