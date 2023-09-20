@@ -23,12 +23,12 @@
 - [x] `modhandler.lua`                    | `modenv.export = function(name, value)`
 - [x] `API/class/Sound.lua`               | `mods.modenv.Sound = Sound`
 - [x] `API/module/save.lua`               | `mods.modenv.save = save`
+- [x] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
+- [x] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
 - [ ] `API/class/Buff.lua`                | `mods.modenv.Buff = Buff`
-- [ ] `API/class/Camera.lua`              | `mods.modenv.camera = instance`
 - [ ] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
 - [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
-- [ ] `API/class/Stage.lua`               | `mods.modenv.Stage = Stage`
 - [ ] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [ ] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
