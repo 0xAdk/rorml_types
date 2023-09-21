@@ -4,6 +4,34 @@
 
 The meta files were built by reading the modloader's lua source code and referencing RoRML
 
+## ModData Types
+
+Aside from providing types for the [RoRML](https://saturnyoshi.gitlab.io/RoRML-Docs/index.html) api there are a few declared types used in the `Instance:getData()` method's return value which can be defined by your mod when needed.
+
+These are
+ - `InstanceModData`
+ - `PlayerInstanceModData`
+ - `ActorInstanceModData`
+ - `DamagerInstanceModData`
+ - `GMObjectModData`
+ - `ItemInstanceModData`
+
+For example
+```lua
+---@class PlayerInstanceModData
+---@field step_count number
+
+callback.register('onPlayerInit', function (player)
+	local pd = player:getData()
+	pd.step_count = 0
+end)
+
+callback.register('onPlayerStep', function (player)
+	local pd = player:getData()
+	pd.step_count = pd.step_count + 1
+end)
+```
+
 ## Installation
 
 This repo in intended to be installed inside the `ModLoader/mods` folder.
