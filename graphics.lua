@@ -188,26 +188,26 @@ function graphics.setBlendMode(mode) end
 function graphics.setBlendModeAdvanced(source, dest) end
 
 ---@class DrawImageArgs
----@field image Sprite **required**: The image to be drawn
----@field x number **required**: The X position to draw at
----@field y number **required**: The Y position to draw at
----@field subimage number Only applies to sprites. The frame of the sprite to draw, starting from 1
+---@field image? Sprite **required**: The image to be drawn
+---@field x? number **required**: The X position to draw at
+---@field y? number **required**: The Y position to draw at
+---@field subimage? number Only applies to sprites. The frame of the sprite to draw, starting from 1
 ---@field [1] Sprite alias for `image`
 ---@field [2] number alias for `x`
 ---@field [3] number alias for `y`
 ---@field [4] number alias for `subimage`
----@field solidColor Color TODO
----@field solidColour Color alias for `solidColor`
----@field color Color The color to tint the image with
----@field colour Color alias for `color`
----@field alpha number The transparency of the image, as a decimal value from 0 to 1
----@field angle number The rotation of the image in degrees, counterclockwise
----@field width number The width to draw the image as in pixels
----@field height number The height to draw the image as in pixels
----@field xscale number Horizontal size multiplier. Stacks with `width`
----@field yscale number Vertical size multiplier. Stacks with `height`
----@field scale number Horizontal and vertical size multiplier. Stacks with all previous scale modifying parameters
----@field region { x: number, y: number, width: number, height: number } TODO
+---@field solidColor? Color TODO
+---@field solidColour? Color alias for `solidColor`
+---@field color? Color The color to tint the image with
+---@field colour? Color alias for `color`
+---@field alpha? number The transparency of the image, as a decimal value from 0 to 1
+---@field angle? number The rotation of the image in degrees, counterclockwise
+---@field width? number The width to draw the image as in pixels
+---@field height? number The height to draw the image as in pixels
+---@field xscale? number Horizontal size multiplier. Stacks with `width`
+---@field yscale? number Vertical size multiplier. Stacks with `height`
+---@field scale? number Horizontal and vertical size multiplier. Stacks with all previous scale modifying parameters
+---@field region? { x: number, y: number, width: number, height: number } TODO
 
 --- Draws a [Sprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/sprite.html) or [Surface](https://saturnyoshi.gitlab.io/RoRML-Docs/class/surface.html).
 ---

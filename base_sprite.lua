@@ -30,7 +30,7 @@ local BaseSprite = {}
 ---
 ---@param x number The horizontal position to draw the sprite at
 ---@param y number The vertical position to draw the sprite at.
----@param subimage number The subimage of the sprite to draw
+---@param subimage? number The subimage of the sprite to draw
 function BaseSprite:draw(x, y, subimage) end
 
 -- the rorml-docs (https://saturnyoshi.gitlab.io/RoRML-Docs/class/baseSprite.html)
