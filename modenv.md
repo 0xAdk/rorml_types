@@ -29,8 +29,8 @@
 - [x] `API/class/Interactable.lua`        | `mods.modenv.Interactable = Interactable`
 - [x] `API/class/Survivor.lua`            | `mods.modenv.Survivor = Survivor`
 - [x] `API/class/object/ParentObject.lua` | `mods.modenv.ParentObject = ParentObject`
+- [x] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
 - [ ] `API/class/Artifact.lua`            | `mods.modenv.Artifact = Artifact`
-- [ ] `API/class/ParticleType.lua`        | `mods.modenv.ParticleType = ParticleType`
 - [ ] `API/deprecated/ObjectGroup.lua`    | `mods.modenv.ObjectGroup = ObjectGroup`
 - [ ] `API/io.lua`                        | `lookup[v] = mods.modenv.io[v]`
 - [ ] `API/io.lua`                        | `mods.modenv.io = {`
