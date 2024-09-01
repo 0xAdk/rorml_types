@@ -123,7 +123,7 @@ callback = {}
 ---@overload fun(name: 'onNPCDeathProc', fn: fun(npc: ActorInstance, player: PlayerInstance), priority?: number)
 ---@overload fun(name: 'onActorInit', fn: fun(actor: ActorInstance), priority?: number)
 ---@overload fun(name: 'onEliteInit', fn: fun(elite: ActorInstance), priority?: number)
----@overload fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source: Instance), priority?: number)
+---@overload fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source: DamagerInstance), priority?: number) TODO: is source an Instance or DamagerInstance
 ---
 ---@-- Player
 ---@overload fun(name: 'onPlayerInit', fn: fun(player: PlayerInstance), priority?: number)
