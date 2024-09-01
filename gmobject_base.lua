@@ -11,14 +11,13 @@ local GMObjectBase = {}
 --- Finds the `n`th [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object. Instances are sorted by the order they were created.
 ---
 --- # Example
----     Print the IDs of the first 5 instances of the `eggplant` object.
----
----     ```lua
----     for i = 1, 5 do
----         local instance = eggplant:find(i)
----         print(instance.ID)
----     end
----     ```
+---   Print the IDs of the first 5 instances of the `eggplant` object.
+---   ```lua
+---   for i = 1, 5 do
+---       local instance = eggplant:find(i)
+---       print(instance.ID)
+---   end
+---   ```
 ---
 ---@param n number The number of the instance to find
 ---@return Instance? '' The [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) if found, otherwise nil
@@ -27,13 +26,12 @@ function GMObjectBase:find(n) end
 --- Finds all [Instances](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object.
 ---
 --- # Example
----     Destroy all instances of the object `eggplant`.
----
----     ```lua
----     for _, instance in ipairs(eggplant:findAll()) do
----         instance:destroy()
----     end
----     ```
+---   Destroy all instances of the object `eggplant`.
+---   ```lua
+---   for _, instance in ipairs(eggplant:findAll()) do
+---       instance:destroy()
+---   end
+---   ```
 ---
 ---@return Instance[] '' A numerically indexed table containing all the found [Instances](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html)
 function GMObjectBase:findAll() end
@@ -46,16 +44,15 @@ function GMObjectBase:count() end
 --- Finds all [Instances](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object with matching key and value variable pairs.
 ---
 --- Example:
----     Heal all Lemurians where `boost` is nil by 50 health,
----     and then sets `boost` to 1 so they’re only healed once.
----
----     ```lua
----     local lizard = Object.find("lizard", "vanilla")
----     for _, v in ipairs(lizard:findMatching("boost", nil) do
----         v:set("hp", v:get("hp") + 50)
----         v:set("boost", 1)
----     end
----     ```
+---   Heal all Lemurians where `boost` is nil by 50 health,
+---   and then sets `boost` to 1 so they’re only healed once.
+---   ```lua
+---   local lizard = Object.find("lizard", "vanilla")
+---   for _, v in ipairs(lizard:findMatching("boost", nil) do
+---       v:set("hp", v:get("hp") + 50)
+---       v:set("boost", 1)
+---   end
+---   ```
 ---
 ---@param key string The name of the first variable to match
 ---@param value string|number|nil The value of the first variable to match
@@ -74,14 +71,13 @@ function GMObjectBase:findMatching(key, value, ...) end
 --- Finds all [Instances](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object with matching key and value variable pairs.
 ---
 --- # Example
----     Kill all Lemurians with less than 30 remaining health.
----
----     ```lua
----     local lizard = Object.find("lizard", "vanilla")
----     for _, v in ipairs(lizard:findMatchingOp("hp", "<", 30) do
----         v:kill()
----     end
----     ```
+---   Kill all Lemurians with less than 30 remaining health.
+---   ```lua
+---   local lizard = Object.find("lizard", "vanilla")
+---   for _, v in ipairs(lizard:findMatchingOp("hp", "<", 30) do
+---       v:kill()
+---   end
+---   ```
 ---
 ---@param key string The name of the first variable to compare against
 ---@param operator FindMatchingOperator The operator to compare with
@@ -93,11 +89,10 @@ function GMObjectBase:findMatchingOp(key, operator, value, ...) end
 --- Finds the [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object closest to a point.
 ---
 --- # Example
----     Find the instance of the object `eggplant` closest to the instance `player`.
----
----     ```lua
----     local target = eggplant:findNearest(player.x, player.y)
----     ```
+---   Find the instance of the object `eggplant` closest to the instance `player`.
+---   ```lua
+---   local target = eggplant:findNearest(player.x, player.y)
+---   ```
 ---
 ---@param x number The horizontal coordinate of the point to check from
 ---@param y number The vertical coordinate of the point to check from
@@ -107,11 +102,10 @@ function GMObjectBase:findNearest(x, y) end
 --- Finds the [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object furthest from a point.
 ---
 --- # Example
----     Find the instance of the object `eggplant` farthest from the instance `player`.
----
----     ```lua
----     local target = eggplant:findFurthest(player.x, player.y)
----     ```
+---   Find the instance of the object `eggplant` farthest from the instance `player`.
+---   ```lua
+---   local target = eggplant:findFurthest(player.x, player.y)
+---   ```
 ---
 ---@param x number The horizontal coordinate of the point to check from
 ---@param y number The vertical coordinate of the point to check from

@@ -16,19 +16,18 @@ save = {}
 --- This is limited in scope to the current mod and will not overwrite values saved by other mods.
 ---
 --- # Example
----     Keep track of the total number of runs the player has had with the mod active.
+---   Keep track of the total number of runs the player has had with the mod active.
+---   ```lua
+---   local runCount = save.read("runCount")
+---   if runCount == nil then
+---       runCount = 0
+---   end
 ---
----     ```lua
----     local runCount = save.read("runCount")
----     if runCount == nil then
----         runCount = 0
----     end
----
----     callback.register("onGameStart", function()
----         runCount = runCount + 1
----         save.write("runCount", runCount)
----     end)
----     ```
+---   callback.register("onGameStart", function()
+---       runCount = runCount + 1
+---       save.write("runCount", runCount)
+---   end)
+---   ```
 ---
 ---@param key string The name of the save key to write
 ---@param value SaveType The value that will be written to the save
@@ -63,14 +62,13 @@ function save.readmod(mod, key) end
 --- returns a list of all of the keys in a mod’s save data.
 ---
 --- # Example
----     Print all save keys of the current mod alongside their values.
----
----     ```lua
----     local keys = save.getKeys()
----     for _, v in ipairs(keys) do
----         print(v, save.read(v))
----     end
----     ```
+---   Print all save keys of the current mod alongside their values.
+---   ```lua
+---   local keys = save.getKeys()
+---   for _, v in ipairs(keys) do
+---       print(v, save.read(v))
+---   end
+---   ```
 ---
 ---@param mod? Mod the internal name of the mod to read keys from. *case insensitive*, *defaults to the current mod*
 ---@return string[] keys A numerically indexed table of all the keys
@@ -79,20 +77,19 @@ function save.getKeys(mod) end
 --- Returns a list of all mods with save data in lowercase.
 ---
 --- # Example
----     Read in all saved mod data and print it to the console.
----
----     ```lua
----     local mods = save.getMods()
----     local data = {}
----     for _, m in ipairs(mods) do
----         data[m] = {}
----         local keys = save.getKeys(m)
----         for _, v in ipairs(keys) do
----             data[m][v] = save.readMod(m, v)
----         end
----     end
----     print(data)
----     ```
+---   Read in all saved mod data and print it to the console.
+---   ```lua
+---   local mods = save.getMods()
+---   local data = {}
+---   for _, m in ipairs(mods) do
+---       data[m] = {}
+---       local keys = save.getKeys(m)
+---       for _, v in ipairs(keys) do
+---           data[m][v] = save.readMod(m, v)
+---       end
+---   end
+---   print(data)
+---   ```
 ---
 ---@return Mod[] mods A numerically indexed table of mod internal names. *all lowercase*
 function save.getMods() end

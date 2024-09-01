@@ -52,11 +52,10 @@ Color.V = Color.value      -- alias for `value`
 --- Produces a new Color object taking RGB values as input.
 ---
 --- # Example
----     Create a new color, assigning it to the variable `blurple`.
----
----     ```lua
----     local blurple = Color.fromRGB(114, 137, 218)
----     ```
+---   Create a new color, assigning it to the variable `blurple`.
+---   ```lua
+---   local blurple = Color.fromRGB(114, 137, 218)
+---   ```
 ---
 ---@param red number The red value of the color. *from 0 to 255*
 ---@param green number The green value of the color. *from 0 to 255*
@@ -67,11 +66,10 @@ function Color.fromRGB(red, green, blue) end
 --- Produces a new Color object taking HSV values as input.
 ---
 --- # Example
----     Create a new color, assigning it to the variable `blurple`.
----
----     ```lua
----     local blurple = Color.fromHSV(226, 120, 217)
----     ```
+---   Create a new color, assigning it to the variable `blurple`.
+---   ```lua
+---   local blurple = Color.fromHSV(226, 120, 217)
+---   ```
 ---
 ---@param hue number The hue of the color. *from 0 to 255*
 ---@param saturation number The saturation of the color. *from 0 to 255*
@@ -82,11 +80,10 @@ function Color.fromHSV(hue, saturation, value) end
 --- Produces a new Color object taking a single number as input.
 ---
 --- # Example
----     Create a new color, assigning it to the variable `blurple`.
----
----     ```lua
----     local blurple = Color.fromHex(0x7289DA)
----     ```
+---   Create a new color, assigning it to the variable `blurple`.
+---   ```lua
+---   local blurple = Color.fromHex(0x7289DA)
+---   ```
 ---
 ---@param value number The color as a single RRGGBB formated number
 ---@return Color '' A new Color object.
@@ -95,18 +92,15 @@ function Color.fromHex(value) end
 --- Produces a new Color object by mixing together 2 existing colors a specified amount.
 ---
 --- # Examples
----     Create a new color that's 50% yellow and 50% orange.
+---   Create a new color that's 50% yellow and 50% orange.
+---   ```lua
+---   local yellorange = Color.mix(Color.YELLOW, Color.ORANGE, 0.5)
+---   ```
 ---
----     ```lua
----     local yellorange = Color.mix(Color.YELLOW, Color.ORANGE, 0.5)
----     ```
----
----
----     Create a new color that's 75% green and 25% blue.
----
----     ```lua
----     local bluish_green = Color.mix(Color.GREEN, Color.BLUE, 0.25)
----     ```
+---   Create a new color that's 75% green and 25% blue.
+---   ```lua
+---   local bluish_green = Color.mix(Color.GREEN, Color.BLUE, 0.25)
+---   ```
 ---
 ---@param color1 Color The base color
 ---@param color2 Color The color to mix with
@@ -119,11 +113,10 @@ function Color.mix(color1, color2, amount) end
 --- Works the same as merging the provided color with `Color.BLACK`.
 ---
 --- # Example
----     roduce a yellow color 25% darker than the original.
----
----     ```lua
----     local dark_yellow = Color.darken(Color.YELLOW, 0.25)
----     ```
+---   roduce a yellow color 25% darker than the original.
+---   ```lua
+---   local dark_yellow = Color.darken(Color.YELLOW, 0.25)
+---   ```
 ---
 ---@param color Color The base color
 ---@param amount number The amount to darken as a decimal value. *from 0 to 1*
@@ -135,11 +128,10 @@ function Color.darken(color, amount) end
 --- Works the same as merging the provided color with `Color.WHITE`.
 ---
 --- # Example
----     Produce a yellow color 75% lighter than the original.
----
----     ```lua
----     local light_yellow = Color.lighten(Color.YELLOW, 0.75)
----     ```
+---   Produce a yellow color 75% lighter than the original.
+---   ```lua
+---   local light_yellow = Color.lighten(Color.YELLOW, 0.75)
+---   ```
 ---
 ---@param color Color The base color
 ---@param amount number The amount to darken as a decimal value. *from 0 to 1*
@@ -159,11 +151,10 @@ function Color.equals(color1, color2) end
 ---
 --- # Example
 ---     Get the blend color of the instance `inst`.
----     This is identical to accessing the instance’s `blendColor` field.
----
----     ```lua
----     local blend = Color.fromGML(inst:get("image_blend"))
----     ```
+---   This is identical to accessing the instance’s `blendColor` field.
+---   ```lua
+---   local blend = Color.fromGML(inst:get("image_blend"))
+---   ```
 ---
 ---@param color number The color in GameMaker format
 ---@return Color

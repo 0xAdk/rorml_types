@@ -18,11 +18,10 @@ Difficulty = {}
 --- Creates a new difficulty.
 ---
 --- # Example
----     Create a new difficulty called `Drought`.
----
----     ```lua
----     local droughtDiff = Difficulty.new("Drought")
----     ```
+---   Create a new difficulty called `Drought`.
+---   ```lua
+---   local droughtDiff = Difficulty.new("Drought")
+---   ```
 ---
 ---@param name string The name to give the difficulty within the current namespace
 ---@return Difficulty
@@ -65,11 +64,10 @@ function Difficulty.getActive() end
 --- Sets the game’s current difficulty to the given one
 ---
 --- # Example
----     Set the game’s difficulty to `droughtDiff`.
----
----     ```lua
----     Difficulty.setActive(droughtDiff)
----     ```
+---   Set the game’s difficulty to `droughtDiff`.
+---   ```lua
+---   Difficulty.setActive(droughtDiff)
+---   ```
 ---
 ---@param diff Difficulty The difficulty to set as active
 function Difficulty.setActive(diff) end

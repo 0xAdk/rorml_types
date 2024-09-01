@@ -23,11 +23,10 @@ Buff = {}
 --- If a name is not provided then an automatically generated name will be used.
 ---
 --- # Example
----     Create a new buff called `Jump Boost`.
----
----     ```lua
----     local jumpboost = Buff.new("Jump Boost")
----     ```
+---   Create a new buff called `Jump Boost`.
+---   ```lua
+---   local jumpboost = Buff.new("Jump Boost")
+---   ```
 ---
 ---@param name? string The name to give the buff within the current namespace
 ---@return Buff
@@ -74,18 +73,17 @@ function Buff:getName() end
 --- The [ActorInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/actorInstance.html) affected by the buff is always passed to the function.
 ---
 --- # Example
----     After the `jumpboost` buff is applied to an actor give them the ability to jump a bit higher.
----     Then revert it once the buff wears off.
+---   After the `jumpboost` buff is applied to an actor give them the ability to jump a bit higher.
+---   Then revert it once the buff wears off.
+---   ```lua
+---   jumpboost:addCallback("start", function(player)
+---       player:set("pVmax", player:get("pVmax") + 1)
+---   end)
 ---
----     ```lua
----     jumpboost:addCallback("start", function(player)
----         player:set("pVmax", player:get("pVmax") + 1)
----     end)
----
----     jumpboost:addCallback("end", function(player)
----         player:set("pVmax", player:get("pVmax") - 1)
----     end)
----     ```
+---   jumpboost:addCallback("end", function(player)
+---       player:set("pVmax", player:get("pVmax") - 1)
+---   end)
+---   ```
 ---
 ---@overload fun(self, callback: 'start', bind: fun(actor: ActorInstance))
 ---@overload fun(self, callback: 'step', bind: fun(actor: ActorInstance, remaining_time: number))

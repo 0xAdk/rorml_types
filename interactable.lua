@@ -15,12 +15,11 @@ Interactable = {}
 --- Creates a new interactable from an existing object, with the specified name.
 ---
 --- # Example
----     Create a new interactable called `Toast_Interactable`.
----
----     ```lua
----     local toastObject = Object.new("Toast_Object")
----     local toastInteractable = Interactable.new(toastObject, "Toast_Interactable")
----     ```
+---   Create a new interactable called `Toast_Interactable`.
+---   ```lua
+---   local toastObject = Object.new("Toast_Object")
+---   local toastInteractable = Interactable.new(toastObject, "Toast_Interactable")
+---   ```
 ---
 ---@param obj GMObject The object represented by this interactable
 ---@param name? string The name to give the interactable within the current namespace
@@ -47,12 +46,11 @@ function Interactable.findAll(namespace) end
 --- Finds an existing interactable given its object.
 ---
 --- # Example
----     Get the existing interactable for the `Chest` object.
----
----     ```lua
----     local chestObject = Object.find("Chest", "vanilla")
----     local chestInteractable = Interactable.fromObject(chestObject)
----     ```
+---   Get the existing interactable for the `Chest` object.
+---   ```lua
+---   local chestObject = Object.find("Chest", "vanilla")
+---   local chestInteractable = Interactable.fromObject(chestObject)
+---   ```
 ---
 ---@param object GMObject The object represented by this interactable
 ---@return Interactable '' An `Interactable` if one exists for the given object, otherwise nil

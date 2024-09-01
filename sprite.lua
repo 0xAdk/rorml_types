@@ -20,12 +20,11 @@ Sprite = {}
 --- **Note**: Only .png files are supported.
 ---
 --- # Example
----     load the sprite called `Light Switch`.
----     It has two frames and its origin is at (12, 14).
----
----     ```lua
----     ls = Sprite.load("Light Switch", "sprites/light switch.png", 2, 12, 14)
----     ```
+---   load the sprite called `Light Switch`.
+---   It has two frames and its origin is at (12, 14).
+---   ```lua
+---   ls = Sprite.load("Light Switch", "sprites/light switch.png", 2, 12, 14)
+---   ```
 ---
 ---@param name string The name to give the sprite within the current namespace.
 ---@param fname string This is the path to the file, relative to the mod’s base path. *file extension is optional*
@@ -86,12 +85,12 @@ function Sprite:getName() end
 --- Replaces a sprite with another sprite. Useful for visual mods.
 ---
 --- # Example
----     Replace every single sprite in the vanilla game with the sprite `eggplant`.
+---   Replace every single sprite in the vanilla game with the sprite `eggplant`.
+---   ```lua
+---   for _, v in ipairs(Sprite.findAll("vanilla")) do
+---       v:replace(eggplant)
+---   end
+---   ```
 ---
----     ```lua
----     for _, v in ipairs(Sprite.findAll("vanilla")) do
----         v:replace(eggplant)
----     end
----     ```
 ---@param new Sprite The sprite that will replace the old sprite
 function Sprite:replace(new) end

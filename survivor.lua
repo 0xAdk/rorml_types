@@ -23,11 +23,10 @@ Survivor = {}
 --- Creates a new survivor.
 ---
 --- # Example
----     Create a new survivor called `Cyborg`.
----
----     ```lua
----     local cyborg = Survivor.new("Cyborg")
----     ```
+---   Create a new survivor called `Cyborg`.
+---   ```lua
+---   local cyborg = Survivor.new("Cyborg")
+---   ```
 ---
 ---@param name string The name to give the survivor within the current namespace
 ---@return Survivor
@@ -78,13 +77,12 @@ function Survivor:getName() end
 --- The arguments passed to the function vary by callback, but the first argument is always the player.
 ---
 --- # Example
----     Increase the player’s running speed when they level up.
----
----     ```lua
----     commando:addCallback("levelUp", function(player)
----         player:set("pHmax", player:get("pHmax") + 0.1)
----     end)
----     ```
+---   Increase the player’s running speed when they level up.
+---   ```lua
+---   commando:addCallback("levelUp", function(player)
+---       player:set("pHmax", player:get("pHmax") + 0.1)
+---   end)
+---   ```
 ---
 ---@overload fun(self, callback: 'init', bind: fun(player: PlayerInstance))
 ---@overload fun(self, callback: 'step', bind: fun(player: PlayerInstance, player_id: number))
@@ -104,15 +102,14 @@ function Survivor:addCallback(callback, bind) end
 --- Sets the description and name of one of the survivor’s skills on the character select screen.
 ---
 --- # Example
----     Set the description and name of `commando`’s third skill: `Tactical Dive`.
----
----     ```lua
----     commando:setLoadoutSkill(
----         3, "Tactical Dive",
----         "&y&Roll forward&!& a small distance.\n"
----         .. "You &b&cannot&!& be hit while rolling."
----     )
----     ```
+---   Set the description and name of `commando`’s third skill: `Tactical Dive`.
+---   ```lua
+---   commando:setLoadoutSkill(
+---       3, "Tactical Dive",
+---       "&y&Roll forward&!& a small distance.\n"
+---       .. "You &b&cannot&!& be hit while rolling."
+---   )
+---   ```
 ---
 ---@param index number The number of the skill to set the information of. *from 1 to 4*
 ---@param name string The name of the skill
@@ -122,17 +119,16 @@ function Survivor:setLoadoutSkill(index, name, description) end
 --- Sets the description of the survivor on the character select screen.
 ---
 --- # Example
----     Set the description and skill icons for `commando`.
----
----     ```lua
----     commando:setLoadoutInfo(
----         "The &y&Commando&!& is characterized by long range and mobility.\n"
----         .. "Effective use of his &y&Tactical Dive&!& will grant increased survivability,\n"
----         .. "while &y&suppressive fire&!& deals massive damage.\n"
----         .. "&y&FMJ&!& can then be used to dispose of large mobs.",
----         skillsprite
----     )
----     ```
+---   Set the description and skill icons for `commando`.
+---   ```lua
+---   commando:setLoadoutInfo(
+---       "The &y&Commando&!& is characterized by long range and mobility.\n"
+---       .. "Effective use of his &y&Tactical Dive&!& will grant increased survivability,\n"
+---       .. "while &y&suppressive fire&!& deals massive damage.\n"
+---       .. "&y&FMJ&!& can then be used to dispose of large mobs.",
+---       skillsprite
+---   )
+---   ```
 ---
 ---@param description string A short description of the character’s play style and functionality. Supports colored text formatting. Note that line breaks must be put in manually. There’s space for 6 lines vertically
 ---@param skills Sprite A sprite containing 4 frames which will be displayed as the character’s skill icons in the character select screen

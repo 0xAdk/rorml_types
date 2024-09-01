@@ -11,11 +11,10 @@ graphics = {}
 --- Changes the render target to a [Surface](https://saturnyoshi.gitlab.io/RoRML-Docs/class/surface.html).
 ---
 --- # Example
----     Set the render target to the surface called `vine`.
----
----     ```lua
----     graphics.setTarget(vine)
----     ```
+---   Set the render target to the surface called `vine`.
+---   ```lua
+---   graphics.setTarget(vine)
+---   ```
 ---
 ---@param target Surface The surface to set the render target to
 function graphics.setTarget(target) end
@@ -23,13 +22,12 @@ function graphics.setTarget(target) end
 --- Resets the render target to go back to drawing as normal.
 ---
 --- # Example
----     ```lua
----     graphics.setTarget(vine)
----     -- Some drawing functions ...
----     graphics.resetTarget()
----     ```
----
----     After drawing to a surface it is important to reset the drawing target so that drawing can return to functioning as usual.
+---   ```lua
+---   graphics.setTarget(vine)
+---   -- Some drawing functions ...
+---   graphics.resetTarget()
+---   ```
+---   After drawing to a surface it is important to reset the drawing target so that drawing can return to functioning as usual.
 ---
 function graphics.resetTarget() end
 
@@ -41,14 +39,13 @@ function graphics.getTarget() end
 --- Sets the transparency which shapes will be drawn at. A `value` of 1 is fully opaque, while 0 is fully transparent.
 ---
 --- # Example
----     Draw a 50x50 square with 30% opacity at the coordinates stored in `x` and `y`,
----     then reset the alpha back to 1 when finished.
----
----     ```lua
----     graphics.alpha(0.3)
----     graphics.rectangle(x, y, x + 50, y + 50, false)
----     graphics.alpha(1)
----     ```
+---   Draw a 50x50 square with 30% opacity at the coordinates stored in `x` and `y`,
+---   then reset the alpha back to 1 when finished.
+---   ```lua
+---   graphics.alpha(0.3)
+---   graphics.rectangle(x, y, x + 50, y + 50, false)
+---   graphics.alpha(1)
+---   ```
 ---
 ---@param value number The new alpha value, from 0 to 1
 function graphics.alpha(value) end
@@ -62,12 +59,11 @@ function graphics.getAlpha() end
 --- as the initial color may vary from call to call.
 ---
 --- # Example
----     Draw a 50x50 blue square at the coordinates stored in `x` and `y`.
----
----     ```lua
----     graphics.color(Color.BLUE)
----     graphics.rectangle(x, y, x + 50, y + 50, false)
----     ```
+---   Draw a 50x50 blue square at the coordinates stored in `x` and `y`.
+---   ```lua
+---   graphics.color(Color.BLUE)
+---   graphics.rectangle(x, y, x + 50, y + 50, false)
+---   ```
 ---
 ---@param value Color The color to begin drawing in
 function graphics.color(value) end
@@ -90,15 +86,14 @@ graphics.getColour = graphics.getColor
 --- This will be the same as `getGameResolution` unless the `"hud_scale"` option in prefs.json is modified.
 --- 
 --- # Example
----     Draw a dark red rectangle over the middle of the HUD.
----
----     ```lua
----     callback.register("onHUDDraw", function()
----         local w, h = graphics.getHUDResolution()
----         graphics.color(Color.DARK_RED)
----         graphics.rectangle(w * 0.25, w * 0.25, w * 0.75, h * 0.75)
----     end)
----     ```
+---   Draw a dark red rectangle over the middle of the HUD.
+---   ```lua
+---   callback.register("onHUDDraw", function()
+---       local w, h = graphics.getHUDResolution()
+---       graphics.color(Color.DARK_RED)
+---       graphics.rectangle(w * 0.25, w * 0.25, w * 0.75, h * 0.75)
+---   end)
+---   ```
 ---
 ---@return number width, number height
 function graphics.getHUDResolution() end
@@ -106,15 +101,14 @@ function graphics.getHUDResolution() end
 --- Returns the width and height of the game camera
 --- 
 --- # Example
----     Draw a dark red rectangle over the middle of the camera.
----
----     ```lua
----     callback.register("onDraw", function()
----         local w, h = graphics.getGameResolution()
----         graphics.color(Color.DARK_RED)
----         graphics.rectangle(w * 0.25, w * 0.25, w * 0.75, h * 0.75)
----     end)
----     ```
+---   Draw a dark red rectangle over the middle of the camera.
+---   ```lua
+---   callback.register("onDraw", function()
+---       local w, h = graphics.getGameResolution()
+---       graphics.color(Color.DARK_RED)
+---       graphics.rectangle(w * 0.25, w * 0.25, w * 0.75, h * 0.75)
+---   end)
+---   ```
 ---
 ---@return number width, number height
 function graphics.getGameResolution() end
@@ -214,37 +208,39 @@ function graphics.setBlendModeAdvanced(source, dest) end
 --- The color, transparency, and scaling of the image can all be specified using optional arguments.
 ---
 --- # Examples
----     All 3 of these examples do the same thing, but decrease in complexity each time.
----     The second example utilizes the numerical aliases of the first few parameters.
+---   All 3 of these examples do the same thing, but decrease in complexity each time.
+---   The second example utilizes the numerical aliases of the first few parameters.
 ---
----     Generally, simple image drawing is more of a use case for the image’s draw method.
+---   Generally, simple image drawing is more of a use case for the image’s draw method.
 ---
----     ```lua
----     graphics.drawImage{
----         image = myImage,
----         x = 50,
----         y = 50
----     }
----     ```
+---   1.
+---   ```lua
+---   graphics.drawImage{
+---       image = myImage,
+---       x = 50,
+---       y = 50
+---   }
+---   ```
 ---
----     ```lua
----     graphics.drawImage { myImage, 50, 50 }
----     ```
+---   2.
+---   ```lua
+---   graphics.drawImage { myImage, 50, 50 }
+---   ```
 ---
----     ```lua
----     myImage:draw(50, 50)
----     ```
+---   3.
+---   ```lua
+---   myImage:draw(50, 50)
+---   ```
 ---
----     Draw `myImage` at 50% opacity, tinted red, and stretched by 50% horizontally.
----
----     ```lua
----     graphics.drawImage {
----         myImage, 50, 50,
----         alpha = 0.5,
----         color = Color.RED,
----         xscale = 1.5
----     }
----     ```
+---   Draw `myImage` at 50% opacity, tinted red, and stretched by 50% horizontally.
+---   ```lua
+---   graphics.drawImage {
+---       myImage, 50, 50,
+---       alpha = 0.5,
+---       color = Color.RED,
+---       xscale = 1.5
+---   }
+---   ```
 ---
 ---@param args DrawImageArgs
 function graphics.drawImage(args) end
@@ -367,21 +363,18 @@ graphics.ALIGN_BOTTOM = 2
 --- Draws a string.
 ---
 --- # Examples
----     Display a counter for the variable `bonus` at the coordinates (16, 128).
----     The font and alignment of the text is never specified, so it will be drawn using
----     the standard font with the top left of the text at the specified coordinates.
+---   Display a counter for the variable `bonus` at the coordinates (16, 128).
+---   The font and alignment of the text is never specified, so it will be drawn using
+---   the standard font with the top left of the text at the specified coordinates.
+---   ```lua
+---   graphics.print("Bonus: " .. tostring(bonus), 16, 128)
+---   ```
 ---
----     ```lua
----     graphics.print("Bonus: " .. tostring(bonus), 16, 128)
----     ```
----
----
----     Display an indicator above the instance `target`.
----     The text will be drawn with the small font, drawn above the Y coordinate, and centered around the X coordinate.
----
----     ```lua
----     graphics.print("[Target]", target.x, target.y - 32, graphics.FONT_SMALL, graphics.ALIGN_MIDDLE, graphics.ALIGN_BOTTOM)
----     ```
+---   Display an indicator above the instance `target`.
+---   The text will be drawn with the small font, drawn above the Y coordinate, and centered around the X coordinate.
+---   ```lua
+---   graphics.print("[Target]", target.x, target.y - 32, graphics.FONT_SMALL, graphics.ALIGN_MIDDLE, graphics.ALIGN_BOTTOM)
+---   ```
 ---
 ---@param text any The text to be drawn. If the value is not a string then it will be converted to a human readable format
 ---@param x number The X coordinate to draw the text at
@@ -396,14 +389,13 @@ function graphics.print(text, x, y, font, halign, valign) end
 --- When using this function, keep in mind that it is slower than using `graphics.print` and that the alignment of the text cannot be changed from top left.
 ---
 --- # Example
----     Display a message containing 3 parts:
----     1. The text `[New Record]` which will be drawn in yellow as indicated by the `&y&` tag.
----     2. The text `Enemies Defeated:` which will be drawn in the current drawing colour.
----     3. The value of variable `enemy_tally` which will be drawn in blue as indicated by the `&b&` tag.
----
----     ```lua
----     graphics.printColor("&y&[New Record]&!& Enemies defeated: &b&" .. tostring(enemy_tally) .. "&!&", x, y)
----     ```
+---   Display a message containing 3 parts:
+---   1. The text `[New Record]` which will be drawn in yellow as indicated by the `&y&` tag.
+---   2. The text `Enemies Defeated:` which will be drawn in the current drawing colour.
+---   3. The value of variable `enemy_tally` which will be drawn in blue as indicated by the `&b&` tag.
+---   ```lua
+---   graphics.printColor("&y&[New Record]&!& Enemies defeated: &b&" .. tostring(enemy_tally) .. "&!&", x, y)
+---   ```
 ---
 ---@param text string The text to be drawn
 ---@param x number The X coordinate to draw the text at
@@ -459,15 +451,14 @@ function graphics.fontReplace(original, new) end
 --- Returns the width of a string in a specific font as pixels.
 ---
 --- # Example
----     Draws the string `str` with a black rectangle behind it.
----
----     ```lua
----     local str = "Hello!"
----     graphics.color(Color.BLACK)
----     graphics.rectangle(16, 16, 16 + graphics.textWidth(str, graphics.FONT_DEFAULT), 16 + graphics.textHeight(graphics.FONT_DEFAULT))
----     graphics.color(Color.WHITE)
----     graphics.print(str, 16, 16)
----     ```
+---   Draws the string `str` with a black rectangle behind it.
+---   ```lua
+---   local str = "Hello!"
+---   graphics.color(Color.BLACK)
+---   graphics.rectangle(16, 16, 16 + graphics.textWidth(str, graphics.FONT_DEFAULT), 16 + graphics.textHeight(graphics.FONT_DEFAULT))
+---   graphics.color(Color.WHITE)
+---   graphics.print(str, 16, 16)
+---   ```
 ---
 ---@param text string The text to get the width of
 ---@param font Font The ID of the font to use
@@ -477,15 +468,14 @@ function graphics.textWidth(text, font) end
 --- Returns the height of a string in a specific font as pixels.
 ---
 --- # Example
----     Draws the string `str` with a black rectangle behind it.
----
----     ```lua
----     local str = "Hello!"
----     graphics.color(Color.BLACK)
----     graphics.rectangle(16, 16, 16 + graphics.textWidth(str, graphics.FONT_DEFAULT), 16 + graphics.textHeight(graphics.FONT_DEFAULT))
----     graphics.color(Color.WHITE)
----     graphics.print(str, 16, 16)
----     ```
+---   Draws the string `str` with a black rectangle behind it.
+---   ```lua
+---   local str = "Hello!"
+---   graphics.color(Color.BLACK)
+---   graphics.rectangle(16, 16, 16 + graphics.textWidth(str, graphics.FONT_DEFAULT), 16 + graphics.textHeight(graphics.FONT_DEFAULT))
+---   graphics.color(Color.WHITE)
+---   graphics.print(str, 16, 16)
+---   ```
 ---
 ---@param text string The text to get the height of
 ---@param font Font The ID of the font to use
@@ -500,49 +490,46 @@ function graphics.textHeight(text, font) end
 --- it can be modified and destroyed at any time to store the state of drawing or stop it.
 ---
 --- # Examples
----     Bind the function `myFunction` to be called each frame at depth -7, just behind players.
+---   Bind the function `myFunction` to be called each frame at depth -7, just behind players.
 ---
----     We call `graphics.bindDepth` at the start of every stage since the instance is removed between stages.
+---   We call `graphics.bindDepth` at the start of every stage since the instance is removed between stages.
+---   ```lua
+---   local drawables = {}
+---   local function myFunction()
+---       for _, v in ipairs(drawables) do
+---           graphics.drawImage(v)
+---       end
+---   end
 ---
----     ```lua
----     local drawables = {}
----     local function myFunction()
----         for _, v in ipairs(drawables) do
----             graphics.drawImage(v)
----         end
----     end
+---   callback.register("onStageEntry", function()
+---       graphics.bindDepth(-7, myFunction)
+---   end)
+---   ```
 ---
----     callback.register("onStageEntry", function()
----         graphics.bindDepth(-7, myFunction)
----     end)
----     ```
+---   Bind the function `drawEffect` to be called each frame at depth -9, just above players.
 ---
+---   The function `drawEffect` itself draws a ring which grows over time and then is destroyed after 45 frames.
+---   This example uses the fact that the object controlling function calls is an instance to contain a state
+---   and destroy the instance when the effect is done.
+---   The number of frames the instance has been around is also passed to the function,
+---   and is used here to control the timing of instance destruction and the rate of circle growth.
+---   ```lua
+---   local function drawEffect(handler, frame)
+---       if frame >= 45 then
+---           handler:destroy()
+---       else
+---           graphics.color(Color.LIGHT_BLUE)
+---           graphics.alpha(1 - frame / 45)
+---           graphics.circle(handler.x, handler.y, frame * 3 + 12, true)
+---           graphics.alpha(1)
+---       end
+---   end
 ---
----     Bind the function `drawEffect` to be called each frame at depth -9, just above players.
----
----     The function `drawEffect` itself draws a ring which grows over time and then is destroyed after 45 frames.
----     This example uses the fact that the object controlling function calls is an instance to contain a state
----     and destroy the instance when the effect is done.
----     The number of frames the instance has been around is also passed to the function,
----     and is used here to control the timing of instance destruction and the rate of circle growth.
----
----     ```lua
----     local function drawEffect(handler, frame)
----         if frame >= 45 then
----             handler:destroy()
----         else
----             graphics.color(Color.LIGHT_BLUE)
----             graphics.alpha(1 - frame / 45)
----             graphics.circle(handler.x, handler.y, frame * 3 + 12, true)
----             graphics.alpha(1)
----         end
----     end
----
----     -- Later in our code...
----     local handler = graphics.bindDepth(-9, drawEffect)
----     handler.x = x
----     handler.y = y
----     ```
+---   -- Later in our code...
+---   local handler = graphics.bindDepth(-9, drawEffect)
+---   handler.x = x
+---   handler.y = y
+---   ```
 ---
 ---@param depth number The depth the function will be called at
 ---@param bind fun(self: Instance, frame: number) The function to be called

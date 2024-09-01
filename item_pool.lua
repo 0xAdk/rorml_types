@@ -19,11 +19,10 @@ ItemPool = {}
 --- Creates a new ItemPool
 ---
 --- # Example
----     Create a new ItemPool called `blue`.
----
----     ```lua
----     local blueItems = ItemPool.new("blue")
----     ```
+---   Create a new ItemPool called `blue`.
+---   ```lua
+---   local blueItems = ItemPool.new("blue")
+---   ```
 ---
 ---@param name string The name to give the itemPool. This is mostly used to distinguish the ItemPool from others in searches
 ---@return ItemPool
@@ -54,11 +53,10 @@ function ItemPool.findAll(namespace) end
 --- Adds an [Item](https://saturnyoshi.gitlab.io/RoRML-Docs/class/item.html) to the pool.
 ---
 --- # Example
----     Add Infusion to the `coolPool` pool.
----
----     ```lua
----     coolPool:add(Item.find("Infusion"))
----     ```
+---   Add Infusion to the `coolPool` pool.
+---   ```lua
+---   coolPool:add(Item.find("Infusion"))
+---   ```
 ---
 ---@param item Item The Item to be added to the pool
 function ItemPool:add(item) end
@@ -66,11 +64,10 @@ function ItemPool:add(item) end
 --- Removes an [Item](https://saturnyoshi.gitlab.io/RoRML-Docs/class/item.html) from the pool.
 ---
 --- # Example
----     Removes Infusion from the `coolPool` pool.
----
----     ```lua
----     coolPool:remove(Item.find("Infusion"))
----     ```
+---   Removes Infusion from the `coolPool` pool.
+---   ```lua
+---   coolPool:remove(Item.find("Infusion"))
+---   ```
 ---
 ---@param item Item The Item to be removed from the pool
 function ItemPool:remove(item) end
@@ -78,13 +75,12 @@ function ItemPool:remove(item) end
 --- Checks if an Item is in the pool.
 ---
 --- # Example
----     Print “uncool” if Infusion is in `coolPool`.
----
----     ```lua
----     if coolPool:contains(Item.find("Infusion")) then
----         print("uncool")
----     end
----     ```
+---   Print "uncool" if Infusion is in `coolPool`.
+---   ```lua
+---   if coolPool:contains(Item.find("Infusion")) then
+---       print("uncool")
+---   end
+---   ```
 ---
 ---@param item Item The Item to checked for
 ---@return boolean '' true if the item is in the pool, otherwise false
@@ -93,34 +89,31 @@ function ItemPool:contains(item) end
 --- Get one [Item](https://saturnyoshi.gitlab.io/RoRML-Docs/class/item.html) randomly selected from the pool.
 ---
 --- # Example
----     Create an instance of a random object from the `coolPool` pool at (`x`, `y`).
----
----     ```lua
----     coolPool:roll().getObject().create(x, y)
----     ```
+---   Create an instance of a random object from the `coolPool` pool at (`x`, `y`).
+---   ```lua
+---   coolPool:roll().getObject().create(x, y)
+---   ```
 ---
 ---@return Item
 function ItemPool:roll() end
 
 --- # Example
----     Create a command crate containing the `coolPool` items.
----
----     ```lua
----     coolPool:getCrate().create(x, y)
----     ```
+---   Create a command crate containing the `coolPool` items.
+---   ```lua
+---   coolPool:getCrate().create(x, y)
+---   ```
 ---
 ---@return GMObject '' The command crate [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) for the pool.
 function ItemPool:getCrate() end
 
 --- # Example
----     Print the internal name of all items in `pool`.
----
----     ```lua
----     local items = pool:toList()
----     for _, v in ipairs(items) do
----         print(v:getName())
----     end
----     ```
+---   Print the internal name of all items in `pool`.
+---   ```lua
+---   local items = pool:toList()
+---   for _, v in ipairs(items) do
+---       print(v:getName())
+---   end
+---   ```
 ---
 ---@return Item[] '' An array table containing all the Items within the pool
 function ItemPool:toList() end

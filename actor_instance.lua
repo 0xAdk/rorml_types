@@ -33,12 +33,11 @@ DAMAGER_BULLET_PIERCE = 4 -- Allows the damager to pierce through any number of 
 --- Creates a hitscan bullet.
 ---
 --- # Example
----     Fire a bullet originating from instance `player` with 100 range, dealing 200% damage.
----     It has no hit sprite, pierces, and doesn’t proc on-hit effects.
----
----     ```lua
----     player:fireBullet(player.x, player.y, player:getFacingDirection(), 100, 2, nil, DAMAGER_BULLET_PIERCE + DAMAGER_NO_PROC)
----     ```
+---   Fire a bullet originating from instance `player` with 100 range, dealing 200% damage.
+---   It has no hit sprite, pierces, and doesn’t proc on-hit effects.
+---   ```lua
+---   player:fireBullet(player.x, player.y, player:getFacingDirection(), 100, 2, nil, DAMAGER_BULLET_PIERCE + DAMAGER_NO_PROC)
+---   ```
 ---
 ---@param x number Horizontal origin of the bullet
 ---@param y number Vertical origin of the bullet
@@ -60,12 +59,11 @@ function ActorInstance:fireBullet(x, y, direction, distance, damage, hitSprite, 
 --- Creates an explosion.
 ---
 --- # Example
----     Fire an explosion on the instance `inst`, with a size of 100x100, dealing 150% damage,
----     using `detonationSprite` as the explosion sprite but no hit sprite.
----
----     ```lua
----     inst:fireExplosion(inst.x, inst.y, 100/19, 100/4, 1.5, detonationSprite, nil, BULLET_NO_RECALCULATE)
----     ```
+---   Fire an explosion on the instance `inst`, with a size of 100x100, dealing 150% damage,
+---   using `detonationSprite` as the explosion sprite but no hit sprite.
+---   ```lua
+---   inst:fireExplosion(inst.x, inst.y, 100/19, 100/4, 1.5, detonationSprite, nil, BULLET_NO_RECALCULATE)
+---   ```
 ---
 ---@param x number Horizontal origin of the explosion
 ---@param y number Vertical origin of the explosion
@@ -108,11 +106,10 @@ function ActorInstance:fireExplosion(x, y, width, height, damage, explosionSprit
 --- Gets one of the actor’s animations.
 ---
 --- # Example
----     Get the walk sprite of instance `lemurian`.
----
----     ```lua
----     local walk = lemurian:getAnimation("walk")
----     ```
+---   Get the walk sprite of instance `lemurian`.
+---   ```lua
+---   local walk = lemurian:getAnimation("walk")
+---   ```
 ---
 ---@param key AnimationKey The key to check for
 ---@return Sprite
@@ -121,11 +118,10 @@ function ActorInstance:getAnimation(key) end
 --- Sets one of the actor’s animations.
 ---
 --- # Example
----     Set the walk sprite of instance `lemurian` to the sprite stored in `customWalk`.
----
----     ```lua
----     lemurian:setAnimation("walk", customWalk)
----     ```
+---   Set the walk sprite of instance `lemurian` to the sprite stored in `customWalk`.
+---   ```lua
+---   lemurian:setAnimation("walk", customWalk)
+---   ```
 ---
 ---@param key AnimationKey The key to set the sprite for
 ---@param sprite Sprite The sprite to set the key to
@@ -135,11 +131,10 @@ function ActorInstance:setAnimation(key, sprite) end
 ---
 --- # Example
 ---     Set both the walk and idle animations of the instance `lemurian` to those
----     stored in the variables `customWalk` and `customIdle`.
----
----     ```lua
----     lemurian:setAnimations{walk = customWalk, idle = customIdle}
----     ```
+---   stored in the variables `customWalk` and `customIdle`.
+---   ```lua
+---   lemurian:setAnimations{walk = customWalk, idle = customIdle}
+---   ```
 ---
 ---@param args table<AnimationKey, Sprite> A table of animation keys and sprite pairs to set
 function ActorInstance:setAnimations(args) end
@@ -149,11 +144,10 @@ function ActorInstance:setAnimations(args) end
 --- Applying a buff already active on the instance will extend the timer.
 ---
 --- # Example
----     Apply the buff `someBuff` to the instance `player` for 3 seconds.
----
----     ```lua
----     player:applyBuff(someBuff, 60 * 3)
----     ```
+---   Apply the buff `someBuff` to the instance `player` for 3 seconds.
+---   ```lua
+---   player:applyBuff(someBuff, 60 * 3)
+---   ```
 ---
 ---@param buff Buff The buff to apply
 ---@param duration number The duration of the buff in frames
@@ -162,11 +156,10 @@ function ActorInstance:applyBuff(buff, duration) end
 --- Removes a [Buff](https://saturnyoshi.gitlab.io/RoRML-Docs/class/buff.html) from the instance.
 ---
 --- # Example
----     Remove the buff `someBuff` from the instance `player`.
----
----     ```lua
----     player:removeBuff(someBuff)
----     ```
+---   Remove the buff `someBuff` from the instance `player`.
+---   ```lua
+---   player:removeBuff(someBuff)
+---   ```
 ---
 ---@param buff Buff The type of buff to remove
 function ActorInstance:removeBuff(buff) end
@@ -174,13 +167,12 @@ function ActorInstance:removeBuff(buff) end
 --- Checks whether an instance is affected by a [Buff](https://saturnyoshi.gitlab.io/RoRML-Docs/class/buff.html).
 ---
 --- # Example
----     Do something if the instance `actor` has the buff `someBuff`.
----
----     ```lua
----     if actor:hasBuff(someBuff) then
----         -- Do something
----     end
----     ```
+---   Do something if the instance `actor` has the buff `someBuff`.
+---   ```lua
+---   if actor:hasBuff(someBuff) then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@param buff Buff The type of buff to check for.
 ---@return boolean '' true if the instance is affected by the buff otherwise false
@@ -195,13 +187,12 @@ function ActorInstance:getBuffTime(buff) end
 --- Gets all the [Buffs](https://saturnyoshi.gitlab.io/RoRML-Docs/class/buff.html) affecting the instance.
 ---
 --- # Example
----     Loop over the buffs a player has and do something for each.
----
----     ```lua
----     for _, buff in ipairs(player:getBuffs()) do
----     	-- Do something
----     end
----     ```
+---   Loop over the buffs a player has and do something for each.
+---   ```lua
+---   for _, buff in ipairs(player:getBuffs()) do
+---   	-- Do something
+---   end
+---   ```
 ---
 ---@return Buff[] '' A list of Buff objects
 function ActorInstance:getBuffs() end
@@ -216,19 +207,16 @@ function ActorInstance:getElite() end
 --- For the elite type to be applied, it must be available in the actor’s spawn elites.
 ---
 --- # Examples
----     Make a `golem` a random elite from its list of available elite types.
+---   Make a `golem` a random elite from its list of available elite types.
+---   ```lua
+---   golem:makeElite()
+---   ```
 ---
----     ```lua
----     golem:makeElite()
----     ```
----
----
----     Make the `golem` an overloading elite, provided it’s allowed to be one normally.
----
----     ```lua
----     local overloading = EliteType.find("Overloading", "Vanilla")
----     golem:makeElite(overloading)
----     ```
+---   Make the `golem` an overloading elite, provided it’s allowed to be one normally.
+---   ```lua
+---   local overloading = EliteType.find("Overloading", "Vanilla")
+---   golem:makeElite(overloading)
+---   ```
 ---
 ---@param type? EliteType The elite type to apply to the enemy. *if nil the enemy will be assigned a random type from its available types*
 ---@return boolean actorChanged true if the actor was changed, otherwise false
@@ -255,19 +243,16 @@ function ActorInstance:getBlighted() end
 ---     | 13    | (Volatile) The enemy gains explosive attacks.                       |
 ---
 --- # Examples
----     Make the `wisp` a random blighted enemy type.
+---   Make the `wisp` a random blighted enemy type.
+---   ```lua
+---   wisp:makeBlighted()
+---   ```
 ---
----     ```lua
----     wisp:makeBlighted()
----     ```
----
----
----     Make the `wisp` a blighted enemy with all effects. Normally blighted enemies
----     only spawn with 2, but there’s no limit to how many can be provided.
----
----     ```lua
----     golem:makeElite(3 * 5 * 7 * 11 * 13)
----     ```
+---   Make the `wisp` a blighted enemy with all effects. Normally blighted enemies
+---   only spawn with 2, but there’s no limit to how many can be provided.
+---   ```lua
+---   golem:makeElite(3 * 5 * 7 * 11 * 13)
+---   ```
 ---
 ---@param type? number The blight type as explained above. *if nil is provided, a random type will be generated from 2 of the primes*
 ---@return boolean actorChanged true if the actor was changed, otherwise false
@@ -276,15 +261,14 @@ function ActorInstance:makeBlighted(type) end
 --- Kills the actor.
 ---
 --- # Example
----     Kill the instance `lemurian`.
----
----     ```lua
----     lemurian:kill()
----     ```
+---   Kill the instance `lemurian`.
+---   ```lua
+---   lemurian:kill()
+---   ```
 ---
 function ActorInstance:kill() end
 
---- Used to check whether the actor is a “classic” type actor.
+--- Used to check whether the actor is a "classic" type actor.
 ---
 --- Classic actors are those which can walk across the map and be knocked down ledges,
 --- such as Lemurians, Golems, Players, and Imp Overlords.

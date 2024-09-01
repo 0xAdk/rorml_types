@@ -29,12 +29,11 @@ MonsterCard = {}
 --- * If the enemy is classic, spawn type is set to `classic`, otherwise it’s set to `offscreen`.
 ---
 --- # Example
----     Create a new enemy and its spawn card.
----
----     ```lua
----     local enemy_obj = Object.base("EnemyClassic", "myEnemy")
----     local enemy_card = MonsterCard.new("myEnemyCard", enemy_obj)
----     ```
+---   Create a new enemy and its spawn card.
+---   ```lua
+---   local enemy_obj = Object.base("EnemyClassic", "myEnemy")
+---   local enemy_card = MonsterCard.new("myEnemyCard", enemy_obj)
+---   ```
 ---
 ---@param name string The name to give the monster card within the current namespace
 ---@param object GMObject The actual object representing the enemy

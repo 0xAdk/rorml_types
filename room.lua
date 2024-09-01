@@ -17,11 +17,10 @@ local Room = {}
 --- Creates a new room.
 ---
 --- # Example
----     Create a new room called `CoolRoom`.
----
----     ```lua
----     local coolRoom = Room.new("CoolRoom")
----     ```
+---   Create a new room called `CoolRoom`.
+---   ```lua
+---   local coolRoom = Room.new("CoolRoom")
+---   ```
 ---
 ---@param name? string The name to give the room within the current namespace
 function Room.new(name) end
@@ -67,12 +66,11 @@ function Room:getOrigin() end
 --- Note that the instance isn’t actually created until the room is loaded.
 ---
 --- # Example
----     Create a `Golem` instance in the `coolRoom` room, and stores the instance’s ID.
----
----     ```lua
----     local golem = Object.find("Golem")
----     local golemInstID = coolRoom:createInstance(golem, 10, 10)
----     ```
+---   Create a `Golem` instance in the `coolRoom` room, and stores the instance’s ID.
+---   ```lua
+---   local golem = Object.find("Golem")
+---   local golemInstID = coolRoom:createInstance(golem, 10, 10)
+---   ```
 ---
 ---@param object GMObject The object of the instance to be created
 ---@param x number The horizontal coordinate of the position to create the instance in
@@ -83,11 +81,10 @@ function Room:createInstance(object, x, y) end
 --- Resizes the room to match the given width and height.
 ---
 --- # Example
----     Resize the `coolRoom` room to be 420x69.
----
----     ```lua
----     coolRoom:resize(420, 69)
----     ```
+---   Resize the `coolRoom` room to be 420x69.
+---   ```lua
+---   coolRoom:resize(420, 69)
+---   ```
 ---
 ---@param width number The room’s new width.
 ---@param height number The room’s new height.

@@ -195,7 +195,7 @@
 ---| 'shoulderr' Right Shoulder Button (Right Bumper or R1)
 ---| 'shoulderrb' Right Shoulder Trigger (Right Trigger or R2)
 ---| 'select' The select button (Touch-Pad press on a PS4 controller)
----| 'start' The start button (“Options” button on a PS4 controller)
+---| 'start' The start button ("Options" button on a PS4 controller)
 ---| 'stickl' The left stick pressed (as a button)
 ---| 'stickr' The right stick pressed (as a button)
 ---| 'padu' Up on the D-pad

@@ -22,11 +22,10 @@ local BaseSprite = {}
 --- Draws the sprite to the current drawing surface.
 ---
 --- # Example
----     Draw the banana sprite to the screen at `player`'s position.
---- 
----     ```lua
----     banana:draw(player.x, player.y, 1)
----     ```
+---   Draw the banana sprite to the screen at `player`'s position.
+---   ```lua
+---   banana:draw(player.x, player.y, 1)
+---   ```
 ---
 ---@param x number The horizontal position to draw the sprite at
 ---@param y number The vertical position to draw the sprite at.

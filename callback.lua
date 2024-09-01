@@ -83,32 +83,32 @@ callback = {}
 --- Adds a function to be called whenever the specified callback is fired.
 ---
 --- # Examples
----     Two functionally identical ways of assigning a function to a callback.
----     In this case we’re doing something on the player step callback.
+---   Two functionally identical ways of assigning a function to a callback.
+---   In this case we’re doing something on the player step callback.
 ---
----     ```lua
----     local function foo(player)
----         -- Do something
----     end
+---   ```lua
+---   local function foo(player)
+---       -- Do something
+---   end
 ---
----     callback.register("onPlayerStep", foo)
----     ```
+---   callback.register("onPlayerStep", foo)
+---   ```
 ---
----     ```lua
----     callback.register("onPlayerStep", function(player)
----         -- Do something
----     end)
----     ```
+---   ```lua
+---   callback.register("onPlayerStep", function(player)
+---       -- Do something
+---   end)
+---   ```
 ---
 ---
----     Similar to above except we register to the NPC death callback with a priority of 200.
----     The higher priority means the callback will be called before most others.
+---   Similar to above except we register to the NPC death callback with a priority of 200.
+---   The higher priority means the callback will be called before most others.
 ---
----     ```lua
----     callback.register("onNPCDeath", function(npc)
----         -- Do something
----     end, 200)
----     ```
+---   ```lua
+---   callback.register("onNPCDeath", function(npc)
+---       -- Do something
+---   end, 200)
+---   ```
 ---
 ---@-- Items
 ---@overload fun(name: 'onItemRoll', fn: (fun(pool: ItemPool, item: Item): override: Item), priority?: number)
@@ -186,21 +186,21 @@ function callback.register(name, fn, priority) end
 ---          If multiple mods try to create the same callback an error will be thrown.
 ---
 --- # Example
----     Create a new callback, add a function to it, and call it with a random number.
+---   Create a new callback, add a function to it, and call it with a random number.
 ---
----     ```lua
----     -- Create a callback
----     local customCallback = callback.create("exampleCustomCallback")
+---   ```lua
+---   -- Create a callback
+---   local customCallback = callback.create("exampleCustomCallback")
 ---
----     -- Add a function to it
----     local function myFunc(number)
----         print("The number is: " .. tostring(number))
----     end
----     callback.register("exampleCustomCallback", myFunc)
+---   -- Add a function to it
+---   local function myFunc(number)
+---       print("The number is: " .. tostring(number))
+---   end
+---   callback.register("exampleCustomCallback", myFunc)
 ---
----     -- Call it
----     customCallback(math.random(100))
----     ```
+---   -- Call it
+---   customCallback(math.random(100))
+---   ```
 ---
 ---@param name string The name that will be used to add to this callback with `callback.register`
 ---@return fun(...) callbackRunner '' A new function used to invoke the callback. Arguments passed to this function will also be passed to all called functions

@@ -20,11 +20,10 @@ ParticleType = {}
 --- If a name is not provided then an automatically generated name will be used.
 ---
 --- # Example
----     Create a new particle type called `Eggplant`.
----
----     ```lua
----     local eggplant = Particles.new("Eggplant")
----     ```
+---   Create a new particle type called `Eggplant`.
+---   ```lua
+---   local eggplant = Particles.new("Eggplant")
+---   ```
 ---
 ---@param name? string The name to give the particle type within the current namespace
 ---@return ParticleType
@@ -67,11 +66,10 @@ function ParticleType:getName() end
 ---
 --- # Example
 ---     Set the sprite of the particle `eggplant` to the sprite `eggplantSprite`.
----     Its animation is stretched to match the life of the particle.
----
----     ```lua
----     eggplant:sprite(eggplantSprite, true, true, false)
----     ```
+---   Its animation is stretched to match the life of the particle.
+---   ```lua
+---   eggplant:sprite(eggplantSprite, true, true, false)
+---   ```
 ---
 ---@param sprite Sprite The sprite that the particle will have
 ---@param animate boolean Whether the sprite should animate or not
@@ -103,11 +101,10 @@ function ParticleType:sprite(sprite, animate, stretch, random) end
 --- (Image taken from the GML documentation page for particles.)
 ---
 --- # Example
----     Set the shape of `circleParticle` to `circle`.
----
----     ```lua
----     circleParticle:shape("circle")
----     ```
+---   Set the shape of `circleParticle` to `circle`.
+---   ```lua
+---   circleParticle:shape("circle")
+---   ```
 ---
 ---@param shape ParticleShape The name of the shape to set the particle as
 function ParticleType:shape(shape) end
@@ -117,11 +114,10 @@ function ParticleType:shape(shape) end
 --- Using the optional arguments you can make particles fade between different colors during their lifespan.
 ---
 --- Example:
----     Make the particle `stoplight` fade from red to yellow to green over the course of its lifespan.
----
----     ```lua
----     stoplight:color(Color.RED, Color.YELLOW, Color.GREEN)
----     ```
+---   Make the particle `stoplight` fade from red to yellow to green over the course of its lifespan.
+---   ```lua
+---   stoplight:color(Color.RED, Color.YELLOW, Color.GREEN)
+---   ```
 ---
 ---@param c1 Color The color that the particle will have
 ---@param c2? Color If set, the particle’s color will fade to this color over its lifespan
@@ -133,11 +129,10 @@ function ParticleType:color(c1, c2, c3) end
 --- Using the optional arguments you can make particles fade between different transparency levels during their lifespan.
 ---
 --- # Example
----     Make the particle `pulseLight` fade into full opacity and then out again over the course of its lifespan.
----
----     ```lua
----     pulseLight:alpha(0, 1, 0)
----     ```
+---   Make the particle `pulseLight` fade into full opacity and then out again over the course of its lifespan.
+---   ```lua
+---   pulseLight:alpha(0, 1, 0)
+---   ```
 ---
 ---@param a1 number The alpha value that the particle will have, 0 is fully transparent and 1 is fully opaque
 ---@param a2? number If set, the particle’s transparency will fade to this transparency over its lifespan
@@ -147,11 +142,10 @@ function ParticleType:alpha(a1, a2, a3) end
 --- Scales the sprite or shape of the particle type before any other size changes are applied.
 ---
 --- # Example
----     Make the particle type `eggplant` 40% wider and 30% shorter.
----
----     ```lua
----     eggplant:scale(1.4, 0.7)
----     ```
+---   Make the particle type `eggplant` 40% wider and 30% shorter.
+---   ```lua
+---   eggplant:scale(1.4, 0.7)
+---   ```
 ---
 ---@param xscale number The horizontal scaling of the image
 ---@param yscale number The vertical scaling of the image
@@ -164,11 +158,10 @@ function ParticleType:scale(xscale, yscale) end
 ---
 --- # Example
 ---     Make the particle `eggplant` start at a random scale between 0.8 and 1.2 times the base size.
----     Grow by 1 to 3 percent each step.
----
----     ```lua
----     eggplant:size(0.8, 1.2, 0.02, 0.01)
----     ```
+---   Grow by 1 to 3 percent each step.
+---   ```lua
+---   eggplant:size(0.8, 1.2, 0.02, 0.01)
+---   ```
 ---
 ---@param min number The minimum size a particle can start at
 ---@param max number The maximum size a particle can start at
@@ -181,11 +174,10 @@ function ParticleType:size(min, max, add, wiggle) end
 --- This is useful for example in fire effects or things that have a glow to them. *defaults to false *
 ---
 --- # Example
----     Make the particle `fairydust` be drawn additively
----
----     ```lua
----     fairydust:additive(true)
----     ```
+---   Make the particle `fairydust` be drawn additively
+---   ```lua
+---   fairydust:additive(true)
+---   ```
 ---
 ---@param additive boolean Whether the particle type should use the additive blend mode
 function ParticleType:additive(additive) end
@@ -196,11 +188,10 @@ function ParticleType:additive(additive) end
 --- When spawned, a particle’s angle will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
----     Make the particle `eggplant` start rotated to a random angle, and turn continuously counterclockwise.
----
----     ```lua
----     eggplant:angle(0, 360, 6, 0, true)
----     ```
+---   Make the particle `eggplant` start rotated to a random angle, and turn continuously counterclockwise.
+---   ```lua
+---   eggplant:angle(0, 360, 6, 0, true)
+---   ```
 ---
 ---@param min number The minimum angle a particle can start at. *in degrees*
 ---@param max number The maximum angle a particle can start at. *in degrees*
@@ -214,11 +205,10 @@ function ParticleType:angle(min, max, add, wiggle, relative) end
 --- When spawned, a particle’s speed will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
----     Make the particle `boomerang` spawn with a speed of 2, which will slowly decrease over its lifespan.
----
----     ```lua
----     boomerang:speed(2, 2, -0.02, 0)
----     ```
+---   Make the particle `boomerang` spawn with a speed of 2, which will slowly decrease over its lifespan.
+---   ```lua
+---   boomerang:speed(2, 2, -0.02, 0)
+---   ```
 ---
 ---@param min number The minimum speed the particle can start at
 ---@param max number The maximum speed the particle can start at
@@ -232,11 +222,10 @@ function ParticleType:speed(min, max, add, wiggle) end
 ---
 --- # Example
 ---     Make Rotating particle `firework` spawn pointing up, with 10 degrees of variance.
----     Rotating slightly as it travels.
----
----     ```lua
----     firework:direction(85, 95, 0, 1)
----     ```
+---   Rotating slightly as it travels.
+---   ```lua
+---   firework:direction(85, 95, 0, 1)
+---   ```
 ---
 ---@param min number The minimum angle the particle can start out heading towards. *in degrees*
 ---@param max number The maximum angle the particle can start out heading towards. *in degrees*
@@ -247,11 +236,10 @@ function ParticleType:direction(min, max, add, wiggle) end
 --- Determines the direction and speed of gravity on a particle.
 ---
 --- # Example
----     Gives the particle `rock` a downwards gravity of 0.5 pixels per frame.
----
----     ```lua
----     rock:gravity(0.5, 270)
----     ```
+---   Gives the particle `rock` a downwards gravity of 0.5 pixels per frame.
+---   ```lua
+---   rock:gravity(0.5, 270)
+---   ```
 ---
 ---@param amount number How much the gravity will affect a particle. *in pixels per step squared*
 ---@param direction number The direction the gravity will pull the particle towards
@@ -262,11 +250,10 @@ function ParticleType:gravity(amount, direction) end
 --- When spawned, a particle’s lifespan will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
----     Give each particle `fog` a random lifespan between 5 and 7 seconds.
----
----     ```lua
----     fog:life(60 * 5, 60 * 7)
----     ```
+---   Give each particle `fog` a random lifespan between 5 and 7 seconds.
+---   ```lua
+---   fog:life(60 * 5, 60 * 7)
+---   ```
 ---
 ---@param min number The minimum lifespan of a particle. *in steps*
 ---@param max number The maximum lifespan of a particle. *in steps*
@@ -277,18 +264,15 @@ function ParticleType:life(min, max) end
 --- **Note**: Be very careful when using this as it can greatly increase the number of particles on-screen at a time and cause the game to slow down noticeably.
 ---
 --- # Examples
----     Make the particle `rocket` spawn two of the particle `smoke` each step.
+---   Make the particle `rocket` spawn two of the particle `smoke` each step.
+---   ```lua
+---   rocket:createOnStep(smoke, 2)
+---   ```
 ---
----     ```lua
----     rocket:createOnStep(smoke, 2)
----     ```
----
----
----     Give the particle `firework` a chance to spawn the particle `smoke` an average of once every 3 steps.
----
----     ```lua
----     firework:createOnStep(smoke, -3)
----     ```
+---   Give the particle `firework` a chance to spawn the particle `smoke` an average of once every 3 steps.
+---   ```lua
+---   firework:createOnStep(smoke, -3)
+---   ```
 ---
 ---@param child ParticleType The child particle to spawn. *can not be the same particle type*
 ---@param amount number  The number of particles to spawn. *If a negative it will be used as a chance to spawn another particle*
@@ -299,11 +283,10 @@ function ParticleType:createOnStep(child, amount) end
 --- **Note**: Be very careful when using this as it can greatly increase the number of particles on-screen at a time and cause the game to slow down noticeably.
 ---
 --- # Example
----     Make particle `firework` spawn 7 of the particle `ember` at the end of its life.
----
----     ```lua
----     firework:createOnDeath(ember, 7)
----     ```
+---   Make particle `firework` spawn 7 of the particle `ember` at the end of its life.
+---   ```lua
+---   firework:createOnDeath(ember, 7)
+---   ```
 ---
 ---@param child ParticleType The child particle to spawn. (can not be the same particle type)
 ---@param amount number The amount of particles to spawn. *If a negative it will be used as a chance to spawn another particle*
@@ -312,22 +295,20 @@ function ParticleType:createOnDeath(child, amount) end
 --- Clears all defined properties of the particle type, reverting it back to when it was created.
 ---
 --- # Example
----     Reset the particle `eggplant` back to an empty shell.
----
----     ```lua
----     eggplant:reset()
----     ```
+---   Reset the particle `eggplant` back to an empty shell.
+---   ```lua
+---   eggplant:reset()
+---   ```
 ---
 function ParticleType:reset() end
 
 --- Creates a burst of particles at a location.
 ---
 --- # Example
----     Create 5 of the particle `eggplant` on the layer `above`.
----
----     ```lua
----     eggplant:burst("above", x, y, 5)
----     ```
+---   Create 5 of the particle `eggplant` on the layer `above`.
+---   ```lua
+---   eggplant:burst("above", x, y, 5)
+---   ```
 ---
 ---@param depth 'above'|'below'|'middle' The layer to spawn the particles on
 ---@param x number The horizontal coordinate to spawn the particles at

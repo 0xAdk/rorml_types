@@ -33,13 +33,12 @@ local Instance = {}
 --- Checks whether the instance still exists.
 ---
 --- # Example
----     Do something if `eggplantinst` still exists.
----
----     ```lua
----     if eggplantinst:isValid() then
----         -- Do something
----     end
----     ```
+---   Do something if `eggplantinst` still exists.
+---   ```lua
+---   if eggplantinst:isValid() then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@return boolean '' true if the instance exists, false if it doesn’t
 function Instance:isValid() end
@@ -47,22 +46,20 @@ function Instance:isValid() end
 --- Destroys the instance.
 ---
 --- # Example
----     Destroy a `peach` instance.
----
----     ```lua
----     peach:destroy()
----     ```
+---   Destroy a `peach` instance.
+---   ```lua
+---   peach:destroy()
+---   ```
 ---
 function Instance:destroy() end
 
 --- Destroys the instance, but doesn’t trigger the `destroy` event.
 --- 
 --- # Example
----     Destroy a `peach` instance, but doesn’t trigger its `destroy` event.
----
----     ```lua
----     peach:delete()
----     ```
+---   Destroy a `peach` instance, but doesn’t trigger its `destroy` event.
+---   ```lua
+---   peach:delete()
+---   ```
 --- 
 --- **WARNING**: Using this too frivolously can create issues, especially with objects that clean up after themselves in the `destroy` event.
 --- 
@@ -71,11 +68,10 @@ function Instance:delete() end
 --- Gets the GMObject that the instance is a type of.
 --- 
 --- # Example
----     Create a new `cherry` instance on top of the `cherry` instance already present.
----
----     ```lua
----     cherry:getObject():create(cherry.x, cherry.y)
----     ```
+---   Create a new `cherry` instance on top of the `cherry` instance already present.
+---   ```lua
+---   cherry:getObject():create(cherry.x, cherry.y)
+---   ```
 ---
 ---@return GMObject
 function Instance:getObject() end
@@ -85,18 +81,15 @@ function Instance:getObject() end
 --- Also supports variable argument count to get multiple values in a single call.
 ---
 --- # Examples
----     Get the `pHspeed` of the instance `player`
+---   Get the `pHspeed` of the instance `player`
+---   ```lua
+---   local speed = player:get("pHspeed")
+---   ```
 ---
----     ```lua
----     local speed = player:get("pHspeed")
----     ```
----
----
----     Get both the `pHspeed` and `pVspeed` of the instance `player`
----
----     ```lua
----     local hspeed, vspeed = player:get("pHspeed", "pVspeed")
----     ```
+---   Get both the `pHspeed` and `pVspeed` of the instance `player`
+---   ```lua
+---   local hspeed, vspeed = player:get("pHspeed", "pVspeed")
+---   ```
 ---
 --- **Note**: Since booleans are stored as numbers internally, a variable which is expected to have a `true` or `false` result will instead usually return a 0 or 1.
 ---
@@ -107,18 +100,15 @@ function Instance:get(...) end
 --- Directly sets a variable in the instance.
 --- 
 --- # Examples
----     Set the `pHspeed` of `player` to 0.
+---   Set the `pHspeed` of `player` to 0.
+---   ```lua
+---   player:set("pHspeed", 0)
+---   ```
 ---
----     ```lua
----     player:set("pHspeed", 0)
----     ```
----
----
----     Use the chainability of the method to set both the `pHspeed` and the `pVspeed` of `player` to 0.
----
----     ```lua
----     player:set("pHspeed", 0):set("pVspeed", 0)
----     ```
+---   Use the chainability of the method to set both the `pHspeed` and the `pVspeed` of `player` to 0.
+---   ```lua
+---   player:set("pHspeed", 0):set("pVspeed", 0)
+---   ```
 ---
 ---@param varName string The name of the instance variable to set
 ---@param value number|string|nil The value to give the variable
@@ -132,12 +122,11 @@ function Instance:set(varName, value) end
 --- An `InstanceAccessor` can be used like a typical table, using any string as a key to get or set instance fields.
 ---
 --- # Example
----     Increase a `timer` variable of `myInstance` by 1 each time it’s ran.
----
----     ```lua
----     local accessor = myInstance:getAccessor()
----     accessor.timer = (accessor.timer or 0) + 1
----     ```
+---   Increase a `timer` variable of `myInstance` by 1 each time it’s ran.
+---   ```lua
+---   local accessor = myInstance:getAccessor()
+---   accessor.timer = (accessor.timer or 0) + 1
+---   ```
 ---
 ---@return InstanceAccessor '' An `InstanceAccessor` object
 function Instance:getAccessor() end
@@ -151,13 +140,12 @@ function Instance:getAccessor() end
 --- **Note**: Alarms are only usable with built-in Game Maker Objects. For modded objects you will have to use other methods.
 ---
 --- # Example
----     Do something if the instance’s 0th alarm is ticking.
----
----     ```lua
----     if inst:getAlarm(0) ~= -1 then
----         -- Do something
----     end
----     ```
+---   Do something if the instance’s 0th alarm is ticking.
+---   ```lua
+---   if inst:getAlarm(0) ~= -1 then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@param index number The index of the alarm. *between 0 and 11*
 ---@return number remaingTime the alarm’s remaining time, a value of -1 means the alarm is not currently ticking
@@ -172,11 +160,10 @@ function Instance:getAlarm(index) end
 --- **Note**: Alarms are only usable with built-in Game Maker Objects. For modded objects you will have to use other methods.
 ---
 --- # Example
----     Set the instance’s 0th alarm to half a second (30 frames).
----
----     ```lua
----     instance:setAlarm(0, 30)
----     ```
+---   Set the instance’s 0th alarm to half a second (30 frames).
+---   ```lua
+---   instance:setAlarm(0, 30)
+---   ```
 ---
 ---@param index number The index of the alarm. *between 0 and 11*
 ---@param value number The time to set the alarm to
@@ -189,22 +176,19 @@ function Instance:setAlarm(index, value) end
 ---
 --- 
 --- # Example
----     Check whether the `eggplant` instance is currently colliding with the other `eggplant` instance.
+---   Check whether the `eggplant` instance is currently colliding with the other `eggplant` instance.
+---   ```lua
+---   if eggplant:collidesWith(othereggplant, eggplant.x, eggplant.y) then
+---       -- Do something
+---   end
+---   ```
 --- 
----     ```lua
----     if eggplant:collidesWith(othereggplant, eggplant.x, eggplant.y) then
----         -- Do something
----     end
----     ```
----
---- 
----     Check whether the `eggplant` instance would collide with a peach if it were to move 10 pixels upwards, and if it wouldn’t, moves 10 pixels upwards.
---- 
----     ```lua
----     if not eggplant:collidesWith(peachObj, eggplant.x, eggplant.y - 10) then
----         eggplant.y = eggplant.y - 10
----     end
----     ```
+---   Check whether the `eggplant` instance would collide with a peach if it were to move 10 pixels upwards, and if it wouldn’t, moves 10 pixels upwards.
+---   ```lua
+---   if not eggplant:collidesWith(peachObj, eggplant.x, eggplant.y - 10) then
+---       eggplant.y = eggplant.y - 10
+---   end
+---   ```
 ---
 ---@param other Instance|GMObject The specific Instance or GMObject to check for collision with
 ---@param x number The horizontal coordinate of the position to check
@@ -215,13 +199,12 @@ function Instance:collidesWith(other, x, y) end
 --- Checks whether the instance would collide with solid ground at a position.
 ---
 --- # Example
----     This makes the `leaf` fall until it hits solid ground.
----
----     ```lua
----     if not leaf:collidesMap(leaf.x, leaf.y + 3) then
----             -- Move down
----     end
----     ```
+---   This makes the `leaf` fall until it hits solid ground.
+---   ```lua
+---   if not leaf:collidesMap(leaf.x, leaf.y + 3) then
+---           -- Move down
+---   end
+---   ```
 ---
 ---@param x number The horizontal coordinate of the position to check
 ---@param y number The vertical coordinate of the position to check

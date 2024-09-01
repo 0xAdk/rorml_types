@@ -31,11 +31,10 @@ function Object.findAll(namespace) end
 --- If a name is not provided then an automatically generated name will be used.
 ---
 --- # Example
----     Create a new GMObject.
----
----     ```lua
----     local fireball = Object.new("fireball")
----     ```
+---   Create a new GMObject.
+---   ```lua
+---   local fireball = Object.new("fireball")
+---   ```
 ---
 ---@param name string The name to give the object within the current namespace
 ---@return GMObject
@@ -60,11 +59,10 @@ function Object.base(kind, name) end
 --- Finds the Instance with a certain ID.
 ---
 --- # Example
----     Find the instance with the ID in `someID`.
----
----     ```lua
----     local inst = Object.findInstanceByID(someID)
----     ```
+---   Find the instance with the ID in `someID`.
+---   ```lua
+---   local inst = Object.findInstanceByID(someID)
+---   ```
 ---
 ---@param id Id The ID of the instance to find
 ---@return Instance? '' An Instance when found, otherwise nil

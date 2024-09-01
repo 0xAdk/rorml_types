@@ -9,13 +9,12 @@ misc = {}
 --- This table is updated at the start of every run.
 ---
 --- # Example
----     Print the name of each player.
---- 
----     ```lua
----     for _, v in ipairs(misc.players) do
----             print(v:get("name"))
----     end
----     ```
+---   Print the name of each player.
+---   ```lua
+---   for _, v in ipairs(misc.players) do
+---           print(v:get("name"))
+---   end
+---   ```
 ---
 ---@type PlayerInstance[]
 misc.players = {}
@@ -26,11 +25,10 @@ misc.players = {}
 --- For a list of the instance’s variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#hud-fields).
 ---
 --- # Example
----     Hide the part of the HUD that displays the player’s gold.
----
----     ```lua
----     misc.hud:set("show_gold", 0)
----     ```
+---   Hide the part of the HUD that displays the player’s gold.
+---   ```lua
+---   misc.hud:set("show_gold", 0)
+---   ```
 ---
 ---@type Instance
 misc.hud = nil
@@ -44,11 +42,10 @@ misc.HUD = misc.hud
 --- For a list of the instance’s variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#director-fields).
 ---
 --- # Example
----     Increase the strength of enemies by 30% of their starting strength.
----
----     ```lua
----     misc.director:set("enemy_buff", director:get("enemy_buff") + 0.3)
----     ```
+---   Increase the strength of enemies by 30% of their starting strength.
+---   ```lua
+---   misc.director:set("enemy_buff", director:get("enemy_buff") + 0.3)
+---   ```
 ---
 ---@type Instance
 misc.director = nil
@@ -72,27 +69,25 @@ misc.director = nil
 --- Gets the value of one of the game’s configuration options.
 ---
 --- # Example
----     Check if the graphics quality is set to high and then does something.
----     Useful for allowing the player to disable expensive visual effects.
----
----     ```lua
----     if misc.getOption("video.quality") == 3 then
----         -- Do something
----     end
----     ```
+---   Check if the graphics quality is set to high and then does something.
+---   Useful for allowing the player to disable expensive visual effects.
+---   ```lua
+---   if misc.getOption("video.quality") == 3 then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@param name ConfigOption The option to get
 ---@return boolean|number
 function misc.getOption(name) end
 
 --- # Example
----     Check if the player has at least 1000 gold and then do something.
----
----     ```lua
----     if misc.getGold() >= 1000 then
----         -- Do something
----     end
----     ```
+---   Check if the player has at least 1000 gold and then do something.
+---   ```lua
+---   if misc.getGold() >= 1000 then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@return number '' the amount of gold the player has
 function misc.getGold() end
@@ -100,23 +95,21 @@ function misc.getGold() end
 --- Sets the amount of gold the player has.
 ---
 --- # Example
----     Increase the player’s gold by 10.
---- 
----     ```lua
----     misc.setGold(misc.getGold() + 10)
----     ```
+---   Increase the player’s gold by 10.
+---   ```lua
+---   misc.setGold(misc.getGold() + 10)
+---   ```
 ---
 ---@param value number The value to set the player’s gold to
 function misc.setGold(value) end
 
 --- # Example
----     Check to make sure time isn’t stopped before executing code. Useful for custom enemy behavior.
----
----     ```lua
----     if misc.getTimeStop() == 0 then
----             -- Do something
----     end
----     ```
+---   Check to make sure time isn’t stopped before executing code. Useful for custom enemy behavior.
+---   ```lua
+---   if misc.getTimeStop() == 0 then
+---           -- Do something
+---   end
+---   ```
 ---
 ---@return number '' The remaining frames time is stopped for. *0 if time isn’t stopped*
 function misc.getTimeStop() end
@@ -126,11 +119,10 @@ function misc.getTimeStop() end
 --- This mechanic is used in the base game by the items Unstable Watch and Time Keeper’s Secret.
 ---
 --- # Example
----     Stop time for 6 seconds.
----
----     ```lua
----     misc.setTimeStop(6 * 60)
----     ```
+---   Stop time for 6 seconds.
+---   ```lua
+---   misc.setTimeStop(6 * 60)
+---   ```
 ---
 ---@param value number The number of steps to stop time for
 function misc.setTimeStop(value) end
@@ -138,14 +130,13 @@ function misc.setTimeStop(value) end
 --- Get the time on the in-game clock.
 ---
 --- # Example
----     Do something when the time displayed on the clock is 20:20.
---- 
----     ```lua
----     local m, s = misc.getTime()
----     if m == 20 and s == 20 then
----         -- Do something
----     end
----     ```
+---   Do something when the time displayed on the clock is 20:20.
+---   ```lua
+---   local m, s = misc.getTime()
+---   if m == 20 and s == 20 then
+---       -- Do something
+---   end
+---   ```
 ---
 ---@return number minutes, number seconds
 function misc.getTime() end
@@ -163,15 +154,14 @@ function misc.shakeScreen(frames) end
 --- * This function can be called without an actor
 ---
 --- Example
----     Fire a bullet from the position (`x`, `y`) traveling 400 pixels left, dealing 30 damage, and on the team `neutral`.
----
----     ```lua
----     misc.fireBullet(x, y, 180, 400, 30, "neutral", hitSprite)
----     ```
+---   Fire a bullet from the position (`x`, `y`) traveling 400 pixels left, dealing 30 damage, and on the team `neutral`.
+---   ```lua
+---   misc.fireBullet(x, y, 180, 400, 30, "neutral", hitSprite)
+---   ```
 ---
 ---@param x number Horizontal origin of the bullet
 ---@param y number Vertical origin of the bullet
----@param direction number Direction the bullet “travels” in
+---@param direction number Direction the bullet "travels" in
 ---@param distance number Max distance of the bullet
 ---@param damage number Damage of the bullet
 ---@param team string The team to create the bullet on. Usually `player`, `enemy`, or `neutral`
@@ -190,11 +180,10 @@ function misc.fireBullet(x, y, direction, distance, damage, team, hitSprite, pro
 --- * This function can be called without an actor.
 ---
 --- # Example
----     Fire an explosion from the instance `target` on the `player` team which deals 25 damage.
---- 
----     ```lua
----     misc.fireExplosion(target.x, target.y, 3, 1.5, 25, "player", explosionSprite, hitSprite)
----     ```
+---   Fire an explosion from the instance `target` on the `player` team which deals 25 damage.
+---   ```lua
+---   misc.fireExplosion(target.x, target.y, 3, 1.5, 25, "player", explosionSprite, hitSprite)
+---   ```
 ---
 ---@param x number Horizontal origin of the explosion
 ---@param y number Vertical origin of the explosion
@@ -214,11 +203,10 @@ function misc.fireExplosion(x, y, width, height, damage, team, explosionSprite, 
 --- Creates damage text.
 ---
 --- # Example:
----     Create a damage text displaying the number 200 in the color orange.
----
----     ```lua
----     misc.damage(200, target.x, target.y, false, Color.ORANGE)
----     ```
+---   Create a damage text displaying the number 200 in the color orange.
+---   ```lua
+---   misc.damage(200, target.x, target.y, false, Color.ORANGE)
+---   ```
 ---
 ---@param damage number The value to be displayed in the damage text
 ---@param x number The x position for the damage text to be created at

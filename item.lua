@@ -21,11 +21,10 @@ Item = {}
 --- Creates a new item.
 ---
 --- # Example
----     Creates a new item called `"Peach"`.
----
----     ```lua
----     local peach = Item.new("Peach")
----     ```
+---   Creates a new item called `"Peach"`.
+---   ```lua
+---   local peach = Item.new("Peach")
+---   ```
 ---
 ---@param name string The name to give the item within the current namespace
 ---@return Item
@@ -59,11 +58,10 @@ function Item.fromObject(object) end
 --]]
 
 --- # Example
----     Creates an instance of the item `exampleItem` at a specific position.
----
----     ```lua
----     exampleItem:getObject():create(xpos, ypos)
----     ```
+---   Creates an instance of the item `exampleItem` at a specific position.
+---   ```lua
+---   exampleItem:getObject():create(xpos, ypos)
+---   ```
 --- 
 ---@return GMObject '' The [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) used to represent the item in the game world.
 function Item:getObject() end
@@ -88,20 +86,22 @@ function Item:getName() end
 --- The [PlayerInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/playerInstance.html) which triggered the callback is always passed to the function.
 ---
 --- # Example
----     Two different ways of achieving the same effect; an item that moves the player 100 pixels upward when picked up.
+---   Two different ways of achieving the same effect; an item that moves the player 100 pixels upward when picked up.
 ---
----     ```lua
----     local function itemPickup(player)
----         player.y = player.y - 100
----     end
----     customItem:addCallback("pickup", itemPickup)
----     ```
+---   1.
+---   ```lua
+---   local function itemPickup(player)
+---       player.y = player.y - 100
+---   end
 ---
----     ```lua
----     customItem:addCallback("pickup", function(player)
----         player.y = player.y - 100
----     end)
----     ```
+---   customItem:addCallback("pickup", itemPickup)
+---   ```
+---   2.
+---   ```lua
+---   customItem:addCallback("pickup", function(player)
+---       player.y = player.y - 100
+---   end)
+---   ```
 --- 
 ---@param callback ItemCallback The name of the callback to bind a function to
 ---@param bind fun(player: PlayerInstance) The function to be run when the callback is fired
@@ -132,27 +132,24 @@ function Item:addCallback(callback, bind) end
 --- Creates an entry for the item in the Item Log, alternatively modifies the existing one.
 ---
 --- # Examples
----     Create a fully formed item log for the custom item.
----     Priority has been omitted so that it’s set to the default for uncommon items.
+---   Create a fully formed item log for the custom item.
+---   Priority has been omitted so that it’s set to the default for uncommon items.
+---   ```lua
+---   customItem:setLog {
+---       group = "uncommon",
+---       description = "This is what the item does",
+---       destination = "City,\nCountry,\nPlanet",
+---       date = "mm/DD/YYYY",
+---       story = "This is some flavortext for the item."
+---   }
+---   ```
 ---
----     ```lua
----     customItem:setLog {
----         group = "uncommon",
----         description = "This is what the item does",
----         destination = "City,\nCountry,\nPlanet",
----         date = "mm/DD/YYYY",
----         story = "This is some flavortext for the item."
----     }
----     ```
----
----
----     Edit a item log description to match the modded changes
----
----     ```lua
----     Item.find("infusion", "vanilla"):setLog {
----         description = "Killing an enemy increases your &r&health permanently by 0.25.&!&"
----     }
----     ```
+---   Edit a item log description to match the modded changes
+---   ```lua
+---   Item.find("infusion", "vanilla"):setLog {
+---       description = "Killing an enemy increases your &r&health permanently by 0.25.&!&"
+---   }
+---   ```
 ---
 ---@param args LogArgs
 function Item:setLog(args) end
@@ -162,17 +159,18 @@ function Item:setLog(args) end
 --- If the item is already in the common, uncommon, rare, or use pool then it will be removed
 ---
 --- # Examples
----     Both of the below code examples achieve the same effect.
----     However, the example utilizing `setTier` is much more concise.
+---   Both of the below code examples achieve the same effect.
+---   However, the example utilizing `setTier` is much more concise.
 ---
----     ```lua
----     customItem:setTier("common")
----     ```
----
----     ```lua
----     ItemPool.find("common"):add(customItem)
----     customItem.color = "w"
----     ```
+---   1.
+---   ```lua
+---   customItem:setTier("common")
+---   ```
+---   2.
+---   ```lua
+---   ItemPool.find("common"):add(customItem)
+---   customItem.color = "w"
+---   ```
 ---
 ---@param tier 'common'|'uncommon'|'rare'|'use'|string
 function Item:setTier(tier) end
@@ -180,11 +178,10 @@ function Item:setTier(tier) end
 --- Creates a new instance of the item. Can be used as a shortcut to `item:getObject():create(x, y)`.
 ---
 --- # Example
----     Create an instance of the item `exampleItem` at a specific position.
----
----     ```lua
----     exampleItem:getObject():create(xpos, ypos)
----     ```
+---   Create an instance of the item `exampleItem` at a specific position.
+---   ```lua
+---   exampleItem:getObject():create(xpos, ypos)
+---   ```
 --- 
 ---@param x number The horizontal coordinate to create an instance of the item at
 ---@param y number The vertical coordinate to create an instance of the item at

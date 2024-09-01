@@ -42,19 +42,16 @@ function Sound.findAll(namespace) end
 --- If a name is not provided then the filename will be used.
 ---
 --- # Examples
----     Load the file `glass.ogg` from the mod’s `sounds` folder and assign it to the variable `smash`.
+---   Load the file `glass.ogg` from the mod’s `sounds` folder and assign it to the variable `smash`.
+---   ```lua
+---   local smash = Sound.load("Smash", "sounds/glass.ogg")
+---   ```
 ---
----     ```lua
----     local smash = Sound.load("Smash", "sounds/glass.ogg")
----     ```
----
----
----     Load the file `bang.ogg` from the mod’s `sounds` folder.
----     As no name is provided, the sound will automatically be assigned the name `bang`.
----
----     ```lua
----     local bang = Sound.load("sounds/bang.ogg")
----     ```
+---   Load the file `bang.ogg` from the mod’s `sounds` folder.
+---   As no name is provided, the sound will automatically be assigned the name `bang`.
+---   ```lua
+---   local bang = Sound.load("sounds/bang.ogg")
+---   ```
 ---
 ---@param name string The name to give the sound within the current namespace
 ---@param fname string The path to the file, relative to the mod’s base path. *file extension is optional*
@@ -87,18 +84,15 @@ function Sound.fromID(id) end
 --- Plays the sound.
 ---
 --- # Examples
----     This would play the `smash` sound at the default pitch and volume.
+---   This would play the `smash` sound at the default pitch and volume.
+---   ```lua
+---   smash:play()
+---   ```
 ---
----     ```lua
----     smash:play()
----     ```
----
----
----     This would play the `smash` sound at 80% pitch and 150% volume.
----
----     ```lua
----     smash:play(0.8, 1.5)
----     ```
+---   This would play the `smash` sound at 80% pitch and 150% volume.
+---   ```lua
+---   smash:play(0.8, 1.5)
+---   ```
 ---
 ---@param pitch number? The pitch to play the sound at. A higher pitch means a higher and faster sound, a lower pitch means a lower and slower sound. *defaults to 1*
 ---@param volume number? The volume to play the sound at. *defaults to 1*
@@ -107,24 +101,22 @@ function Sound:play(pitch, volume) end
 --- Stops all playing instances of the sound.
 ---
 --- # Example
----     Stop any currently playing instanecs of the `smash` sound.
----
----     ```lua
----     smash:stop()
----     ```
+---   Stop any currently playing instanecs of the `smash` sound.
+---   ```lua
+---   smash:stop()
+---   ```
 ---
 function Sound:stop() end
 
 --- Returns whether any instance of the sound is currently playing.
 ---
 --- # Example
----     Check if the sound `smash` is currently playing, and if it is, execute some code.
----
----     ```lua
----     if smash:isPlaying() then
----          -- Some Code
----     end
----     ```
+---   Check if the sound `smash` is currently playing, and if it is, execute some code.
+---   ```lua
+---   if smash:isPlaying() then
+---        -- Some Code
+---   end
+---   ```
 ---
 ---@return boolean '' true if any instances of the sound are playing, otherwise false
 function Sound:isPlaying() end
@@ -132,11 +124,10 @@ function Sound:isPlaying() end
 --- Loops the sound, playing it repeatedly until the [`Sound:stop()`](https://saturnyoshi.gitlab.io/RoRML-Docs/class/sound.html#sound-stop) method is called.
 ---
 --- # Example
----     Play the `smash` sound on loop until `smash:stop()` is called.
----
----     ```lua
----     smash:loop()
----     ```
+---   Play the `smash` sound on loop until `smash:stop()` is called.
+---   ```lua
+---   smash:loop()
+---   ```
 ---
 function Sound:loop() end
 

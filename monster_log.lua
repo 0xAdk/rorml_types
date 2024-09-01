@@ -25,13 +25,12 @@ MonsterLog.map = nil
 --- Creates and returns a new monster log.
 ---
 --- # Example
----     Create a new enemy and its log, assigning the log to the enemy.
----
----     ```lua
----     local enemy_obj = Object.base("EnemyClassic", "myEnemy")
----     local enemy_log = MonsterLog.new("My Enemy")
----     MonsterLog.map[enemy_obj] = enemy_log
----     ```
+---   Create a new enemy and its log, assigning the log to the enemy.
+---   ```lua
+---   local enemy_obj = Object.base("EnemyClassic", "myEnemy")
+---   local enemy_log = MonsterLog.new("My Enemy")
+---   MonsterLog.map[enemy_obj] = enemy_log
+---   ```
 ---
 ---@param name string The name to give the monster log within the current namespace
 ---@return MonsterLog

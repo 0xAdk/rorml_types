@@ -31,11 +31,10 @@ function Stage.new(name) end
 --- If trying to access level indexes after the default 6, [Stage.getProgression](https://saturnyoshi.gitlab.io/RoRML-Docs/class/stage.html#stage-getprogression) must be used.
 ---
 --- # Example
----     Store the first stage available for selection at level index 2 in the local variable `stage`.
----
----     ```lua
----     local stage = Stage.progression[2][1]
----     ```
+---   Store the first stage available for selection at level index 2 in the local variable `stage`.
+---   ```lua
+---   local stage = Stage.progression[2][1]
+---   ```
 ---
 ---@type List<Stage>[]
 Stage.progression = {}
@@ -59,21 +58,19 @@ function Stage.findAll(namespace) end
 
 
 --- # Example
----     Print the name of the current stage.
----
----     ```lua
----     print(Stage.getCurrentStage().displayName)
----     ```
+---   Print the name of the current stage.
+---   ```lua
+---   print(Stage.getCurrentStage().displayName)
+---   ```
 ---
 --- @return Stage '' The currently loaded stage
 function Stage.getCurrentStage() end
 
 --- # Example
----     Store the size of the current stage in the `width` and `height` variables.
----
----     ```lua
----     local width, height = Stage.getDimensions()
----     ```
+---   Store the size of the current stage in the `width` and `height` variables.
+---   ```lua
+---   local width, height = Stage.getDimensions()
+---   ```
 ---
 ---@return number room_width '' The width of the current stage. *in pixels*
 ---@return number room_height '' The height of the current stage. *in pixels*
@@ -102,18 +99,15 @@ function Stage.collidesRectangle(x1, y1, x2, y2) end
 --- Normally the limit is 6.
 ---
 --- # Example
----     Change the number of stages in a run to 3.
+---   Change the number of stages in a run to 3.
+---   ```lua
+---   Stage.progressionLimit(3)
+---   ```
 ---
----     ```lua
----     Stage.progressionLimit(3)
----     ```
----
----
----     Print the current progression limit
----
----     ```lua
----     print(Stage.progressionLimit())
----     ```
+---   Print the current progression limit
+---   ```lua
+---   print(Stage.progressionLimit())
+---   ```
 ---
 ---@param value? number The new value if setting, nil if getting
 ---@return number '' The current stage limit if `value` is nil, otherwise returns `value`.
@@ -124,13 +118,12 @@ function Stage.progressionLimit(value) end
 --- Unless you need to access level indexes after the default 6, using the built-in [Stage.progression](https://saturnyoshi.gitlab.io/RoRML-Docs/class/stage.html#stage-progression) table is usually preferable.
 ---
 --- # Example
----     Change the maximum stage to 7 (1 higher than the base game).
----     Then get the stages at the newly added stage index.
----
----     ```lua
----     Stage.progressionLimit(7)
----     local list = Stage.getProgression(7)
----     ```
+---   Change the maximum stage to 7 (1 higher than the base game).
+---   Then get the stages at the newly added stage index.
+---   ```lua
+---   Stage.progressionLimit(7)
+---   local list = Stage.getProgression(7)
+---   ```
 ---
 ---@param index number The level index to get the stages for
 ---@return List<Stage> '' A list containing the stages that can be selected for level index
@@ -139,12 +132,11 @@ function Stage.getProgression(index) end
 --- Changes the current stage to [Stage Class](https://saturnyoshi.gitlab.io/RoRML-Docs/class/stage.html#).
 ---
 --- # Example
----     Immediately teleport every player to the stage “Boar Beach”.
----
----     ```lua
----     local boarBeach = Stage.find("Boar Beach")
----     Stage.transport(boarBeach)
----     ```
+---   Immediately teleport every player to the stage "Boar Beach".
+---   ```lua
+---   local boarBeach = Stage.find("Boar Beach")
+---   Stage.transport(boarBeach)
+---   ```
 ---
 ---@param stage Stage The stage to teleport to
 function Stage.transport(stage) end

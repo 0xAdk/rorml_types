@@ -17,11 +17,10 @@ local GMObject = {}
 --- Creates an [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the object at the specified position in the game world.
 ---
 --- # Example
----     Create an instance of the object `eggplant` at coordinates 200, 200.
----
----     ```lua
----     eggplant:create(200, 200)
----     ```
+---   Create an instance of the object `eggplant` at coordinates 200, 200.
+---   ```lua
+---   eggplant:create(200, 200)
+---   ```
 ---
 ---@param x number The horizontal coordinate to create the instance at
 ---@param y number The vertical coordinate to create the instance at
@@ -51,13 +50,12 @@ function GMObject:getName() end
 --- **Note**: that some events are not currently supported by built-in objects.
 ---
 --- # Example
----     Make instances of the object `leftMover` move to the left by 2 pixels each frame.
----
----     ```lua
----     leftMover:addCallback("step", function(self)
----             self.x = self.x - 2
----     end)
----     ```
+---   Make instances of the object `leftMover` move to the left by 2 pixels each frame.
+---   ```lua
+---   leftMover:addCallback("step", function(self)
+---           self.x = self.x - 2
+---   end)
+---   ```
 ---
 ---@param callback GMObjectCallback The name of the callback to bind a function onto
 ---@param bind fun(self: Instance) The function to be run when the callback is fired. The function is always passed the Instance which fired the callback
