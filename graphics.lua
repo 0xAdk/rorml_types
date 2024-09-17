@@ -186,10 +186,10 @@ function graphics.setBlendModeAdvanced(source, dest) end
 ---@field x? number **required**: The X position to draw at
 ---@field y? number **required**: The Y position to draw at
 ---@field subimage? number Only applies to sprites. The frame of the sprite to draw, starting from 1
----@field [1] Sprite alias for `image`
----@field [2] number alias for `x`
----@field [3] number alias for `y`
----@field [4] number alias for `subimage`
+---@field [1]? Sprite alias for `image`
+---@field [2]? number alias for `x`
+---@field [3]? number alias for `y`
+---@field [4]? number alias for `subimage`
 ---@field solidColor? Color TODO
 ---@field solidColour? Color alias for `solidColor`
 ---@field color? Color The color to tint the image with
