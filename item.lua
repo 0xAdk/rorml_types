@@ -62,7 +62,7 @@ function Item.fromObject(object) end
 ---   ```lua
 ---   exampleItem:getObject():create(xpos, ypos)
 ---   ```
---- 
+---
 ---@return GMObject '' The [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) used to represent the item in the game world.
 function Item:getObject() end
 
