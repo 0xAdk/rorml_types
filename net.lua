@@ -68,3 +68,19 @@ function net.Packet:sendAsClient(...) end
 ---@param player? PlayerInstance The player to send to or exclude when using the `DIRECT` or `EXCLUDE` settings respectively. *can be nil when using the `ALL` setting
 ---@param ... NetType Any number of valid net type arguments
 function net.Packet:sendAsHost(target, player, ...) end
+
+--- The `NetInstance` class is used to transfer instances which are already synced by the vanilla game.
+---
+---@class NetInstance
+---@field object GMObject
+---@field id Id The internal ID of the instance
+---@field ID Id alias for `id`
+local NetInstance = {}
+
+--- Used to find the actual instance.
+---
+--- It is possible that the instance no longer exists and this will fail,
+--- in which case `nil` will be returned instead.
+---
+---@return Instance
+function NetInstance:resolve() end
