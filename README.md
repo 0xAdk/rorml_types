@@ -13,7 +13,6 @@ These are
  - `PlayerInstanceModData`
  - `ActorInstanceModData`
  - `DamagerInstanceModData`
- - `GMObjectModData`
  - `ItemInstanceModData`
 
 For example
