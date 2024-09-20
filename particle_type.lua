@@ -1,6 +1,6 @@
 ---@meta _
 
---- The `ParticleType` class is used to define the behavior of particles. This class is primarily an interface for [GML’s own particle types](https://docs.yoyogames.com/source/dadiospice/002_reference/particles/particle%20types/index.html).
+--- The `ParticleType` class is used to define the behavior of particles. This class is primarily an interface for [GML's own particle types](https://docs.yoyogames.com/source/dadiospice/002_reference/particles/particle%20types/index.html).
 ---
 --- A ParticleType object has no accessible fields, instead all of its properties must be altered through methods.
 ---
@@ -73,7 +73,7 @@ function ParticleType:getName() end
 ---
 ---@param sprite Sprite The sprite that the particle will have
 ---@param animate boolean Whether the sprite should animate or not
----@param stretch boolean Whether to stretch the sprite’s animation to match the particle’s lifespan
+---@param stretch boolean Whether to stretch the sprite's animation to match the particle's lifespan
 ---@param random boolean Whether to choose a random sub-image
 function ParticleType:sprite(sprite, animate, stretch, random) end
 
@@ -120,8 +120,8 @@ function ParticleType:shape(shape) end
 ---   ```
 ---
 ---@param c1 Color The color that the particle will have
----@param c2? Color If set, the particle’s color will fade to this color over its lifespan
----@param c3? Color If set, the particle’s color will fade first to `c2` during the first half of its lifespan and then fade from `c2` to this color during the second half.
+---@param c2? Color If set, the particle's color will fade to this color over its lifespan
+---@param c3? Color If set, the particle's color will fade first to `c2` during the first half of its lifespan and then fade from `c2` to this color during the second half.
 function ParticleType:color(c1, c2, c3) end
 
 --- Sets the transparency of the particle type.
@@ -135,8 +135,8 @@ function ParticleType:color(c1, c2, c3) end
 ---   ```
 ---
 ---@param a1 number The alpha value that the particle will have, 0 is fully transparent and 1 is fully opaque
----@param a2? number If set, the particle’s transparency will fade to this transparency over its lifespan
----@param a3? number If set, the particle’s transparency will fade first to `a2` during the first half of its lifespan and then fade from `a2` to this transparency during the second half
+---@param a2? number If set, the particle's transparency will fade to this transparency over its lifespan
+---@param a3? number If set, the particle's transparency will fade first to `a2` during the first half of its lifespan and then fade from `a2` to this transparency during the second half
 function ParticleType:alpha(a1, a2, a3) end
 
 --- Scales the sprite or shape of the particle type before any other size changes are applied.
@@ -154,7 +154,7 @@ function ParticleType:scale(xscale, yscale) end
 --- Determines the size range of the particle type.
 ---
 --- Size is multiplicative, meaning a size of 0.5 is half and a size of 2 is twice as big.
---- When spawned, a particle’s size will be selected randomly between the minimum and the maximum.
+--- When spawned, a particle's size will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
 ---     Make the particle `eggplant` start at a random scale between 0.8 and 1.2 times the base size.
@@ -166,7 +166,7 @@ function ParticleType:scale(xscale, yscale) end
 ---@param min number The minimum size a particle can start at
 ---@param max number The maximum size a particle can start at
 ---@param add number How much a particle should grow or shrink per step, negative values indicate shrinking
----@param wiggle number Randomly added or subtracted from a particle’s size each step
+---@param wiggle number Randomly added or subtracted from a particle's size each step
 function ParticleType:size(min, max, add, wiggle) end
 
 --- Sets whether particles of the type should use additive blend mode or not.
@@ -182,10 +182,10 @@ function ParticleType:size(min, max, add, wiggle) end
 ---@param additive boolean Whether the particle type should use the additive blend mode
 function ParticleType:additive(additive) end
 
---- Determines the rotation of a particle’s sprite or shape.
+--- Determines the rotation of a particle's sprite or shape.
 ---
 --- An angle of 0 is straight right, an angle of 90 is straight up, and so on.
---- When spawned, a particle’s angle will be selected randomly between the minimum and the maximum.
+--- When spawned, a particle's angle will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
 ---   Make the particle `eggplant` start rotated to a random angle, and turn continuously counterclockwise.
@@ -196,13 +196,13 @@ function ParticleType:additive(additive) end
 ---@param min number The minimum angle a particle can start at. *in degrees*
 ---@param max number The maximum angle a particle can start at. *in degrees*
 ---@param add number How much a particle should rotate each step. *in degrees*
----@param wiggle number Randomly added or subtracted from a particle’s angle each step
----@param relative boolean Whether the particle should rotate in the direction it’s moving
+---@param wiggle number Randomly added or subtracted from a particle's angle each step
+---@param relative boolean Whether the particle should rotate in the direction it's moving
 function ParticleType:angle(min, max, add, wiggle, relative) end
 
 --- Determines the speed at which a particle will move.
 ---
---- When spawned, a particle’s speed will be selected randomly between the minimum and the maximum.
+--- When spawned, a particle's speed will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
 ---   Make the particle `boomerang` spawn with a speed of 2, which will slowly decrease over its lifespan.
@@ -213,12 +213,12 @@ function ParticleType:angle(min, max, add, wiggle, relative) end
 ---@param min number The minimum speed the particle can start at
 ---@param max number The maximum speed the particle can start at
 ---@param add number How much the particle should accelerate or decelerate each step. Can be both negative and positive
----@param wiggle number Randomly added or subtracted from the particle’s speed each step
+---@param wiggle number Randomly added or subtracted from the particle's speed each step
 function ParticleType:speed(min, max, add, wiggle) end
 
 --- Determines the direction a particle will move.
 --- An angle of 0 is straight right, an angle of 90 is straight up, and so on.
---- When spawned, a particle’s direction will be selected randomly between the minimum and the maximum.
+--- When spawned, a particle's direction will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
 ---     Make Rotating particle `firework` spawn pointing up, with 10 degrees of variance.
@@ -230,7 +230,7 @@ function ParticleType:speed(min, max, add, wiggle) end
 ---@param min number The minimum angle the particle can start out heading towards. *in degrees*
 ---@param max number The maximum angle the particle can start out heading towards. *in degrees*
 ---@param add number How much the particle should turn each step. *in degrees*
----@param wiggle number Randomly added or subtracted from the particle’s direction each step
+---@param wiggle number Randomly added or subtracted from the particle's direction each step
 function ParticleType:direction(min, max, add, wiggle) end
 
 --- Determines the direction and speed of gravity on a particle.
@@ -247,7 +247,7 @@ function ParticleType:gravity(amount, direction) end
 
 --- Determines the lifespan of the particle.
 ---
---- When spawned, a particle’s lifespan will be selected randomly between the minimum and the maximum.
+--- When spawned, a particle's lifespan will be selected randomly between the minimum and the maximum.
 ---
 --- # Example
 ---   Give each particle `fog` a random lifespan between 5 and 7 seconds.

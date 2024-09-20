@@ -61,12 +61,12 @@ function Room:getName() end
 function Room:getOrigin() end
 
 
---- Creates an instance of the given object at the given coordinates, and returns the created instance’s ID.
+--- Creates an instance of the given object at the given coordinates, and returns the created instance's ID.
 ---
---- Note that the instance isn’t actually created until the room is loaded.
+--- Note that the instance isn't actually created until the room is loaded.
 ---
 --- # Example
----   Create a `Golem` instance in the `coolRoom` room, and stores the instance’s ID.
+---   Create a `Golem` instance in the `coolRoom` room, and stores the instance's ID.
 ---   ```lua
 ---   local golem = Object.find("Golem")
 ---   local golemInstID = coolRoom:createInstance(golem, 10, 10)
@@ -86,6 +86,6 @@ function Room:createInstance(object, x, y) end
 ---   coolRoom:resize(420, 69)
 ---   ```
 ---
----@param width number The room’s new width.
----@param height number The room’s new height.
+---@param width number The room's new width.
+---@param height number The room's new height.
 function Room:resize(width, height) end

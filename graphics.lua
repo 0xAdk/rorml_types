@@ -1,6 +1,6 @@
 ---@meta _
 
---- The `graphics` module is used to draw things to the screen, whether it’s an image, shape, or text.
+--- The `graphics` module is used to draw things to the screen, whether it's an image, shape, or text.
 ---
 --- **Note**:
 ---     Drawing functions can only be used either during a drawing callback, or to a surface.
@@ -211,7 +211,7 @@ function graphics.setBlendModeAdvanced(source, dest) end
 ---   All 3 of these examples do the same thing, but decrease in complexity each time.
 ---   The second example utilizes the numerical aliases of the first few parameters.
 ---
----   Generally, simple image drawing is more of a use case for the image’s draw method.
+---   Generally, simple image drawing is more of a use case for the image's draw method.
 ---
 ---   1.
 ---   ```lua
@@ -309,9 +309,9 @@ function graphics.pixel(x, y) end
 ---| `graphics.FONT_DEFAULT` The most common font used for drawing
 ---| `graphics.FONT_LARGE` Used for things such as the level name when entering a stage and the number of minutes on the in-game timer
 ---| `graphics.FONT_SMALL` Used by RoRML in the command console
----| `graphics.FONT_DAMAGE` Used by damage indicators and the player’s health bar, only contains numbers and a few miscellaneous characters
+---| `graphics.FONT_DAMAGE` Used by damage indicators and the player's health bar, only contains numbers and a few miscellaneous characters
 ---| `graphics.FONT_CRITICAL` Same as `graphics.FONT_DAMAGE` but has a red outline rather than a black one
----| `graphics.FONT_MONEY` Used by the player’s current gold display at the top left of the HUD
+---| `graphics.FONT_MONEY` Used by the player's current gold display at the top left of the HUD
 
 ---@alias Font
 ---| BuiltinFont
@@ -327,13 +327,13 @@ graphics.FONT_LARGE = nil    -- Used for things such as the level name when ente
 graphics.FONT_SMALL = nil    -- Used by RoRML in the command console
 
 ---@type Font
-graphics.FONT_DAMAGE = nil   -- Used by damage indicators and the player’s health bar, only contains numbers and a few miscellaneous characters
+graphics.FONT_DAMAGE = nil   -- Used by damage indicators and the player's health bar, only contains numbers and a few miscellaneous characters
 
 ---@type Font
 graphics.FONT_CRITICAL = nil -- Same as `graphics.FONT_DAMAGE` but has a red outline rather than a black one
 
 ---@type Font
-graphics.FONT_MONEY = nil    -- Used by the player’s current gold display at the top left of the HUD
+graphics.FONT_MONEY = nil    -- Used by the player's current gold display at the top left of the HUD
 
 
 graphics.ALIGN_LEFT = 0
@@ -384,7 +384,7 @@ graphics.ALIGN_BOTTOM = 2
 ---@param valign? VAlign Decides where the text is drawn relative to the Y coordinate. *defaults to `graphics.ALIGN_TOP`*
 function graphics.print(text, x, y, font, halign, valign) end
 
---- Draws a string. Additionally supports Risk of Rain’s Supports [colored text formatting](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/coloredTextFormatting.html).
+--- Draws a string. Additionally supports Risk of Rain's Supports [colored text formatting](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/coloredTextFormatting.html).
 ---
 --- When using this function, keep in mind that it is slower than using `graphics.print` and that the alignment of the text cannot be changed from top left.
 ---
@@ -410,7 +410,7 @@ graphics.printColour = graphics.printColor
 ---
 --- **Note**: that this will not work well with pixel fonts due to anti-aliasing.
 ---
----@param fname string The name of a `ttf` file relative to the mod’s directory. The file extension is optional
+---@param fname string The name of a `ttf` file relative to the mod's directory. The file extension is optional
 ---@param size number The font size in pixels
 ---@param bold? boolean If true the font will be bold
 ---@param italic? boolean If true the font will be italic
@@ -422,7 +422,7 @@ function graphics.fontFromFile(fname, size, bold, italic) end
 ---@param sprite Sprite The sprite with each character of the font as a subimage
 ---@param characters string A string containing all the characters in the font in order of subimage
 ---@param separation? number The distance in pixels between each character when rendered. *defaults to 1*
----@param monospace? boolean If true then each character of the font will take the font’s width, rather than being based on the width of the subimage
+---@param monospace? boolean If true then each character of the font will take the font's width, rather than being based on the width of the subimage
 ---@return FontId '' The ID of the new font
 function graphics.fontFromSprite(sprite, characters, separation, monospace) end
 

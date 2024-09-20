@@ -11,7 +11,7 @@ save = {}
 ---| boolean
 ---| nil
 
---- Writes a value to the user’s save file.
+--- Writes a value to the user's save file.
 ---
 --- This is limited in scope to the current mod and will not overwrite values saved by other mods.
 ---
@@ -33,7 +33,7 @@ save = {}
 ---@param value SaveType The value that will be written to the save
 function save.write(key, value) end
 
---- Reads a value from the user’s save file.
+--- Reads a value from the user's save file.
 ---
 --- This is limited in scope to the current mod and will not return values saved by other mods.
 ---
@@ -41,25 +41,25 @@ function save.write(key, value) end
 ---@return SaveType value The value in the save file. *if no value exists nil is returned*
 function save.read(key) end
 
---- Writes a value to the user’s save file.
+--- Writes a value to the user's save file.
 ---
---- This is used to write to the save data of other mods. The mod’s internal name is used to identify it.
+--- This is used to write to the save data of other mods. The mod's internal name is used to identify it.
 ---
 ---@param mod Mod The internal name of the mod to write to. *case insensitive*
 ---@param key string the name of the save key to write
 ---@param value savetype the value that will be written to the save
 function save.writemod(mod, key, value) end
 
---- reads a value from the user’s save file.
+--- reads a value from the user's save file.
 ---
---- this is used to read from the save data of other mods. the mod’s internal name is used to identify it.
+--- this is used to read from the save data of other mods. the mod's internal name is used to identify it.
 ---
 ---@param mod mod the internal name of the mod to read from. *case insensitive*
 ---@param key string the name of the save key to read
 ---@return savetype value the value in the save file. *if no value exists nil is returned*
 function save.readmod(mod, key) end
 
---- returns a list of all of the keys in a mod’s save data.
+--- returns a list of all of the keys in a mod's save data.
 ---
 --- # Example
 ---   Print all save keys of the current mod alongside their values.

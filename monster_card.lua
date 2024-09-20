@@ -3,7 +3,7 @@
 ---@alias MonsterCardType
 ---| 'classic' Spawns on the ground with an animation and sound. This is the typical spawn type for classic enemies
 ---| 'player' Spawns the enemy at the exact same coordinates as the player. This is used by a few bosses to find an appropriate spawn location
----| 'origin' Spawns the enemy at the coordinates 0,0. This is used by the Magma Worm because the spawned object is a controller and doesn’t have a hitbox.
+---| 'origin' Spawns the enemy at the coordinates 0,0. This is used by the Magma Worm because the spawned object is a controller and doesn't have a hitbox.
 ---| 'offscreen' Spawns at the edge of the game view, slightly offscreen. This is the typical spawn type for flying enemies
 
 --- A `MonsterCard` defines the rules which allow a type of enemy to spawn in a level.
@@ -26,7 +26,7 @@ MonsterCard = {}
 --- Depending on the object, some properties of the resulting card are automatically set:
 --- * Classic enemies are initialized with all vanilla elite types.
 --- * Bosses automatically have `isBoss` set to true.
---- * If the enemy is classic, spawn type is set to `classic`, otherwise it’s set to `offscreen`.
+--- * If the enemy is classic, spawn type is set to `classic`, otherwise it's set to `offscreen`.
 ---
 --- # Example
 ---   Create a new enemy and its spawn card.

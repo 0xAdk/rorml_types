@@ -22,10 +22,10 @@ misc.players = {}
 --- Contains an [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the HUD [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) not otherwise accessible.
 --- This field is replaced at the start of every run.
 ---
---- For a list of the instance’s variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#hud-fields).
+--- For a list of the instance's variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#hud-fields).
 ---
 --- # Example
----   Hide the part of the HUD that displays the player’s gold.
+---   Hide the part of the HUD that displays the player's gold.
 ---   ```lua
 ---   misc.hud:set("show_gold", 0)
 ---   ```
@@ -39,7 +39,7 @@ misc.HUD = misc.hud
 --- Contains an [Instance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html) of the director [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) not otherwise accessible.
 --- This field is replaced at the start of every run.
 ---
---- For a list of the instance’s variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#director-fields).
+--- For a list of the instance's variables, see the page on [common variables](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/variables.html#director-fields).
 ---
 --- # Example
 ---   Increase the strength of enemies by 30% of their starting strength.
@@ -66,7 +66,7 @@ misc.director = nil
 ---| 'general.volume' [number] The sound effects volume. *ranges from 0 to 1*
 ---| 'general.music volume' [number] The music volume. *ranges from 0 to 1*
 
---- Gets the value of one of the game’s configuration options.
+--- Gets the value of one of the game's configuration options.
 ---
 --- # Example
 ---   Check if the graphics quality is set to high and then does something.
@@ -95,28 +95,28 @@ function misc.getGold() end
 --- Sets the amount of gold the player has.
 ---
 --- # Example
----   Increase the player’s gold by 10.
+---   Increase the player's gold by 10.
 ---   ```lua
 ---   misc.setGold(misc.getGold() + 10)
 ---   ```
 ---
----@param value number The value to set the player’s gold to
+---@param value number The value to set the player's gold to
 function misc.setGold(value) end
 
 --- # Example
----   Check to make sure time isn’t stopped before executing code. Useful for custom enemy behavior.
+---   Check to make sure time isn't stopped before executing code. Useful for custom enemy behavior.
 ---   ```lua
 ---   if misc.getTimeStop() == 0 then
 ---           -- Do something
 ---   end
 ---   ```
 ---
----@return number '' The remaining frames time is stopped for. *0 if time isn’t stopped*
+---@return number '' The remaining frames time is stopped for. *0 if time isn't stopped*
 function misc.getTimeStop() end
 
 --- When time is stopped, enemies are frozen and a ticking sound is played.
 ---
---- This mechanic is used in the base game by the items Unstable Watch and Time Keeper’s Secret.
+--- This mechanic is used in the base game by the items Unstable Watch and Time Keeper's Secret.
 ---
 --- # Example
 ---   Stop time for 6 seconds.
@@ -165,7 +165,7 @@ function misc.shakeScreen(frames) end
 ---@param distance number Max distance of the bullet
 ---@param damage number Damage of the bullet
 ---@param team string The team to create the bullet on. Usually `player`, `enemy`, or `neutral`
----@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if nil sparks won’t be created*
+---@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if nil sparks won't be created*
 ---@ TEST: saturn's docs says this is the only property that is supported...
 ---@       but there is a good chance that is wrong.
 ---@param properties? `DAMAGER_BULLET_PIERCE` A combination of damager property constants, as seen below, added together
@@ -191,8 +191,8 @@ function misc.fireBullet(x, y, direction, distance, damage, team, hitSprite, pro
 ---@param height number The height of the explosion, as a multiple of 4
 ---@param damage number The damage of the explosion.
 ---@param team string The team to create the explosion on. Usually `player`, `enemy`, or `neutral`
----@param explosionSprite? Sprite The animation used by the explosion itself, *if nil then the explosion won’t be visible*
----@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if nil sparks won’t be created*
+---@param explosionSprite? Sprite The animation used by the explosion itself, *if nil then the explosion won't be visible*
+---@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if nil sparks won't be created*
 ---@ TEST: saturn's docs include that this function has a properties field,
 ---@       but dont give valid values. I am going to assume it's the same
 ---@       as ActorInstance:fireExplosion()

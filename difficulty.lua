@@ -3,7 +3,7 @@
 --- A `Difficulty` is a setting you can pick before starting a new game.
 ---
 ---@class Difficulty
----@field displayName string The difficulty’s display name
+---@field displayName string The difficulty's display name
 ---@field icon Sprite The icon sprite used by the difficulty
 ---@field scale number The scaling used by the difficulty, to get harder over time. *this is applied every minute*
 ---@field scaleOnline number Same as scale. *only for online use*
@@ -45,11 +45,11 @@ function Difficulty.find(name, namespace) end
 function Difficulty.findAll(namespace) end
 
 ---@alias DifficultyScaleKind
----| 'hp' Used to scale actors’ base HP over time
----| 'damage' Used to scale actors’ base damage over time
----| 'cost' Used to increase chests and other interactables’ cost over time
+---| 'hp' Used to scale actors' base HP over time
+---| 'damage' Used to scale actors' base damage over time
+---| 'cost' Used to increase chests and other interactables' cost over time
 
---- Returns one of the game’s different stat multipliers described below.
+--- Returns one of the game's different stat multipliers described below.
 --- These are used to increase difficulty as time goes on.
 ---
 ---@param kind? DifficultyScaleKind The stat to get the multiplier for
@@ -61,10 +61,10 @@ function Difficulty.getScaling(kind) end
 ---@return Difficulty '' The current difficulty
 function Difficulty.getActive() end
 
---- Sets the game’s current difficulty to the given one
+--- Sets the game's current difficulty to the given one
 ---
 --- # Example
----   Set the game’s difficulty to `droughtDiff`.
+---   Set the game's difficulty to `droughtDiff`.
 ---   ```lua
 ---   Difficulty.setActive(droughtDiff)
 ---   ```

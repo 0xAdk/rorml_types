@@ -3,12 +3,12 @@
 --- The `Item` class is used to create and modify items which can be found in the game.
 ---
 ---@class Item
----@field pickupText string The text displayed under the name of the item when it’s picked up, usually a short descriptor of the item’s functionality
+---@field pickupText string The text displayed under the name of the item when it's picked up, usually a short descriptor of the item's functionality
 ---@field sprite Sprite The sprite of the item. Use items expect a 2 frame sprite, the first one with the `USE` label on it. Other item sprites will only display the first frame
 ---@field isUseItem boolean Whether the item is a use item or not
 ---@field useCooldown number *Only applies to use items*: This is the cooldown of the item, in seconds. *default is 45*
 ---@field displayName string The name of the item as displayed in-game
----@field color Color|ColorText The color of the item’s tier in colored text formatting or as a Color object
+---@field color Color|ColorText The color of the item's tier in colored text formatting or as a Color object
 ---@field colour Color alias for `color`
 ---
 ---@overload fun(name: string): Item
@@ -133,7 +133,7 @@ function Item:addCallback(callback, bind) end
 ---
 --- # Examples
 ---   Create a fully formed item log for the custom item.
----   Priority has been omitted so that it’s set to the default for uncommon items.
+---   Priority has been omitted so that it's set to the default for uncommon items.
 ---   ```lua
 ---   customItem:setLog {
 ---       group = "uncommon",

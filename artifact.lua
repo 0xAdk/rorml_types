@@ -4,13 +4,13 @@
 ---
 ---@class Artifact
 ---@field displayName string The name of the artifact as displayed in-game.
----@field pickupName string The name displayed when the artifact is picked up. Usually the item’s `displayName` with `"Artifact of "` added to the start. Automatically updated when `displayName` is changed.
----@field pickupSprite Sprite The sprite of the artifact’s pickup object.
+---@field pickupName string The name displayed when the artifact is picked up. Usually the item's `displayName` with `"Artifact of "` added to the start. Automatically updated when `displayName` is changed.
+---@field pickupSprite Sprite The sprite of the artifact's pickup object.
 ---@field active boolean Whether the artifact is enabled. This can be modified at any time, but will be reset to false at the end of the run if the artifact is not unlocked.
 ---@field unlocked boolean Whether the artifact is unlocked and selectable. Saved to the save file. Set to true when a player picks up the artifact.
 ---@field disabled boolean When set to true the artifact will be hidden from all menus and be unable to be toggled by the player.
 ---@field loadoutSprite Sprite The sprite of the artifact in the character select menu. Usually a 2 frame image with the origin at the center. The first frame of the sprite is the icon in solid white. The second frame is used when the artifact is enabled.
----@field loadoutText string The description of the artifact in the character select screen. A short description of the artifact’s effect.
+---@field loadoutText string The description of the artifact in the character select screen. A short description of the artifact's effect.
 ---
 ---@overload fun(name: string): Artifact
 Artifact = {}
@@ -64,7 +64,7 @@ function Artifact.fromObject(object) end
 ---   someArtifact:getObject():create(xpos, ypos)
 ---   ```
 ---
----@return GMObject '' The [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) used as the artifact’s pickup.
+---@return GMObject '' The [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) used as the artifact's pickup.
 function Artifact:getObject() end
 
 --- See the page on [namespace searching](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/contextSearch.html#context-origin) for more information.

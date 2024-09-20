@@ -15,7 +15,7 @@ EliteType = {}
 
 --- Creates a new elite type.
 ---
---- **Note**: This `EliteType` won't show up in-game until it's manually added to an enemy’s elite list.
+--- **Note**: This `EliteType` won't show up in-game until it's manually added to an enemy's elite list.
 ---
 ---@param name string The name to give the elite within the current namespace
 ---@return EliteType
@@ -42,12 +42,12 @@ function EliteType.findAll(namespace) end
 ---
 --- The sprite will automatically be overwritten to include all other elite palettes.
 ---
---- The sprite should be a single frame 1x6 pixel image containing the enemy’s source colors which will be mapped to the elite palette’s colors.
+--- The sprite should be a single frame 1x6 pixel image containing the enemy's source colors which will be mapped to the elite palette's colors.
 ---
 --- [palette example image](https://saturnyoshi.gitlab.io/RoRML-Docs/_images/elitepalettes.png)
 ---
 ---@param palette Sprite The new palette being set up
----@param object GMObject The enemy the palette is being assigned to. The palette must still be manually set as the enemy’s `palette` sprite on spawn
+---@param object GMObject The enemy the palette is being assigned to. The palette must still be manually set as the enemy's `palette` sprite on spawn
 function EliteType.registerPalette(palette, object) end
 
 --- Forces all elite palettes to be refreshed.

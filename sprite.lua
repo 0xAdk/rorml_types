@@ -5,7 +5,7 @@
 --- Sprite inherits all functionality from [BaseSprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/baseSprite.html).
 ---
 ---@class Sprite: BaseSprite
----@field id Id The sprite’s GameMaker resource ID
+---@field id Id The sprite's GameMaker resource ID
 ---@field ID Id alias for `id`
 ---
 ---@overload fun(name: string, fname: string, frames: number, xorigin: number, yorigin: number): Sprite
@@ -15,7 +15,7 @@ Sprite = {}
 ---- static functions
 --]]
 
---- Loads a sprite from the path fname relative to the mod’s directory.
+--- Loads a sprite from the path fname relative to the mod's directory.
 ---
 --- **Note**: Only .png files are supported.
 ---
@@ -27,10 +27,10 @@ Sprite = {}
 ---   ```
 ---
 ---@param name string The name to give the sprite within the current namespace.
----@param fname string This is the path to the file, relative to the mod’s base path. *file extension is optional*
+---@param fname string This is the path to the file, relative to the mod's base path. *file extension is optional*
 ---@param frames number The amount of frames in the sprite. When the sprite is imported into the game, the PNG image will be cut into this many equally sized vertical slices
----@param xorigin number The X position of the sprite’s origin. When a sprite is being drawn to the screen, this is the point that will end up at the specified coordinates
----@param yorigin number The Y position of the sprite’s origin
+---@param xorigin number The X position of the sprite's origin. When a sprite is being drawn to the screen, this is the point that will end up at the specified coordinates
+---@param yorigin number The Y position of the sprite's origin
 ---@return Sprite
 function Sprite.load(name, fname, frames, xorigin, yorigin) end
 

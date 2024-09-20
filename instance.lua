@@ -14,16 +14,16 @@
 ---@class Instance
 ---@field sprite Sprite The sprite the instance is currently displaying
 ---@field mask Sprite|nil The sprite used by the instance for collision checking. Appearance modifying fields (like xscale or angle) also apply to the mask
----@field blendColor Color Value the sprite’s colour is multiplied by when rendering
+---@field blendColor Color Value the sprite's colour is multiplied by when rendering
 ---@field blendColour Color alias for `blendColor`
----@field xscale number Multiplier for the sprite’s horiontal size
----@field yscale number Multiplier for the sprite’s vertical size
+---@field xscale number Multiplier for the sprite's horiontal size
+---@field yscale number Multiplier for the sprite's vertical size
 ---@field angle number Rotation of the sprite in degrees
 ---@field alpha number The transparency of the sprite, from 1 to 0
----@field spriteSpeed number The speed the instance’s sprite will be played at. A value of 1 is 60 FPS, 0.5 is 30, etc
----@field subimage number The current displayed frame of the instance’s sprite. *starts at 1*
+---@field spriteSpeed number The speed the instance's sprite will be played at. A value of 1 is 60 FPS, 0.5 is 30, etc
+---@field subimage number The current displayed frame of the instance's sprite. *starts at 1*
 ---@field depth number Controls what the instance will be rendered in front or behind of. Instances are rendered from highest to lowest depth
----@field visible number When set to false the instance’s rendering will be disabled
+---@field visible number When set to false the instance's rendering will be disabled
 ---@field x number The horizontal position of the instance in the room
 ---@field y number The vertical position of the instance in the room
 ---@field id Id The internal ID of the instance
@@ -40,7 +40,7 @@ local Instance = {}
 ---   end
 ---   ```
 ---
----@return boolean '' true if the instance exists, false if it doesn’t
+---@return boolean '' true if the instance exists, false if it doesn't
 function Instance:isValid() end
 
 --- Destroys the instance.
@@ -53,10 +53,10 @@ function Instance:isValid() end
 ---
 function Instance:destroy() end
 
---- Destroys the instance, but doesn’t trigger the `destroy` event.
+--- Destroys the instance, but doesn't trigger the `destroy` event.
 --- 
 --- # Example
----   Destroy a `peach` instance, but doesn’t trigger its `destroy` event.
+---   Destroy a `peach` instance, but doesn't trigger its `destroy` event.
 ---   ```lua
 ---   peach:delete()
 ---   ```
@@ -115,14 +115,14 @@ function Instance:get(...) end
 ---@return Instance self The calling instance to allow setters to be chained
 function Instance:set(varName, value) end
 
---- Gets the instance’s associated `InstanceAccessor` object.
+--- Gets the instance's associated `InstanceAccessor` object.
 --- 
 --- The `InstanceAccessor` class is a special class; it does not have any methods or inherent fields but instead acts as a direct interface for getting and setting variables within instances.
 --- 
 --- An `InstanceAccessor` can be used like a typical table, using any string as a key to get or set instance fields.
 ---
 --- # Example
----   Increase a `timer` variable of `myInstance` by 1 each time it’s ran.
+---   Increase a `timer` variable of `myInstance` by 1 each time it's ran.
 ---   ```lua
 ---   local accessor = myInstance:getAccessor()
 ---   accessor.timer = (accessor.timer or 0) + 1
@@ -135,12 +135,12 @@ function Instance:getAccessor() end
 ---
 --- Alarms in GameMaker are simple frame based timers.
 --- There are 12 of them for each instance and they are decremented every frame until they reach 0,
---- at which point they’re set to -1.
+--- at which point they're set to -1.
 ---
 --- **Note**: Alarms are only usable with built-in Game Maker Objects. For modded objects you will have to use other methods.
 ---
 --- # Example
----   Do something if the instance’s 0th alarm is ticking.
+---   Do something if the instance's 0th alarm is ticking.
 ---   ```lua
 ---   if inst:getAlarm(0) ~= -1 then
 ---       -- Do something
@@ -148,19 +148,19 @@ function Instance:getAccessor() end
 ---   ```
 ---
 ---@param index number The index of the alarm. *between 0 and 11*
----@return number remaingTime the alarm’s remaining time, a value of -1 means the alarm is not currently ticking
+---@return number remaingTime the alarm's remaining time, a value of -1 means the alarm is not currently ticking
 function Instance:getAlarm(index) end
 
 --- Sets the remaining frames until an alarm is triggered.
 --- 
 --- Alarms in GameMaker are simple frame based timers.
 --- There are 12 of them for each instance and they tick down one value every frame until they reach 0,
---- at which point they’re set to -1.
+--- at which point they're set to -1.
 ---
 --- **Note**: Alarms are only usable with built-in Game Maker Objects. For modded objects you will have to use other methods.
 ---
 --- # Example
----   Set the instance’s 0th alarm to half a second (30 frames).
+---   Set the instance's 0th alarm to half a second (30 frames).
 ---   ```lua
 ---   instance:setAlarm(0, 30)
 ---   ```
@@ -183,7 +183,7 @@ function Instance:setAlarm(index, value) end
 ---   end
 ---   ```
 --- 
----   Check whether the `eggplant` instance would collide with a peach if it were to move 10 pixels upwards, and if it wouldn’t, moves 10 pixels upwards.
+---   Check whether the `eggplant` instance would collide with a peach if it were to move 10 pixels upwards, and if it wouldn't, moves 10 pixels upwards.
 ---   ```lua
 ---   if not eggplant:collidesWith(peachObj, eggplant.x, eggplant.y - 10) then
 ---       eggplant.y = eggplant.y - 10
@@ -219,21 +219,21 @@ function Instance:collidesMap(x, y) end
 ---@return NetInstance '' A NetInstance representing the instance.
 function Instance:getNetIdentity() end
 
---- Writes a list of all the instance’s variables to a file in the logs directory.
+--- Writes a list of all the instance's variables to a file in the logs directory.
 --- Useful both as a debug tool and to find undocumented variables that can be edited.
 ---
---- **WARNING**: Only call this method once when you need to otherwise you’ll quickly end up writing a lot to the log file.
+--- **WARNING**: Only call this method once when you need to otherwise you'll quickly end up writing a lot to the log file.
 ---
 ---@param dumpValues? boolean When set to true the value of the variables will be written alongside the names. *defaults to false*
----@param advanced? boolean When set to true a handful of normally hidden variable names will be dumped too. These include single letter names, variables of unsupported types, and several hand-picked variables that aren’t useful under normal circumstances. **Note**: there are some variables which are still hidden even with this option set to true, as you really should never touch those
+---@param advanced? boolean When set to true a handful of normally hidden variable names will be dumped too. These include single letter names, variables of unsupported types, and several hand-picked variables that aren't useful under normal circumstances. **Note**: there are some variables which are still hidden even with this option set to true, as you really should never touch those
 function Instance:dumpVariables(dumpValues, advanced) end
 
---- Used to get the instance’s mod data table.
+--- Used to get the instance's mod data table.
 ---
 --- This table can be used to store any arbitrary information,
 --- there are absolutely no limitations on what keys or values can be stored here.
 ---
---- When storing custom information, it is preferable to use this over the instance’s
+--- When storing custom information, it is preferable to use this over the instance's
 --- get and set methods for several reasons:
 ---  * There are no limitations for what can be stored here.
 ---    This includes nested tables, non-string keys, or even other Lua objects.
@@ -243,7 +243,7 @@ function Instance:dumpVariables(dumpValues, advanced) end
 ---@return InstanceModData '' The mod-specific unique data table for the instance
 function Instance:getData() end
 
---- Used to get the instance’s data table from another mod.
+--- Used to get the instance's data table from another mod.
 ---
 ---@param mod string The internal name of the mod to get the data from
 ---@return table '' The unique data table for the instance from a specific mod.

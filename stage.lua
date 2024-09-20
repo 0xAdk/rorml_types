@@ -4,12 +4,12 @@
 ---
 ---@class Stage
 ---@field displayName string The name of the stage displayed on the screen when you enter it. **Note**: that the internal name of the stage will still be the same if this is altered
----@field subname string The text displayed under the name of the stage when it’s entered
+---@field subname string The text displayed under the name of the stage when it's entered
 ---@field disabled boolean Removes the stage from stage selection. Be sure not to disable all stages of a certain set otherwise the game will crash
 ---@field music? Sound The music used by this stage
 ---@field enemies List<MonsterCard> The list of enemy cards that can spawn in this stage
 ---@field interactables List<Interactable> The list of interactables that can spawn in this stage
----@field interactableRarity Map<Interactable, number> A map containing each interactable’s spawn rarity. Spawn rarity modifies how far away an object has to be from the stage entrance to spawn. *defaults to 1*
+---@field interactableRarity Map<Interactable, number> A map containing each interactable's spawn rarity. Spawn rarity modifies how far away an object has to be from the stage entrance to spawn. *defaults to 1*
 ---@field rooms List<Room> The list of rooms present in this stage
 ---@field teleporterIndex number The subimage used by the teleporter the player enters through. Can be used to select stage specific enterance teleporters
 ---

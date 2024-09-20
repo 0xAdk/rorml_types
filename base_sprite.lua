@@ -2,7 +2,7 @@
 
 --- The `BaseSprite` class provides shared methods to the [Sprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/sprite.html) and [DynamicSprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/dynamicSprite.html) classes.
 ---
---- The origin of the sprite (`xorigin`, `yorigin`) is used as the sprite’s pivot point.
+--- The origin of the sprite (`xorigin`, `yorigin`) is used as the sprite's pivot point.
 ---
 --- The `sprite`s bounding box is the area of the sprite used for collision detection.
 ---

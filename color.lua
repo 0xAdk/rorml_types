@@ -147,11 +147,11 @@ function Color.equals(color1, color2) end
 
 --- Produces a new Color object taking a GameMaker color as input.
 ---
---- You’ll typically expect to find these values stored in instance variables used to represent colors.
+--- You'll typically expect to find these values stored in instance variables used to represent colors.
 ---
 --- # Example
 ---     Get the blend color of the instance `inst`.
----   This is identical to accessing the instance’s `blendColor` field.
+---   This is identical to accessing the instance's `blendColor` field.
 ---   ```lua
 ---   local blend = Color.fromGML(inst:get("image_blend"))
 ---   ```

@@ -7,7 +7,7 @@
 --- A list of most usable objects added by the base game can be found on [this page](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/objects.html).
 ---
 ---@class GMObject: GMObjectBase
----@field id Id The object’s GameMaker resource ID
+---@field id Id The object's GameMaker resource ID
 ---@field ID Id alias for `id`
 ---@field sprite Sprite The default sprite of the object
 ---@field depth number The depth the object will be rendered at. A higher depth means the object will be rendered further back. *defaults to 0*

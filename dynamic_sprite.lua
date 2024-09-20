@@ -19,7 +19,7 @@ local DynamicSprite = {}
 function DynamicSprite:delete() end
 
 --- Checks whether the sprite still exists.
---- This will only return false after the sprite’s delete method has been called.
+--- This will only return false after the sprite's delete method has been called.
 ---
 ---@return boolean
 function DynamicSprite:isValid() end

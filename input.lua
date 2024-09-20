@@ -12,7 +12,7 @@ input.PRESSED = 3  -- Just released
 ---- general functions
 --]]
 
---- Used to check the press status of one of the player’s inputs.
+--- Used to check the press status of one of the player's inputs.
 ---
 --- Functionally the same as [PlayerInstance:control](https://saturnyoshi.gitlab.io/RoRML-Docs/class/playerInstance.html#player-instance-control).
 ---
@@ -29,7 +29,7 @@ input.PRESSED = 3  -- Just released
 ---@return PressStatus '' The press status of the control
 function input.checkControl(control, player) end
 
---- Gets a string representation of one of the player’s inputs.
+--- Gets a string representation of one of the player's inputs.
 ---
 --- **Note**: Strings of gamepad controls use special characters and will only display
 ---       correctly on the `graphics.FONT_DEFAULT` and `graphics.FONT_LARGE` fonts.
@@ -83,7 +83,7 @@ function input.checkKeyboard(key) end
 ---@return PressStatus '' The press status of the button
 function input.checkGamepad(button, gamepad) end
 
---- Gets the ID of a player’s currently active gamepad.
+--- Gets the ID of a player's currently active gamepad.
 ---
 --- # Example
 ---   Get the gamepad index of `player`.
@@ -131,7 +131,7 @@ function input.checkMouse(button) end
 --- Gets the position of the mouse either on screen or in the game world.
 ---
 --- # Example
----   Draw the sprite `eggplant_sprite` at the mouse’s game world coordinates.
+---   Draw the sprite `eggplant_sprite` at the mouse's game world coordinates.
 ---   ```lua
 ---   local x, y = input.getMousePos()
 ---   eggplant_sprite:draw(x, y)

@@ -45,7 +45,7 @@ function GMObjectBase:count() end
 ---
 --- Example:
 ---   Heal all Lemurians where `boost` is nil by 50 health,
----   and then sets `boost` to 1 so they’re only healed once.
+---   and then sets `boost` to 1 so they're only healed once.
 ---   ```lua
 ---   local lizard = Object.find("lizard", "vanilla")
 ---   for _, v in ipairs(lizard:findMatching("boost", nil) do

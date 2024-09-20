@@ -16,8 +16,8 @@ local ActorInstance = {}
 function ActorInstance:getFacingDirection() end
 
 DAMAGER_NO_RECALC = 1     -- When this flag is set, the damager's displayed damage will not be randomized and the bullet cannot be a critical hit.
-DAMAGER_NO_PROC = 2       -- The damager won’t proc on-hit item effects when this flag is set; Such as Sticky Bomb or Ifrit’s Horn.
-DAMAGER_BULLET_PIERCE = 4 -- Allows the damager to pierce through any number of enemies, like the Commando’s FMJ.
+DAMAGER_NO_PROC = 2       -- The damager won't proc on-hit item effects when this flag is set; Such as Sticky Bomb or Ifrit's Horn.
+DAMAGER_BULLET_PIERCE = 4 -- Allows the damager to pierce through any number of enemies, like the Commando's FMJ.
 
 --- FIXME: Is this worth it?
 ---
@@ -34,7 +34,7 @@ DAMAGER_BULLET_PIERCE = 4 -- Allows the damager to pierce through any number of 
 ---
 --- # Example
 ---   Fire a bullet originating from instance `player` with 100 range, dealing 200% damage.
----   It has no hit sprite, pierces, and doesn’t proc on-hit effects.
+---   It has no hit sprite, pierces, and doesn't proc on-hit effects.
 ---   ```lua
 ---   player:fireBullet(player.x, player.y, player:getFacingDirection(), 100, 2, nil, DAMAGER_BULLET_PIERCE + DAMAGER_NO_PROC)
 ---   ```
@@ -43,8 +43,8 @@ DAMAGER_BULLET_PIERCE = 4 -- Allows the damager to pierce through any number of 
 ---@param y number Vertical origin of the bullet
 ---@param direction number Direction the bullet travels in
 ---@param distance number Max distance the bullet can travel
----@param damage number Damage multiplier of the bullet. The final damage dealt will be the actor’s damage multiplied by this number
----@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if left nil then sparks won’t be created*
+---@param damage number Damage multiplier of the bullet. The final damage dealt will be the actor's damage multiplied by this number
+---@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if left nil then sparks won't be created*
 ---@param properties? FireBulletProperties A combination of damager property constants, as seen below, added together
 ---@return DamagerInstance '' The created [DamagerInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html)
 function ActorInstance:fireBullet(x, y, direction, distance, damage, hitSprite, properties) end
@@ -69,9 +69,9 @@ function ActorInstance:fireBullet(x, y, direction, distance, damage, hitSprite, 
 ---@param y number Vertical origin of the explosion
 ---@param width number The width of the explosion, as a multiple of 19
 ---@param height number The height of the explosion, as a multiple of 4
----@param damage number Damage multiplier of the explosion. The final damage dealt will be the actor’s damage multiplied by this number
----@param explosionSprite? Sprite The animation used by the explosion itself, *if left nil then the explosion won’t be visible*
----@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if left nil then sparks won’t be created*
+---@param damage number Damage multiplier of the explosion. The final damage dealt will be the actor's damage multiplied by this number
+---@param explosionSprite? Sprite The animation used by the explosion itself, *if left nil then the explosion won't be visible*
+---@param hitSprite? Sprite The sprite of the sparks spawned when the damager hits something, *if left nil then sparks won't be created*
 ---@param properties? FireExplosionProperties A combination of damager property constants, as seen below, added together
 ---@return DamagerInstance '' The created [DamagerInstance](https://saturnyoshi.gitlab.io/RoRML-Docs/class/instance.html)
 function ActorInstance:fireExplosion(x, y, width, height, damage, explosionSprite, hitSprite, properties) end
@@ -103,7 +103,7 @@ function ActorInstance:fireExplosion(x, y, width, height, damage, explosionSprit
 ---| 'shoot4_2'  The 2nd sprite used for the 4th skill
 ---| 'shoot4_3'  The 3rd sprite used for the 4th skill
 
---- Gets one of the actor’s animations.
+--- Gets one of the actor's animations.
 ---
 --- # Example
 ---   Get the walk sprite of instance `lemurian`.
@@ -115,7 +115,7 @@ function ActorInstance:fireExplosion(x, y, width, height, damage, explosionSprit
 ---@return Sprite
 function ActorInstance:getAnimation(key) end
 
---- Sets one of the actor’s animations.
+--- Sets one of the actor's animations.
 ---
 --- # Example
 ---   Set the walk sprite of instance `lemurian` to the sprite stored in `customWalk`.
@@ -127,7 +127,7 @@ function ActorInstance:getAnimation(key) end
 ---@param sprite Sprite The sprite to set the key to
 function ActorInstance:setAnimation(key, sprite) end
 
---- Sets multiple of the actor’s animations at the same time.
+--- Sets multiple of the actor's animations at the same time.
 ---
 --- # Example
 ---     Set both the walk and idle animations of the instance `lemurian` to those
@@ -197,14 +197,14 @@ function ActorInstance:getBuffTime(buff) end
 ---@return Buff[] '' A list of Buff objects
 function ActorInstance:getBuffs() end
 
----@return EliteType '' The enemy’s [EliteType](https://saturnyoshi.gitlab.io/RoRML-Docs/class/eliteType.html) if one is applied, otherwise returns nil
+---@return EliteType '' The enemy's [EliteType](https://saturnyoshi.gitlab.io/RoRML-Docs/class/eliteType.html) if one is applied, otherwise returns nil
 function ActorInstance:getElite() end
 
 --- Applies an [EliteType](https://saturnyoshi.gitlab.io/RoRML-Docs/class/eliteType.html) to the instance.
 ---
---- If the enemy is already elite or blighted then this method won’t do anything.
+--- If the enemy is already elite or blighted then this method won't do anything.
 ---
---- For the elite type to be applied, it must be available in the actor’s spawn elites.
+--- For the elite type to be applied, it must be available in the actor's spawn elites.
 ---
 --- # Examples
 ---   Make a `golem` a random elite from its list of available elite types.
@@ -212,7 +212,7 @@ function ActorInstance:getElite() end
 ---   golem:makeElite()
 ---   ```
 ---
----   Make the `golem` an overloading elite, provided it’s allowed to be one normally.
+---   Make the `golem` an overloading elite, provided it's allowed to be one normally.
 ---   ```lua
 ---   local overloading = EliteType.find("Overloading", "Vanilla")
 ---   golem:makeElite(overloading)
@@ -222,15 +222,15 @@ function ActorInstance:getElite() end
 ---@return boolean actorChanged true if the actor was changed, otherwise false
 function ActorInstance:makeElite(type) end
 
----@return number? '' The blighted enemy’s type if one is applied, otherwise nil
+---@return number? '' The blighted enemy's type if one is applied, otherwise nil
 function ActorInstance:getBlighted() end
 
 --- Transforms an enemy into a blighted version.
 ---
---- If the enemy is already elite or blighted then this method won’t do anything.
+--- If the enemy is already elite or blighted then this method won't do anything.
 ---
 --- For the enemy to become blighted, it must be able to spawn blighted under normal circumstances.
---- The blighted enemy’s type is represented by a single number generated by multiplying primes together to define its traits.
+--- The blighted enemy's type is represented by a single number generated by multiplying primes together to define its traits.
 ---
 --- Each prime and associated effect is as follows:
 ---
@@ -249,7 +249,7 @@ function ActorInstance:getBlighted() end
 ---   ```
 ---
 ---   Make the `wisp` a blighted enemy with all effects. Normally blighted enemies
----   only spawn with 2, but there’s no limit to how many can be provided.
+---   only spawn with 2, but there's no limit to how many can be provided.
 ---   ```lua
 ---   golem:makeElite(3 * 5 * 7 * 11 * 13)
 ---   ```
@@ -281,12 +281,12 @@ function ActorInstance:isClassic() end
 ---@return boolean
 function ActorInstance:isBoss() end
 
---- Used to get the actor instance’s mod data table.
+--- Used to get the actor instance's mod data table.
 ---
 --- This table can be used to store any arbitrary information,
 --- there are absolutely no limitations on what keys or values can be stored here.
 ---
---- When storing custom information, it is preferable to use this over the instance’s
+--- When storing custom information, it is preferable to use this over the instance's
 --- get and set methods for several reasons:
 ---  * There are no limitations for what can be stored here.
 ---    This includes nested tables, non-string keys, or even other Lua objects.

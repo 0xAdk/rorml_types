@@ -17,7 +17,7 @@ function DamagerInstance:getParent() end
 
 --- # Example
 ---   Set the local variable direction to 90 if the instance in damager is an explosion,
----   otherwise sets it to the bullet’s direction.
+---   otherwise sets it to the bullet's direction.
 ---   ```lua
 ---   local direction
 ---   if damager:isExplosion() then
@@ -27,15 +27,15 @@ function DamagerInstance:getParent() end
 ---   end
 ---   ```
 ---
----@return boolean '' true: if the instance is an explosion, false: if it’s a bullet
+---@return boolean '' true: if the instance is an explosion, false: if it's a bullet
 function DamagerInstance:isExplosion() end
 
---- Used to get the damager instance’s mod data table.
+--- Used to get the damager instance's mod data table.
 ---
 --- This table can be used to store any arbitrary information,
 --- there are absolutely no limitations on what keys or values can be stored here.
 ---
---- When storing custom information, it is preferable to use this over the instance’s
+--- When storing custom information, it is preferable to use this over the instance's
 --- get and set methods for several reasons:
 ---  * There are no limitations for what can be stored here.
 ---    This includes nested tables, non-string keys, or even other Lua objects.

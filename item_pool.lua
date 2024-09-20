@@ -5,7 +5,7 @@
 --- For a complete list of pools in the base game, see [this page](https://saturnyoshi.gitlab.io/RoRML-Docs/misc/vanillaItemPools.html).
 ---
 ---@class ItemPool
----@field ignoreLocks boolean If set to true all items in the pool will be able to drop even if the player hasn’t unlocked them
+---@field ignoreLocks boolean If set to true all items in the pool will be able to drop even if the player hasn't unlocked them
 ---@field ignoreEnigma boolean By default, use items will not be rolled if the Artifact of Enigma is enabled. Setting this flag to true allows the item pool to roll use items even when Enigma is active
 ---@field weighted boolean Allows assigning different weights to items in the item pool. Setting this to false clears all existing weight values in the pool. *the only default item pool where this is true is the gunchest pool*
 ---

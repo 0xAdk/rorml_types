@@ -40,11 +40,11 @@ function Surface.isValid(val) end
 
 --- Manually deletes the surface.
 --- 
---- Surfaces take up graphical memory which is a limited resource, so it is important to free them when you’re done with them.
+--- Surfaces take up graphical memory which is a limited resource, so it is important to free them when you're done with them.
 ---
 --- # Example
 ---   In this code we create a temporary surface and then draw it,
----   then since we’re not going to need it for next frame, we free it from memory.
+---   then since we're not going to need it for next frame, we free it from memory.
 ---   ```lua
 ---   local tempsurf = createTempSurface()
 ---   tempsurf:draw(xpos, ypos)
@@ -95,8 +95,8 @@ function Surface:draw(x, y) end
 
 --- Creates a new [DynamicSprite](https://saturnyoshi.gitlab.io/RoRML-Docs/class/dynamicSprite.html), adding the surface as its only subimage.
 ---
----@param xorigin? number The x coordinate of the sprite’s origin. defaults to (TODO)
----@param yorigin? number The y coordinate of the sprite’s origin. defaults to (TODO)
+---@param xorigin? number The x coordinate of the sprite's origin. defaults to (TODO)
+---@param yorigin? number The y coordinate of the sprite's origin. defaults to (TODO)
 ---@param x? number The left x coordinate of the region of the surface to copy. *defaults to 0*
 ---@param y? number The top y coordinate of the region of the surface to copy. *default to 0*
 ---@param w? number The width of the surface. *defaults to the width of the surface*

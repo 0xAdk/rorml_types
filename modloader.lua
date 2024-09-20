@@ -90,13 +90,13 @@ function modloader.getMods() end
 ---   end
 ---   ```
 ---
----@param mod string The mod’s internal name
+---@param mod string The mod's internal name
 ---@return boolean '' true if the mod is loaded
 function modloader.checkMod(mod) end
 
 --- Gets the full name of the mod.
 ---
---- Calling this function on a mod that isn’t loaded will cause an error.
+--- Calling this function on a mod that isn't loaded will cause an error.
 ---
 --- # Example
 ---   Print the name of each loaded mod.
@@ -106,31 +106,31 @@ function modloader.checkMod(mod) end
 ---   end
 ---   ```
 ---
----@param mod string The mod’s internal name
+---@param mod string The mod's internal name
 ---@return string '' The display name of the mod
 function modloader.getModName(mod) end
 
 --- Gets the description of the mod.
 ---
---- Calling this function on a mod that isn’t loaded will cause an error.
+--- Calling this function on a mod that isn't loaded will cause an error.
 ---
----@param mod string The mod’s internal name.
+---@param mod string The mod's internal name.
 ---@return string '' The description of the mod
 function modloader.getModDescription(mod) end
 
 --- Gets the version of the mod.
 ---
---- Calling this function on a mod that isn’t loaded will cause an error.
+--- Calling this function on a mod that isn't loaded will cause an error.
 ---
----@param mod string The mod’s internal name.
+---@param mod string The mod's internal name.
 ---@return string '' The version string of the mod
 function modloader.getModVersion(mod) end
 
 --- Gets the author of the mod.
 ---
---- Calling this function on a mod that isn’t loaded will cause an error.
+--- Calling this function on a mod that isn't loaded will cause an error.
 ---
----@param mod string The mod’s internal name
+---@param mod string The mod's internal name
 ---@return string '' The author of the mod
 function modloader.getModAuthor(mod) end
 

@@ -9,7 +9,7 @@
 ---       to check the timing of events.
 ---
 ---@class Sound
----@field id Id The sound’s GameMaker resource ID
+---@field id Id The sound's GameMaker resource ID
 ---@field ID Id alias for `id`
 ---
 ---@overload fun(name: string, fname: string): Sound
@@ -37,24 +37,24 @@ function Sound.find(name, namespace) end
 ---@return Sound[]
 function Sound.findAll(namespace) end
 
---- Loads a sound from the path `fname` relative to the mod’s directory. Only `.wav` and `.ogg` files are supported.
+--- Loads a sound from the path `fname` relative to the mod's directory. Only `.wav` and `.ogg` files are supported.
 ---
 --- If a name is not provided then the filename will be used.
 ---
 --- # Examples
----   Load the file `glass.ogg` from the mod’s `sounds` folder and assign it to the variable `smash`.
+---   Load the file `glass.ogg` from the mod's `sounds` folder and assign it to the variable `smash`.
 ---   ```lua
 ---   local smash = Sound.load("Smash", "sounds/glass.ogg")
 ---   ```
 ---
----   Load the file `bang.ogg` from the mod’s `sounds` folder.
+---   Load the file `bang.ogg` from the mod's `sounds` folder.
 ---   As no name is provided, the sound will automatically be assigned the name `bang`.
 ---   ```lua
 ---   local bang = Sound.load("sounds/bang.ogg")
 ---   ```
 ---
 ---@param name string The name to give the sound within the current namespace
----@param fname string The path to the file, relative to the mod’s base path. *file extension is optional*
+---@param fname string The path to the file, relative to the mod's base path. *file extension is optional*
 ---@return Sound
 function Sound.load(name, fname) end
 

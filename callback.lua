@@ -23,12 +23,12 @@
 ---|-- Player Callbacks: These are callbacks related to the player and are fired for each player object in the game
 ---| 'onPlayerInit' Fired at the start of the run for every player.
 ---| 'onPlayerStep' Fired each tick for every player.
----| 'onPlayerDrawBelow' Fired after drawing the player’s sprite.
+---| 'onPlayerDrawBelow' Fired after drawing the player's sprite.
 ---| 'onPlayerDraw'  Fired when beginning to draw the player, before any part of them is drawn.
 ---| 'onPlayerDrawAbove' Fired after drawing all parts of the player.
 ---| 'onPlayerLevelUp' Fired whenever the player levels up.
 ---| 'onPlayerDeath' Fired whenever a player dies.
----| 'onPlayerHUDDraw' The x and y coordinates are the position of the player’s first skill on screen.
+---| 'onPlayerHUDDraw' The x and y coordinates are the position of the player's first skill on screen.
 ---|
 ---|-- Damager Callbacks: These are callbacks related to damagers, i.e. bullets and explosions
 ---| 'onFire' Called each time a bullet or explosion is fired.
@@ -57,7 +57,7 @@
 ---| 'preHUDDraw' Fired before most vanilla HUD rendering. Drawing coordinates are screen based.
 ---| 'onLoad' Fired immediately after all mods are initialized.
 ---| 'postLoad' Fired immediately after onLoad.
----| 'onCameraUpdate' Fired immediately after the base game’s camera movement.
+---| 'onCameraUpdate' Fired immediately after the base game's camera movement.
 ---|
 ---|-- Global Callbacks: **WARNING**: The API was not really designed to be used outside of runs. Running code outside of the game holds a much higher risk of errors. These are callbacks that can be executed both in and outside of gameplay, such as during menus or cutscenes.
 ---| 'globalStep' Global equivalent to the "onStep" callback.
@@ -69,7 +69,7 @@
 --- Callbacks are your main method of getting the game to call your code.
 ---
 --- **WARNING**: Callbacks exist forever (even across runs) no matter when they are defined.
----          If you think you need to define a callback after load, then you’re probably doing something wrong.
+---          If you think you need to define a callback after load, then you're probably doing something wrong.
 ---
 ---@overload fun(name: Callback, fn: fun(...), priority?: number)
 callback = {}
@@ -84,7 +84,7 @@ callback = {}
 ---
 --- # Examples
 ---   Two functionally identical ways of assigning a function to a callback.
----   In this case we’re doing something on the player step callback.
+---   In this case we're doing something on the player step callback.
 ---
 ---   ```lua
 ---   local function foo(player)

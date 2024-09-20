@@ -15,12 +15,12 @@ local ItemInstance = {}
 ---@return Item '' The Item which the instance represents
 function ItemInstance:getItem() end
 
---- Used to get the item instance’s mod data table.
+--- Used to get the item instance's mod data table.
 ---
 --- This table can be used to store any arbitrary information,
 --- there are absolutely no limitations on what keys or values can be stored here.
 ---
---- When storing custom information, it is preferable to use this over the instance’s
+--- When storing custom information, it is preferable to use this over the instance's
 --- get and set methods for several reasons:
 ---  * There are no limitations for what can be stored here.
 ---    This includes nested tables, non-string keys, or even other Lua objects.

@@ -5,9 +5,9 @@
 ---@class MonsterLog
 ---@field displayName string The name of the log as displayed in-game
 ---@field story string The main lore of the enemy
----@field statHP number The enemy’s displayed HP stat
----@field statDamage number The enemy’s displayed damage stat
----@field statSpeed number The enemy’s displayed speed stat
+---@field statHP number The enemy's displayed HP stat
+---@field statDamage number The enemy's displayed damage stat
+---@field statSpeed number The enemy's displayed speed stat
 ---@field sprite Sprite The sprite of the enemy used as the log icon
 ---@field portrait Sprite The big sprite of the enemy seen when viewing the log
 ---@field portraitSubimage number The subimage of the portrait sprite to display. **Note**: *This is 0-indexed rather than the usual 1-indexing*
@@ -15,7 +15,7 @@
 ---@overload fun(name: string): MonsterLog
 MonsterLog = {}
 
---- A [Map](https://saturnyoshi.gitlab.io/RoRML-Docs/class/map.html) associating an enemy’s [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) to its log entry.
+--- A [Map](https://saturnyoshi.gitlab.io/RoRML-Docs/class/map.html) associating an enemy's [GMObject](https://saturnyoshi.gitlab.io/RoRML-Docs/class/gmObject.html) to its log entry.
 ---
 --- Assigning a log to an object in this map will cause that object to drop the log when killed.
 ---
