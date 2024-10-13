@@ -7,7 +7,7 @@
 ---@class Room
 ---
 ---@overload fun(name: string): Room
-local Room = {}
+Room = {}
 
 --[[
 ---- static functions
