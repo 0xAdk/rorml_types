@@ -66,6 +66,70 @@
 ---| 'globalRoomStart' Called any time a new room is loaded.
 ---| 'globalRoomEnd' Called when the current room is being unloaded.
 
+---@alias CallbackFunction
+---| fun(name: Callback, fn: function, priority?: number)
+---|
+---|-- Items
+---| fun(name: 'onItemRoll', fn: (fun(pool: ItemPool, item: Item): (override: Item)), priority?: number)
+---| fun(name: 'onItemDropped', fn: fun(...), priority?: number) TEST: is this implemented?
+---| fun(name: 'onItemInit', fn: fun(item: ItemInstance), priority?: number)
+---| fun(name: 'onItemPickup', fn: fun(item: ItemInstance, player: PlayerInstance), priority?: number)
+---| fun(name: 'onUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
+---| fun(name: 'postUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
+---|
+---|-- Actor
+---| fun(name: 'onNPCDeath', fn: fun(npc: ActorInstance), priority?: number)
+---| fun(name: 'onNPCDeathProc', fn: fun(npc: ActorInstance, player: PlayerInstance), priority?: number)
+---| fun(name: 'onActorInit', fn: fun(actor: ActorInstance), priority?: number)
+---| fun(name: 'onEliteInit', fn: fun(elite: ActorInstance), priority?: number)
+---| fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source?: Instance|DamagerInstance|ActorInstance), priority?: number)
+---|
+---|-- Player
+---| fun(name: 'onPlayerInit', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerStep', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerDrawBelow', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerDraw', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerDrawAbove', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerLevelUp', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerDeath', fn: fun(player: PlayerInstance), priority?: number)
+---| fun(name: 'onPlayerHUDDraw', fn: fun(player: PlayerInstance, x: number, y: number), priority?: number)
+---|
+---|-- Damagers
+---| fun(name: 'onFire', fn: fun(damager: DamagerInstance ), priority?: number)
+---| fun(name: 'onFireSetProcs', fn: fun(damager: DamagerInstance, parent: ActorInstance ), priority?: number)
+---| fun(name: 'onHit', fn: fun(damager: DamagerInstance, hit: ActorInstance, x: number, y: number), priority?: number)
+---| fun(name: 'preHit', fn: fun(damager: DamagerInstance, hit: ActorInstance ), priority?: number)
+---| fun(name: 'postHit', fn: fun(damager: DamagerInstance ), priority?: number)
+---| fun(name: 'onImpact', fn: fun(damager: DamagerInstance, x: number, y: number), priority?: number)
+---|
+---|-- Map objects
+---| fun(name: 'onMapObjectActivate', fn: fun(mapObject: Instance, activator: PlayerInstance), priority?: number)
+---|
+---|-- Game
+---| fun(name: 'onStageEntry', fn: fun(), priority?: number)
+---| fun(name: 'onSecond', fn: fun(minute: number, second: number), priority?: number)
+---| fun(name: 'onMinute', fn: fun(minute: number, second: number), priority?: number)
+---| fun(name: 'onGameStart', fn: fun(), priority?: number)
+---| fun(name: 'onGameEnd', fn: fun(), priority?: number)
+---|
+---|-- General
+---| fun(name: 'onStep', fn: fun(), priority?: number)
+---| fun(name: 'preStep', fn: fun(), priority?: number)
+---| fun(name: 'postStep', fn: fun(), priority?: number)
+---| fun(name: 'onDraw', fn: fun(), priority?: number)
+---| fun(name: 'onHUDDraw', fn: fun(), priority?: number)
+---| fun(name: 'preHUDDraw', fn: fun(), priority?: number)
+---| fun(name: 'onLoad', fn: fun(), priority?: number)
+---| fun(name: 'postLoad', fn: fun(), priority?: number)
+---| fun(name: 'onCameraUpdate', fn: fun(), priority?: number)
+---|
+---|-- Global
+---| fun(name: 'globalStep', fn: fun(room: Room), priority?: number)
+---| fun(name: 'globalPreStep', fn: fun(room: Room), priority?: number)
+---| fun(name: 'globalPostStep', fn: fun(room: Room), priority?: number)
+---| fun(name: 'globalRoomStart', fn: fun(room: Room), priority?: number)
+---| fun(name: 'globalRoomEnd', fn: fun(room: Room), priority?: number)
+
 --- Callbacks are your main method of getting the game to call your code.
 ---
 --- **WARNING**: Callbacks exist forever (even across runs) no matter when they are defined.
@@ -110,73 +174,15 @@ callback = {}
 ---   end, 200)
 ---   ```
 ---
----@-- Items
----@overload fun(name: 'onItemRoll', fn: (fun(pool: ItemPool, item: Item): override: Item), priority?: number)
----@overload fun(name: 'onItemDropped', fn: fun(...), priority?: number) TEST: is this implemented?
----@overload fun(name: 'onItemInit', fn: fun(item: ItemInstance), priority?: number)
----@overload fun(name: 'onItemPickup', fn: fun(item: ItemInstance, player: PlayerInstance), priority?: number)
----@overload fun(name: 'onUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
----@overload fun(name: 'postUseItemUse', fn: fun(player: PlayerInstance, item: Item), priority?: number)
----
----@-- Actor
----@overload fun(name: 'onNPCDeath', fn: fun(npc: ActorInstance), priority?: number)
----@overload fun(name: 'onNPCDeathProc', fn: fun(npc: ActorInstance, player: PlayerInstance), priority?: number)
----@overload fun(name: 'onActorInit', fn: fun(actor: ActorInstance), priority?: number)
----@overload fun(name: 'onEliteInit', fn: fun(elite: ActorInstance), priority?: number)
----@overload fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source?: Instance|DamagerInstance|ActorInstance), priority?: number)
----
----@-- Player
----@overload fun(name: 'onPlayerInit', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerStep', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerDrawBelow', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerDraw', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerDrawAbove', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerLevelUp', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerDeath', fn: fun(player: PlayerInstance), priority?: number)
----@overload fun(name: 'onPlayerHUDDraw', fn: fun(player: PlayerInstance, x: number, y: number), priority?: number)
----
----@-- Damagers
----@overload fun(name: 'onFire', fn: fun(damager: DamagerInstance ), priority?: number)
----@overload fun(name: 'onFireSetProcs', fn: fun(damager: DamagerInstance, parent: ActorInstance ), priority?: number)
----@overload fun(name: 'onHit', fn: fun(damager: DamagerInstance, hit: ActorInstance, x: number, y: number), priority?: number)
----@overload fun(name: 'preHit', fn: fun(damager: DamagerInstance, hit: ActorInstance ), priority?: number)
----@overload fun(name: 'postHit', fn: fun(damager: DamagerInstance ), priority?: number)
----@overload fun(name: 'onImpact', fn: fun(damager: DamagerInstance, x: number, y: number), priority?: number)
----
----@-- Map objects
----@overload fun(name: 'onMapObjectActivate', fn: fun(mapObject: Instance, activator: PlayerInstance), priority?: number)
----
----@-- Game
----@overload fun(name: 'onStageEntry', fn: fun(), priority?: number)
----@overload fun(name: 'onSecond', fn: fun(minute: number, second: number), priority?: number)
----@overload fun(name: 'onMinute', fn: fun(minute: number, second: number), priority?: number)
----@overload fun(name: 'onGameStart', fn: fun(), priority?: number)
----@overload fun(name: 'onGameEnd', fn: fun(), priority?: number)
----
----@-- General
----@overload fun(name: 'onStep', fn: fun(), priority?: number)
----@overload fun(name: 'preStep', fn: fun(), priority?: number)
----@overload fun(name: 'postStep', fn: fun(), priority?: number)
----@overload fun(name: 'onDraw', fn: fun(), priority?: number)
----@overload fun(name: 'onHUDDraw', fn: fun(), priority?: number)
----@overload fun(name: 'preHUDDraw', fn: fun(), priority?: number)
----@overload fun(name: 'onLoad', fn: fun(), priority?: number)
----@overload fun(name: 'postLoad', fn: fun(), priority?: number)
----@overload fun(name: 'onCameraUpdate', fn: fun(), priority?: number)
----
----@-- Global
----@overload fun(name: 'globalStep', fn: fun(room: Room), priority?: number)
----@overload fun(name: 'globalPreStep', fn: fun(room: Room), priority?: number)
----@overload fun(name: 'globalPostStep', fn: fun(room: Room), priority?: number)
----@overload fun(name: 'globalRoomStart', fn: fun(room: Room), priority?: number)
----@overload fun(name: 'globalRoomEnd', fn: fun(room: Room), priority?: number)
----
 ---@-- FIXME: using `Callback` as the type instead of `string` casues every callback to show up
 ---@--        twice in suggestions due to the overloads.
 ---@--        It's required for the callback docs, and the overloads for the autocomplete.
 ---@param name Callback The name of the callback to add a function onto
 ---@param fn function The function to add as the callback. The arguments fed to this function will depend on what callback is being fired ([see here](https://saturnyoshi.gitlab.io/RoRML-Docs/global/registerCallback.html#list-of-callbacks))
 ---@param priority? number A priority can be set to decide in which order callbacks will be run. A higher priority means the function is called earlier. This value can be negative. *defaults to 10*
+---
+---@-- Adds the overloads
+---@type CallbackFunction
 ---
 function callback.register(name, fn, priority) end
 
@@ -217,6 +223,9 @@ function callback.create(name) end
 ---@param name Callback The name of the callback to add a function onto
 ---@param fn function The function to add as the callback. The arguments fed to this function will depend on what callback is being fired ([see here](https://saturnyoshi.gitlab.io/RoRML-Docs/global/registerCallback.html#list-of-callbacks))
 ---@param priority? number A priority can be set to decide in which order callbacks will be run. A higher priority means the function is called earlier. This value can be negative. *defaults to 10*
+---
+---@-- Adds the overloads
+---@type CallbackFunction
 ---
 ---@deprecated 'Use `callback.register` instead'
 function registercallback(name, fn, priority) end
