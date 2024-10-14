@@ -18,7 +18,8 @@
 ---| 'onNPCDeath' Fired whenever an NPC dies.
 ---| 'onNPCDeathProc' Fired for each player whenever an NPC dies. Handle death item procs here.
 ---| 'onEliteInit' TODO
----| 'onDamage' TODO
+---|-- TODO: this needs testing. Is this correct? is it a truthy value or only booleans, will it cancel all following onDamage callbacks?
+---| 'onDamage' Fired whenever an actor takes damage. The damage can be negated by returning a truthy value like `true` from within the callback.
 ---|
 ---|-- Player Callbacks: These are callbacks related to the player and are fired for each player object in the game
 ---| 'onPlayerInit' Fired at the start of the run for every player.
@@ -70,7 +71,7 @@
 ---| fun(name: Callback, fn: function, priority?: number)
 ---|
 ---|-- Items
----| fun(name: 'onItemRoll', fn: (fun(pool: ItemPool, item: Item): (override: Item)), priority?: number)
+---| fun(name: 'onItemRoll', fn: fun(pool: ItemPool, item: Item): (override: Item), priority?: number)
 ---| fun(name: 'onItemDropped', fn: fun(...), priority?: number) TEST: is this implemented?
 ---| fun(name: 'onItemInit', fn: fun(item: ItemInstance), priority?: number)
 ---| fun(name: 'onItemPickup', fn: fun(item: ItemInstance, player: PlayerInstance), priority?: number)
@@ -82,7 +83,7 @@
 ---| fun(name: 'onNPCDeathProc', fn: fun(npc: ActorInstance, player: PlayerInstance), priority?: number)
 ---| fun(name: 'onActorInit', fn: fun(actor: ActorInstance), priority?: number)
 ---| fun(name: 'onEliteInit', fn: fun(elite: ActorInstance), priority?: number)
----| fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source?: Instance|DamagerInstance|ActorInstance), priority?: number)
+---| fun(name: 'onDamage', fn: fun(target: ActorInstance, damage: number, source?: Instance|DamagerInstance|ActorInstance): (cancel: boolean?), priority?: number)
 ---|
 ---|-- Player
 ---| fun(name: 'onPlayerInit', fn: fun(player: PlayerInstance), priority?: number)
